@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
             //for button just switch it to this instead of input.x&y 
            // input.x = dirX;
-           //  input.y = dirY;
+           // input.y = dirY;
 
 
             //stop diagonal movement
