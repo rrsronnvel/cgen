@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UI_KeyHolder : MonoBehaviour
-{  
+{
     [SerializeField] private KeyHolder keyHolder;
 
     private Transform container;
@@ -20,6 +20,7 @@ public class UI_KeyHolder : MonoBehaviour
     private void Start()
     {
         keyHolder.OnKeysChanged += KeyHolder_OnKeysChanged;
+        UpdateVisual();
     }
 
     private void KeyHolder_OnKeysChanged(object sender, System.EventArgs e)
@@ -43,7 +44,7 @@ public class UI_KeyHolder : MonoBehaviour
             Key.KeyType keyType = keyList[i];
             Transform keyTransform = Instantiate(keyTemplate, container);
             keyTransform.gameObject.SetActive(true);
-            keyTransform.GetComponent<RectTransform>().anchoredPosition = new Vector2(50 * i , 0);
+            keyTransform.GetComponent<RectTransform>().anchoredPosition = new Vector2(50 * i, 0);
             Image keyImage = keyTransform.Find("Image").GetComponent<Image>();
             switch (keyType)
             {
@@ -53,7 +54,7 @@ public class UI_KeyHolder : MonoBehaviour
                 case Key.KeyType.Blue: keyImage.color = Color.blue; break;
 
             }
-           
+
         }
     }
 }

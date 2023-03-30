@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDataPersistence
 {
 
     [SerializeField] GameObject controlButton;
@@ -36,6 +36,16 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         interactButton.onClick.AddListener(Interact);
+    }
+
+    public void LoadData(GameData data)
+    {
+        this.transform.position = data.playerPosition;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.playerPosition = this.transform.position;
     }
 
 
@@ -89,6 +99,9 @@ public class PlayerController : MonoBehaviour
         {
             Interact();
         }
+
+
+
     }
 
     void Interact()

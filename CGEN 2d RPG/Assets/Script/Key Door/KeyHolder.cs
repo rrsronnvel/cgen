@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyHolder : MonoBehaviour
+public class KeyHolder : MonoBehaviour, IDataPersistence
 {
     public event EventHandler OnKeysChanged;
 
@@ -14,7 +14,7 @@ public class KeyHolder : MonoBehaviour
         keyList = new List<Key.KeyType>();
     }
 
-    public List<Key.KeyType> GetKeyList() 
+    public List<Key.KeyType> GetKeyList()
     {
         return keyList;
     }
@@ -37,24 +37,39 @@ public class KeyHolder : MonoBehaviour
         return keyList.Contains(keyType);
     }
 
+    public void LoadData(GameData data)
+    {
+        keyList.Clear();
+        keyList = data.keyList;
+        OnKeysChanged?.Invoke(this, EventArgs.Empty); // Trigger the event instead of calling UpdateVisual()
+    }
+
+
+    public void SaveData(ref GameData data)
+    {
+        data.keyList = keyList;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Key key = collision.GetComponent<Key>();
         if (key != null)
         {
-            AddKey(key.GetKeyType());
+            // The line below has been removed
+            // AddKey(key.GetKeyType());
             Destroy(key.gameObject);
         }
 
         KeyDoor keyDoor = collision.GetComponent<KeyDoor>();
-        if (keyDoor != null )
+        if (keyDoor != null)
         {
             if (ContainsKey(keyDoor.GetKeyType()))
             {
-                //Currently holding key to open this door
+                // Currently holding key to open this door
                 RemoveKey(keyDoor.GetKeyType());
                 keyDoor.OpenDoor();
             }
         }
     }
+
 }

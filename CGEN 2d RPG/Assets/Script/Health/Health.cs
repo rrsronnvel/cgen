@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, IDataPersistence
 {   
     [Header ("Health")]
     [SerializeField] private float startingHealth;
@@ -20,6 +20,16 @@ public class Health : MonoBehaviour
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
+    }
+
+    public void LoadData(GameData data)
+    {
+        this.currentHealth = data.currentHealth;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.currentHealth = this.currentHealth;
     }
 
     public void TakeDamage(float _damage)

@@ -1,16 +1,49 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public void GoToScene(string sceneName)
+    [Header("Menu Buttons")]
+    [SerializeField] private Button newGameButton;
+    [SerializeField] private Button continueGameButton;
+
+    private void Start()
     {
-        SceneManager.LoadScene(sceneName);
+        if (!DataPersistenceManager.instance.HasGameData())
+        {
+            continueGameButton.interactable = false;
+        }
+    }
+
+    public void OnNewGameClicked()
+    {
+         DisableMenuButtons();
+        //create a new game - which will initialize our game data
+         DataPersistenceManager.instance.NewGame();
+        //Load the gameplay scene - which will in turn save the game because of 
+        //OnSceneUnloaded() in the DataPersistenceManager.
+          SceneManager.LoadSceneAsync("SampleScene");
+       
+    }
+
+    public void OnContinueGameClicked()
+    {
+        DisableMenuButtons();
+        //Load the next scene - which will in turn load the game because of
+        //OnSceneLoaded() in the DataPersistenceManager
+        SceneManager.LoadSceneAsync("SampleScene");
     }
 
     public void QuitApp()
     {
         Application.Quit();
         Debug.Log("Application has quit.");
+    }
+
+    private void DisableMenuButtons()
+    {
+        newGameButton.interactable = false;
+        continueGameButton.interactable = false;
     }
 }
