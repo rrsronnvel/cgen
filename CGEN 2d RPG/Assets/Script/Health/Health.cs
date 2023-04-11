@@ -1,9 +1,18 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 
 public class Health : MonoBehaviour, IDataPersistence
-{   
+{
+    [Header("Game Management")]
+    [SerializeField] private GameManager gameManager;
+
+
+    [Header("GameOver UI")]
+    [SerializeField] private GameObject gameOverUI;
+
+
     [Header ("Health")]
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
@@ -20,6 +29,7 @@ public class Health : MonoBehaviour, IDataPersistence
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
+        HideGameOverUI();
     }
 
     public void LoadData(GameData data)
@@ -49,13 +59,31 @@ public class Health : MonoBehaviour, IDataPersistence
             {
                 anim.SetTrigger("die");
                 dead = true;
+                ShowGameOverUI();
             }
-            
         }
-
     }
 
-   public void AddHealth(float _value)
+    private void ShowGameOverUI()
+    {
+        gameOverUI.SetActive(true);
+    }
+
+    private void HideGameOverUI()
+    {
+        gameOverUI.SetActive(false);
+    }
+
+    public void RestartGame()
+    {
+        gameManager.RestartGame();
+    }
+
+
+
+
+
+    public void AddHealth(float _value)
     {
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
     }
