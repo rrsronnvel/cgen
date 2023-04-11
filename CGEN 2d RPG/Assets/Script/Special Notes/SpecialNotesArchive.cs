@@ -1,3 +1,6 @@
+using System;
+using System.Xml;
+using System.Xml.Serialization;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,30 +9,99 @@ using TMPro;
 [System.Serializable]
 public class MessageData
 {
+    public string id;
     public string title;
     public string content;
-    public Sprite image;
+    public string imageBase64;
+
+    // Use this property to get or set the Sprite for the MessageData object
+    [XmlIgnore]
+    public Sprite Image
+    {
+        get
+        {
+            return SpriteFromTexture2D(Base64ToTexture(imageBase64));
+        }
+        set
+        {
+            imageBase64 = TextureToBase64(value.texture);
+        }
+    }
+
+    // Helper methods for converting between Sprite, Texture2D, and Base64 string
+
+    private string TextureToBase64(Texture2D texture)
+    {
+        return Convert.ToBase64String(texture.EncodeToPNG());
+    }
+
+    private Texture2D Base64ToTexture(string base64)
+    {
+        byte[] imageData = Convert.FromBase64String(base64);
+        Texture2D tex = new Texture2D(2, 2);
+        tex.LoadImage(imageData);
+        return tex;
+    }
+
+    private Sprite SpriteFromTexture2D(Texture2D texture)
+    {
+        return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+    }
 }
 
-public class SpecialNotesArchive : MonoBehaviour, Interactable
+
+
+
+public class SpecialNotesArchive : MonoBehaviour, Interactable, IDataPersistence
 {
     [SerializeField] private GameObject messageListPrefab;
     [SerializeField] private GameObject messageDetailsPrefab;
     [SerializeField] private Button messageButtonPrefab;
 
     private Canvas canvas;
-    private List<MessageData> messages;
+    private List<MessageData> messages = new List<MessageData>();
+
 
     private void Start()
     {
         canvas = FindObjectOfType<Canvas>();
-        messages = new List<MessageData>();
+        //messages = new List<MessageData>();
     }
 
-    public void AddMessage(MessageData message)
+    public void LoadData(GameData data)
     {
-        messages.Add(message);
+        messages.Clear();
+        foreach (KeyValuePair<string, MessageData> pair in data.specialNotesData)
+        {
+            messages.Add(pair.Value);
+        }
     }
+
+    public void SaveData(ref GameData data)
+    {
+        data.specialNotesData.Clear();
+        foreach (MessageData message in messages)
+        {
+            data.specialNotesData.Add(message.id, message);
+        }
+    }
+
+
+    public void AddMessage(MessageData messageData)
+    {
+        if (!messages.Exists(x => x.id == messageData.id))
+        {
+            MessageData newMessage = new MessageData
+            {
+                id = messageData.id,
+                title = messageData.title,
+                content = messageData.content,
+                Image = messageData.Image
+            };
+            messages.Add(newMessage);
+        }
+    }
+
 
     public void Interact()
     {
@@ -91,7 +163,7 @@ public class SpecialNotesArchive : MonoBehaviour, Interactable
         // Assign the title, content, and image
         messageDetailsInstance.transform.Find("Title Text").GetComponent<TextMeshProUGUI>().text = messageData.title;
         messageDetailsInstance.transform.Find("Content Text").GetComponent<TextMeshProUGUI>().text = messageData.content;
-        messageDetailsInstance.transform.Find("Image").GetComponent<Image>().sprite = messageData.image;
+        messageDetailsInstance.transform.Find("Image").GetComponent<Image>().sprite = messageData.Image;
 
         Button closeButton = messageDetailsInstance.GetComponentInChildren<Button>();
         closeButton.onClick.AddListener(() =>

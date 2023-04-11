@@ -95,8 +95,11 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
         animator.SetBool("isMoving", isMoving);
         // || Input.GetMouseButtonDown(0)
-        if (Input.GetButtonDown("InteractButton"))
+
+      //  Input.GetKeyDown(KeyCode.Z)
+        if (Input.GetButtonDown("InteractButton") || Input.GetKeyDown(KeyCode.Z))
         {
+            Debug.Log("Hello World!");
             Interact();
         }
 

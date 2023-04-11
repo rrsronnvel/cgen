@@ -18,6 +18,11 @@ public class GameData
 
     public SerializableDictionary<string, bool> openDoors;
 
+    public SerializableDictionary<string, bool> notesCollected;
+
+    public SerializableDictionary<string, MessageData> specialNotesData;
+
+
     // the values defined in this constructor will be the default values
     // the game  starts with when there's no data to load
 
@@ -33,6 +38,11 @@ public class GameData
         keyList = new List<Key.KeyType>();
 
         openDoors = new SerializableDictionary<string, bool>();
+
+        notesCollected = new SerializableDictionary<string, bool>();
+
+        specialNotesData = new SerializableDictionary<string, MessageData>();
+
 
         playerPosition = new Vector3(-12.0f, 1.0f, 0f);
     }
