@@ -28,7 +28,7 @@ public class FactsMessage : MonoBehaviour, IDataPersistence
         messageArchive = FindObjectOfType<SpecialNotesArchive>();
     }
 
-    public void LoadData(GameData data)
+    public void LoadData(GameData data, bool isRestarting)
     {
         data.notesCollected.TryGetValue(id, out collected);
 

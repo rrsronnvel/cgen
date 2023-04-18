@@ -28,12 +28,19 @@ public class Key : MonoBehaviour, IDataPersistence
         return keyType;
     }
 
-    public void LoadData(GameData data)
+    public void LoadData(GameData data, bool isRestarting)
     {
         data.keysCollected.TryGetValue(id, out collected);
         if (collected)
         {
-            gameObject.SetActive(false);
+            if (isRestarting)
+            {
+                collected = false;
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 
@@ -53,6 +60,9 @@ public class Key : MonoBehaviour, IDataPersistence
             collision.GetComponent<KeyHolder>().AddKey(keyType);
             collected = true;
             gameObject.SetActive(false);
+
+            // Save the game after collecting the key
+            DataPersistenceManager.instance.SaveGame();
         }
     }
 

@@ -37,11 +37,14 @@ public class KeyHolder : MonoBehaviour, IDataPersistence
         return keyList.Contains(keyType);
     }
 
-    public void LoadData(GameData data)
+    public void LoadData(GameData data, bool isRestarting)
     {
-        keyList.Clear();
-        keyList = data.keyList;
-        OnKeysChanged?.Invoke(this, EventArgs.Empty); // Trigger the event instead of calling UpdateVisual()
+        if (!isRestarting)
+        {
+            keyList.Clear();
+            keyList = data.keyList;
+            OnKeysChanged?.Invoke(this, EventArgs.Empty); // Trigger the event instead of calling UpdateVisual()
+        }
     }
 
 

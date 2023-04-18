@@ -68,7 +68,7 @@ public class SpecialNotesArchive : MonoBehaviour, Interactable, IDataPersistence
         //messages = new List<MessageData>();
     }
 
-    public void LoadData(GameData data)
+    public void LoadData(GameData data, bool isRestarting)
     {
         messages.Clear();
         foreach (KeyValuePair<string, MessageData> pair in data.specialNotesData)

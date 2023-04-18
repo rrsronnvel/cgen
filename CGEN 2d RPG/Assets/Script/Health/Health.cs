@@ -5,8 +5,9 @@ using System.Collections;
 
 public class Health : MonoBehaviour, IDataPersistence
 {
-    [Header("Game Management")]
-    [SerializeField] private GameManager gameManager;
+    //Might delete this later
+   /* [Header("Game Management")]
+    [SerializeField] private GameManager gameManager;*/
 
 
     [Header("GameOver UI")]
@@ -24,6 +25,9 @@ public class Health : MonoBehaviour, IDataPersistence
     [SerializeField] private float numberOfFlashes;
     private SpriteRenderer spriteRend;
 
+    [Header("Player")]
+    [SerializeField] private PlayerController playerController;
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -32,10 +36,18 @@ public class Health : MonoBehaviour, IDataPersistence
         HideGameOverUI();
     }
 
-    public void LoadData(GameData data)
+    public void LoadData(GameData data, bool isRestarting)
     {
-        this.currentHealth = data.currentHealth;
+        if (!isRestarting)
+        {
+            this.currentHealth = data.currentHealth;
+        }
+        else
+        {
+            this.currentHealth = startingHealth;
+        }
     }
+
 
     public void SaveData(ref GameData data)
     {
@@ -60,6 +72,7 @@ public class Health : MonoBehaviour, IDataPersistence
                 anim.SetTrigger("die");
                 dead = true;
                 ShowGameOverUI();
+                playerController.isGameOver = true;
             }
         }
     }
@@ -74,10 +87,11 @@ public class Health : MonoBehaviour, IDataPersistence
         gameOverUI.SetActive(false);
     }
 
-    public void RestartGame()
+    //Might delete this later.
+   /* public void RestartGame()
     {
         gameManager.RestartGame();
-    }
+    }*/
 
 
 

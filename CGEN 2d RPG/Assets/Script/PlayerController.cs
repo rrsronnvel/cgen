@@ -26,7 +26,11 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     public LayerMask solidObjectsLayer;
     public LayerMask interactableLayer;
 
-    
+    private bool isDestroyed = false;
+
+    public bool isGameOver = false;
+
+
 
     private void Awake()
     {
@@ -38,19 +42,45 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         interactButton.onClick.AddListener(Interact);
     }
 
-    public void LoadData(GameData data)
+    private void OnDestroy()
     {
-        this.transform.position = data.playerPosition;
+        isDestroyed = true;
     }
+
+
+    public void LoadData(GameData data, bool isRestarting)
+    {
+        if (!isRestarting)
+        {
+            this.transform.position = data.playerPosition;
+        }
+        else
+        {
+            this.transform.position = new Vector3(-12.0f, 1.0f, 0f); // Set this to your initial player position
+        }
+    }
+
+
+
+
 
     public void SaveData(ref GameData data)
     {
-        data.playerPosition = this.transform.position;
+        if (!isDestroyed)
+        {
+            data.playerPosition = this.transform.position;
+        }
     }
+
 
 
     public void HandleUpdate()
     {
+        if (isGameOver)
+        {
+            return;
+        }
+
         controlButton.SetActive(true);
         if (!isMoving)
         {

@@ -17,14 +17,26 @@ public class HealthCollectible : MonoBehaviour, IDataPersistence
     private bool collected = false;
 
 
-    public void LoadData(GameData data)
+    public void LoadData(GameData data, bool isRestarting)
     {
         data.healthsCollected.TryGetValue(id, out collected);
         if (collected)
         {
-            gameObject.SetActive(false);
+            if (isRestarting)
+            {
+                collected = false;
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
+        /*else if (isRestarting && !collected)
+        {
+            gameObject.SetActive(true);
+        } */
     }
+
 
     public void SaveData(ref GameData data)
     {
@@ -42,6 +54,9 @@ public class HealthCollectible : MonoBehaviour, IDataPersistence
             collision.GetComponent<Health>().AddHealth(healthValue);
             collected = true;
             gameObject.SetActive(false);
+
+            // Save the game after collecting health
+            DataPersistenceManager.instance.SaveGame();
         }
     }
 }

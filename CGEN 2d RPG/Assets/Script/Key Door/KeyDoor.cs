@@ -40,10 +40,20 @@ public class KeyDoor : MonoBehaviour, IDataPersistence
         animator.SetBool("Open", false);
     }
 
-    public void LoadData(GameData data)
+    public void LoadData(GameData data, bool isRestarting)
     {
         data.openDoors.TryGetValue(doorId, out isOpen);
-        animator.SetBool("Open", isOpen);
+        if (isOpen)
+        {
+            if (isRestarting)
+            {
+                isOpen = false;
+            }
+            else
+            {
+                animator.SetBool("Open", true);
+            }
+        }
     }
 
     public void SaveData(ref GameData data)

@@ -20,6 +20,8 @@ public class DataPersistenceManager : MonoBehaviour
 
     public static DataPersistenceManager instance { get; private set; }
 
+    public bool IsRestarting { get; private set; } = false;
+
     private void Awake()
     {
         if (instance != null)
@@ -86,7 +88,7 @@ public class DataPersistenceManager : MonoBehaviour
         // push the Loaded data to all other scripts that need it.
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
-            dataPersistenceObj.LoadData(gameData);
+            dataPersistenceObj.LoadData(gameData, IsRestarting);
         }
         Debug.Log("Loaded health count = " + gameData.currentHealth);
     }
@@ -103,13 +105,17 @@ public class DataPersistenceManager : MonoBehaviour
         // pass the data to other scripts so they can update it.
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
-            dataPersistenceObj.SaveData(ref gameData);
+            if (dataPersistenceObj != null)
+            {
+                dataPersistenceObj.SaveData(ref gameData);
+            }
         }
         Debug.Log("Saved health count = " + gameData.currentHealth);
 
         //save that data to a file using the data handler.
         dataHandler.Save(gameData);
     }
+
 
     private void OnApplicationQuit()
     {
@@ -127,4 +133,20 @@ public class DataPersistenceManager : MonoBehaviour
     {
         return gameData != null;
     }
+
+    public void SetIsRestarting(bool isRestarting)
+    {
+        IsRestarting = isRestarting;
+    }
+
+    public void RestartGame()
+    {
+        SetIsRestarting(true);
+        // Replace "SampleScene" with the name of the scene you want to restart.
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
+
+
+
 }
