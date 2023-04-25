@@ -14,7 +14,7 @@ public class DataPersistenceManager : MonoBehaviour
     [SerializeField] private bool useEncryption;
 
     private GameData gameData;
-    private List<IDataPersistence> dataPersistenceObjects;
+    public List<IDataPersistence> dataPersistenceObjects = new List<IDataPersistence>();
 
     private FileDataHandler dataHandler;
 
@@ -126,6 +126,12 @@ public class DataPersistenceManager : MonoBehaviour
     {
         IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistence>();
 
+        // Add the StageManager instance to the dataPersistenceObjects list
+        if (StageManager.instance != null)
+        {
+            dataPersistenceObjects = dataPersistenceObjects.Concat(new IDataPersistence[] { StageManager.instance });
+        }
+
         return new List<IDataPersistence>(dataPersistenceObjects);
     }
 
@@ -143,6 +149,7 @@ public class DataPersistenceManager : MonoBehaviour
     {
         SetIsRestarting(true);
         // Replace "SampleScene" with the name of the scene you want to restart.
+       // SceneManager.LoadScene("SampleScene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }

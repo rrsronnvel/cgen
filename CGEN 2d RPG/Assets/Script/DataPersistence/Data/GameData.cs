@@ -22,12 +22,13 @@ public class GameData
 
     public SerializableDictionary<string, MessageData> specialNotesData;
 
+    public List<bool> stageCompletionStatus;
+
+
+
 
     // the values defined in this constructor will be the default values
     // the game  starts with when there's no data to load
-
-
-
     public GameData()
     {
         this.currentHealth = 3;
@@ -42,6 +43,8 @@ public class GameData
         notesCollected = new SerializableDictionary<string, bool>();
 
         specialNotesData = new SerializableDictionary<string, MessageData>();
+
+        stageCompletionStatus = new List<bool> { false, false, false, false, false };
 
 
         playerPosition = new Vector3(-12.0f, 1.0f, 0f);
