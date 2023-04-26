@@ -40,12 +40,14 @@ public class DataPersistenceManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.sceneUnloaded += OnSceneUnloaded;
+        
     }
 
     public void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
         SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)

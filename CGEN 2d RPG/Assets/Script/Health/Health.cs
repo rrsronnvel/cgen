@@ -6,9 +6,9 @@ using System.Collections;
 public class Health : MonoBehaviour, IDataPersistence
 {
     //Might delete this later
-   /* [Header("Game Management")]
-    [SerializeField] private GameManager gameManager;*/
-
+    /* [Header("Game Management")]
+     [SerializeField] private GameManager gameManager;*/
+    public TestingRestart testingRestart;
 
     [Header("GameOver UI")]
     [SerializeField] private GameObject gameOverUI;
@@ -80,7 +80,20 @@ public class Health : MonoBehaviour, IDataPersistence
     private void ShowGameOverUI()
     {
         gameOverUI.SetActive(true);
+        TestingRestart.instance.SetupRestartButtons();
+
+        if (TestingRestart.instance.button2 != null)
+        {
+            // Add this line
+            TestingRestart.instance.button2.onClick.AddListener(TestingRestart.instance.RestartGame);
+        }
+        else
+        {
+            Debug.LogError("Button2 is not found.");
+        }
     }
+
+
 
     private void HideGameOverUI()
     {
