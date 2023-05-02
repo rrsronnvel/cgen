@@ -1,10 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class HiddenPartDetail : MonoBehaviour, Interactable, IDataPersistence
 {
     [SerializeField] private string id;
+
+    [SerializeField] private GameObject puzzlePopupPrefab;
+
+    [SerializeField] private string stageIdentifier; 
+    [SerializeField] private List<StageMiniGamePair> stageMiniGamePairs; 
+
 
     [ContextMenu("Generate guid for id")]
     private void GenerateGuid()
@@ -67,12 +75,50 @@ public class HiddenPartDetail : MonoBehaviour, Interactable, IDataPersistence
         popupInstance.transform.Find("Content Text").GetComponent<TextMeshProUGUI>().text = messageContent; // Update this line
         popupInstance.transform.Find("Image").GetComponent<Image>().sprite = messageImage;
 
-        Button closeButton = popupInstance.GetComponentInChildren<Button>();
-        closeButton.onClick.AddListener(() => ClosePopup(popupInstance));
+        popupInstance.AddComponent<PopupCloseOnClick>().Initialize(() => ClosePopup(popupInstance));
     }
 
     private void ClosePopup(GameObject popupInstance)
     {
         Destroy(popupInstance);
+        ShowPuzzlePopup();
     }
+
+    private void ShowPuzzlePopup()
+    {
+        GameObject puzzlePopupInstance = Instantiate(puzzlePopupPrefab, canvas.transform);
+        puzzlePopupInstance.SetActive(true);
+        puzzlePopupInstance.AddComponent<PopupCloseOnClick>().Initialize(() => ClosePuzzlePopup(puzzlePopupInstance));
+    }
+
+    private void ClosePuzzlePopup(GameObject puzzlePopupInstance)
+    {
+        Destroy(puzzlePopupInstance);
+        LoadMiniGameScene();
+    }
+
+    private void LoadMiniGameScene()
+    {
+        // Find the mini-game scene name for the current stage
+        StageMiniGamePair pair = stageMiniGamePairs.Find(pair => pair.StageIdentifier == stageIdentifier);
+
+        if (!string.IsNullOrEmpty(pair.MiniGameScene))
+        {
+            SceneManager.LoadScene(pair.MiniGameScene);
+        }
+        else
+        {
+            Debug.LogError("No mini-game scene defined for the current stage.");
+        }
+    }
+
+
+
+}
+
+[System.Serializable]
+public struct StageMiniGamePair
+{
+    public string StageIdentifier;
+    public string MiniGameScene;
 }
