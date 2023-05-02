@@ -60,7 +60,7 @@ public class Portal : MonoBehaviour, Interactable
             enterButton.interactable = true;
         }
         else
-        {
+        {   
             stageStatus.text = "Locked";
             enterButton.interactable = false;
         }
@@ -78,9 +78,24 @@ public class Portal : MonoBehaviour, Interactable
 
     private void EnterStage()
     {
+        // Get the player's Health component
+        Health playerHealth = FindObjectOfType<Health>();
+
+        // Reset the player's health to full
+        if (playerHealth != null)
+        {
+            playerHealth.ResetHealthToFull();
+        }
+        else
+        {
+            Debug.LogError("Player Health component not found.");
+        }
+
         string sceneName = "Stage" + stageNumber;
         Debug.Log("Trying to load scene: " + sceneName);
         SceneManager.LoadScene(sceneName);
+
+        
     }
 
 

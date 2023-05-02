@@ -2,9 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class FactsMessage : MonoBehaviour, IDataPersistence
+public class HiddenPartDetail : MonoBehaviour, Interactable, IDataPersistence
 {
-
     [SerializeField] private string id;
 
     [ContextMenu("Generate guid for id")]
@@ -20,42 +19,41 @@ public class FactsMessage : MonoBehaviour, IDataPersistence
     [SerializeField] private Sprite messageImage;
     [SerializeField] private GameObject popupPrefab;
     private Canvas canvas;
-    private SpecialNotesArchive messageArchive;
+    private HiddenPartArchive messageArchive;
 
     void Start()
     {
         canvas = FindObjectOfType<Canvas>();
-        messageArchive = FindObjectOfType<SpecialNotesArchive>();
+        messageArchive = FindObjectOfType<HiddenPartArchive>();
     }
 
     public void LoadData(GameData data, bool isRestarting)
     {
-        data.notesCollected.TryGetValue(id, out collected);
+        data.hiddenPartsCollected.TryGetValue(id, out collected);
 
         if (collected)
         {
-            gameObject.SetActive(false);
+            // change to false if want to remove if already pick up
+            gameObject.SetActive(true);
         }
     }
 
     public void SaveData(ref GameData data)
     {
-        if (data.notesCollected.ContainsKey(id))
+        if (data.hiddenPartsCollected.ContainsKey(id))
         {
-            data.notesCollected.Remove(id);
+            data.hiddenPartsCollected.Remove(id);
         }
-        data.notesCollected.Add(id, collected);
+        data.hiddenPartsCollected.Add(id, collected);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Interact()
     {
-        if (other.CompareTag("Player"))
-        {
-            ShowPopup();
-            messageArchive.AddMessage(new MessageData { id = id, title = messageTitle, content = messageContent, Image = messageImage });
-            collected = true;
-            gameObject.SetActive(false);
-        }
+        Debug.Log("interacting");
+        ShowPopup();
+        messageArchive.AddMessage(new PartData { id = id, title = messageTitle, content = messageContent, Image = messageImage });
+        collected = true;
+        //gameObject.SetActive(false);
     }
 
 

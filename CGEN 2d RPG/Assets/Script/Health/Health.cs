@@ -101,12 +101,16 @@ public class Health : MonoBehaviour, IDataPersistence
     }
 
     //Might delete this later.
-   /* public void RestartGame()
+    /* public void RestartGame()
+     {
+         gameManager.RestartGame();
+     }*/
+
+
+    public void ResetHealthToFull()
     {
-        gameManager.RestartGame();
-    }*/
-
-
+        currentHealth = startingHealth;
+    }
 
 
 

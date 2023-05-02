@@ -22,6 +22,10 @@ public class GameData
 
     public SerializableDictionary<string, MessageData> specialNotesData;
 
+    public SerializableDictionary<string, bool> hiddenPartsCollected;
+
+    public SerializableDictionary<string, PartData> hiddenPartsData;
+
     public List<bool> stageCompletionStatus;
 
 
@@ -43,6 +47,10 @@ public class GameData
         notesCollected = new SerializableDictionary<string, bool>();
 
         specialNotesData = new SerializableDictionary<string, MessageData>();
+
+        hiddenPartsCollected = new SerializableDictionary<string, bool>();
+
+        hiddenPartsData = new SerializableDictionary<string, PartData>();
 
         stageCompletionStatus = new List<bool> { false, false, false, false, false };
 
