@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StageManager : MonoBehaviour, IDataPersistence
 {
@@ -49,4 +50,12 @@ public class StageManager : MonoBehaviour, IDataPersistence
         }
         return GetStageCompletionStatus(stageNumber - 1);
     }
+
+    public void CompleteCurrentStage(int stageNumber)
+    {
+        SetStageCompletionStatus(stageNumber, true);
+        DataPersistenceManager.instance.SaveGame();
+    }
+
+
 }

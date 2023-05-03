@@ -53,7 +53,7 @@ public class Gamemanager : MonoBehaviour
     }
     public void LoadNewScene()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("SampleScene");
     }
 
 
@@ -61,7 +61,7 @@ public class Gamemanager : MonoBehaviour
     {
         panel.SetActive(false);
         pieces = new List<Transform>();
-        size = 3;
+        size = 2;
         CreateGamePieces(0.01f);
         shuffling = true;
         StartCoroutine(WaitShuffle(0.5f));
@@ -113,6 +113,8 @@ public class Gamemanager : MonoBehaviour
         }
         return false;
     }
+    public int stageNumber;
+
     private bool CheckCompletion()
     {
         for (int i = 0; i < pieces.Count; i++)
@@ -123,13 +125,15 @@ public class Gamemanager : MonoBehaviour
             }
         }
 
-        
-        Debug.Log("Victory");
         panel.SetActive(true);
+
+        StageManager.instance.CompleteCurrentStage(stageNumber);
+
         gameComplete = true;
 
         return true;
     }
+
 
 
     private IEnumerator WaitShuffle(float duration){
