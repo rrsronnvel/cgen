@@ -13,6 +13,9 @@ public class DataPersistenceManager : MonoBehaviour
     [SerializeField] private string fileName;
     [SerializeField] private bool useEncryption;
 
+    [Header("Excluded Scenes")]
+    [SerializeField] private List<string> excludedScenes;
+
     private GameData gameData;
     public List<IDataPersistence> dataPersistenceObjects = new List<IDataPersistence>();
 
@@ -21,6 +24,21 @@ public class DataPersistenceManager : MonoBehaviour
     public static DataPersistenceManager instance { get; private set; }
 
     public bool IsRestarting { get; private set; } = false;
+
+    public string GetCurrentSceneName()
+    {
+        if (gameData != null)
+        {
+            return gameData.currentScene;
+        }
+        else
+        {
+            Debug.LogWarning("No saved game data available.");
+            return null;
+        }
+    }
+
+
 
     private void Awake()
     {
@@ -104,6 +122,18 @@ public class DataPersistenceManager : MonoBehaviour
         {
             Debug.LogWarning("No data was found. A New Game needs to be started before data can be saved.");
             return;
+        }
+
+        // Get the current scene name
+        string activeSceneName = SceneManager.GetActiveScene().name;
+
+        // Check if the current scene is not in the excluded scenes list
+        if (!excludedScenes.Contains(activeSceneName))
+        {
+            if (this.gameData != null)
+            {
+                gameData.currentScene = activeSceneName;
+            }
         }
 
         // pass the data to other scripts so they can update it.

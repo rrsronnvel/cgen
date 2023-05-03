@@ -28,6 +28,8 @@ public class GameData
 
     public List<bool> stageCompletionStatus;
 
+    public string currentScene;
+
 
 
 
@@ -53,6 +55,8 @@ public class GameData
         hiddenPartsData = new SerializableDictionary<string, PartData>();
 
         stageCompletionStatus = new List<bool> { false, false, false, false, false };
+
+        currentScene = "SampleScene";
 
 
         playerPosition = new Vector3(-12.0f, 1.0f, 0f);

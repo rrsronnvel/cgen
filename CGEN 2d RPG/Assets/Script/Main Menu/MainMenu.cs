@@ -30,10 +30,20 @@ public class MainMenu : MonoBehaviour
     public void OnContinueGameClicked()
     {
         DisableMenuButtons();
-        //Load the next scene - which will in turn load the game because of
-        //OnSceneLoaded() in the DataPersistenceManager
-        SceneManager.LoadSceneAsync("SampleScene");
+        // Load the next scene - which will in turn load the game because of
+        // OnSceneLoaded() in the DataPersistenceManager
+        string currentScene = DataPersistenceManager.instance.GetCurrentSceneName();
+        if (!string.IsNullOrEmpty(currentScene))
+        {
+            SceneManager.LoadSceneAsync(currentScene);
+        }
+        else
+        {
+            Debug.LogWarning("No saved game data available.");
+        }
     }
+
+
 
     public void QuitApp()
     {
