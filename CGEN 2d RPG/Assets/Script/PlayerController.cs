@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     public bool isGameOver = false;
 
+    private PickUp pickUp;
+
 
 
     private void Awake()
@@ -40,6 +42,9 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     private void Start()
     {
         interactButton.onClick.AddListener(Interact);
+
+        pickUp = gameObject.GetComponent<PickUp>();
+        pickUp.Direction = new Vector2(0, -1);
     }
 
     private void OnDestroy()
@@ -85,8 +90,14 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         if (!isMoving)
         {
             //comment this if want to change to button
+            input = Vector3.zero;
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
+
+            if (input.sqrMagnitude > .1f)
+            {
+                pickUp.Direction = input.normalized;
+            }
 
             
             //Debug.Log("This is input.x " + input.x);
@@ -154,6 +165,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         {
             collider.GetComponent<Interactable>()?.Interact();
         }
+        GetComponent<PickUp>().Interact();
     }
 
     IEnumerator Move(Vector3 targetPos)
