@@ -57,6 +57,7 @@ public class DialogManager : MonoBehaviour
                 dialogBox.SetActive(false);
                 currentLine = 0;
                 OnHideDialog?.Invoke();
+                controlButton.SetActive(true);
             }
         }
     }

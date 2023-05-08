@@ -19,7 +19,6 @@ public class GameData
     public SerializableDictionary<string, bool> openDoors;
 
     public SerializableDictionary<string, bool> notesCollected;
-
     public SerializableDictionary<string, MessageData> specialNotesData;
 
     public SerializableDictionary<string, bool> hiddenPartsCollected;
@@ -29,6 +28,8 @@ public class GameData
     public List<bool> stageCompletionStatus;
 
     public string currentScene;
+
+    public SerializableDictionary<string, bool> messagesCollected;
 
 
 
@@ -57,6 +58,8 @@ public class GameData
         stageCompletionStatus = new List<bool> { false, false, false, false, false };
 
         currentScene = "SampleScene";
+
+        messagesCollected = new SerializableDictionary<string, bool>();
 
 
         playerPosition = new Vector3(-12.0f, 1.0f, 0f);

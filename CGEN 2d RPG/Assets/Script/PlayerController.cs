@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
             return;
         }
 
-        controlButton.SetActive(true);
+       // controlButton.SetActive(true);
         if (!isMoving)
         {
             //comment this if want to change to button
