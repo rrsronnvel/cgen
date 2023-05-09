@@ -62,6 +62,7 @@ public class GameData
         messagesCollected = new SerializableDictionary<string, bool>();
 
 
+
         playerPosition = new Vector3(-12.0f, 1.0f, 0f);
     }
 

@@ -10,6 +10,9 @@ public class SpecialMessage : MonoBehaviour, IDataPersistence
 
     [SerializeField] private string title;
 
+    [SerializeField] private SpecialMessageArchive specialMessageArchive;
+
+
     [ContextMenu("Generate guid for id")]
     private void GenerateGuid()
     {
@@ -31,6 +34,7 @@ public class SpecialMessage : MonoBehaviour, IDataPersistence
         if (collected)
         {
             gameObject.SetActive(false);
+            specialMessageArchive.AddMessage(this);
         }
     }
 
@@ -49,8 +53,10 @@ public class SpecialMessage : MonoBehaviour, IDataPersistence
         {
             collected = true;
             ShowMessage();
+            specialMessageArchive.AddMessage(this);
         }
     }
+
 
     public void ShowMessage()
     {

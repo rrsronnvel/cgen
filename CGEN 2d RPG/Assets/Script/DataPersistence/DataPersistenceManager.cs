@@ -166,8 +166,13 @@ public class DataPersistenceManager : MonoBehaviour
             dataPersistenceObjects = dataPersistenceObjects.Concat(new IDataPersistence[] { StageManager.instance });
         }
 
+        // Add the SpecialMessage instances to the dataPersistenceObjects list
+        IEnumerable<IDataPersistence> specialMessages = FindObjectsOfType<SpecialMessage>().OfType<IDataPersistence>();
+        dataPersistenceObjects = dataPersistenceObjects.Concat(specialMessages);
+
         return new List<IDataPersistence>(dataPersistenceObjects);
     }
+
 
     public bool HasGameData()
     {
@@ -187,6 +192,8 @@ public class DataPersistenceManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
+
+
 
 
 
