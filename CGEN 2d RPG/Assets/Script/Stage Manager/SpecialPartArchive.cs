@@ -1,10 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class SpecialMessageArchive : MonoBehaviour, Interactable
+public class SpecialPartArchive : MonoBehaviour, Interactable
 {
     [SerializeField] private GameObject archivePanel;
 
@@ -12,15 +11,13 @@ public class SpecialMessageArchive : MonoBehaviour, Interactable
     [SerializeField] private Transform buttonContainer;
     [SerializeField] private GameObject controlButtons;
 
-    private Dictionary<string, SpecialMessage> archivedMessages = new Dictionary<string, SpecialMessage>();
+    private Dictionary<string, SpecialPart> archivedParts = new Dictionary<string, SpecialPart>();
 
     public void Interact()
     {
         ToggleArchivePanel(true);
         controlButtons.SetActive(false);
     }
-
-
 
     public void ClosePanel()
     {
@@ -33,14 +30,14 @@ public class SpecialMessageArchive : MonoBehaviour, Interactable
         archivePanel.SetActive(show);
     }
 
-    public void AddMessage(SpecialMessage message)
+    public void AddPart(SpecialPart part)
     {
-        if (!archivedMessages.ContainsKey(message.Id))
+        if (!archivedParts.ContainsKey(part.Id))
         {
-            archivedMessages[message.Id] = message;
+            archivedParts[part.Id] = part;
             GameObject newButton = Instantiate(buttonPrefab, buttonContainer);
-            newButton.GetComponentInChildren<TextMeshProUGUI>().text = message.Title;
-            newButton.GetComponent<Button>().onClick.AddListener(() => message.ShowMessage());
+            newButton.GetComponentInChildren<TextMeshProUGUI>().text = part.Title;
+            newButton.GetComponent<Button>().onClick.AddListener(() => part.ShowPart(false));
         }
     }
 

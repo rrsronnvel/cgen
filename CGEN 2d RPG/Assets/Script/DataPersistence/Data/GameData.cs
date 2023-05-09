@@ -31,6 +31,8 @@ public class GameData
 
     public SerializableDictionary<string, bool> messagesCollected;
 
+    public SerializableDictionary<string, bool> partsCollected;
+
 
 
 
@@ -60,6 +62,8 @@ public class GameData
         currentScene = "SampleScene";
 
         messagesCollected = new SerializableDictionary<string, bool>();
+
+        partsCollected = new SerializableDictionary<string, bool>();
 
 
 

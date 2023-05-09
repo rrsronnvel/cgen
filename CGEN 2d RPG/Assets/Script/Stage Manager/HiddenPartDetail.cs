@@ -81,9 +81,9 @@ public class HiddenPartDetail : MonoBehaviour, Interactable, IDataPersistence
     private void ClosePopup(GameObject popupInstance)
     {
         Destroy(popupInstance);
-        ShowPuzzlePopup();
+        //ShowPuzzlePopup();
     }
-
+    /*
     private void ShowPuzzlePopup()
     {
         GameObject puzzlePopupInstance = Instantiate(puzzlePopupPrefab, canvas.transform);
@@ -111,14 +111,14 @@ public class HiddenPartDetail : MonoBehaviour, Interactable, IDataPersistence
             Debug.LogError("No mini-game scene defined for the current stage.");
         }
     }
-
+    */
 
 
 }
-
+/*
 [System.Serializable]
 public struct StageMiniGamePair
 {
     public string StageIdentifier;
     public string MiniGameScene;
-}
+}*/
