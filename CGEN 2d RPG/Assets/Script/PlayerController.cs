@@ -94,6 +94,14 @@ public class PlayerController : MonoBehaviour, IDataPersistence
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
 
+
+            dirX = CrossPlatformInputManager.GetAxis("Horizontal");
+            dirY = CrossPlatformInputManager.GetAxis("Vertical");
+
+            //for button just switch it to this instead of input.x&y 
+           // input.x = dirX;
+           // input.y = dirY;
+
             if (input.sqrMagnitude > .1f)
             {
                 pickUp.Direction = input.normalized;
@@ -103,13 +111,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
             //Debug.Log("This is input.x " + input.x);
           //  Debug.Log("This is input.y " + input.y);
 
-    
-            dirX = CrossPlatformInputManager.GetAxis("Horizontal");
-            dirY = CrossPlatformInputManager.GetAxis("Vertical");
-
-            //for button just switch it to this instead of input.x&y 
-           // input.x = dirX;
-           // input.y = dirY;
+        
 
 
             //stop diagonal movement

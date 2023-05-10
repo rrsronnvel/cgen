@@ -91,6 +91,9 @@ public class Portal : MonoBehaviour, Interactable
             Debug.LogError("Player Health component not found.");
         }
 
+        // Call RestartGame method from TestingRestart class
+        TestingRestart.instance.RestartGame();
+
         string sceneName = "Stage" + stageNumber;
         Debug.Log("Trying to load scene: " + sceneName);
         SceneManager.LoadScene(sceneName);
