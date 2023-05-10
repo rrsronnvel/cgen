@@ -6,8 +6,6 @@ using System.Collections.Generic;
 public class TestingRestart : MonoBehaviour
 {
     private List<Button> restartButtons = new List<Button>();
-    [SerializeField] public Button button2;
-
 
     public static TestingRestart instance;
 
@@ -23,6 +21,7 @@ public class TestingRestart : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -36,36 +35,22 @@ public class TestingRestart : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         SetupRestartButtons();
-
-        // Find Button2 in the scene using its tag
-        GameObject button2Object = GameObject.FindGameObjectWithTag("RestartButton");
-        if (button2Object != null)
-        {
-            button2 = button2Object.GetComponent<Button>();
-        }
-        else
-        {
-            Debug.LogError("Button2 is not found.");
-        }
-
     }
 
-   public void SetupRestartButtons()
-{
-    Button[] buttons = FindObjectsOfType<Button>();
-
-    foreach (Button button in buttons)
+    public void SetupRestartButtons()
     {
-        if (button.CompareTag("RestartButton"))
+        Button[] buttons = FindObjectsOfType<Button>();
+
+        foreach (Button button in buttons)
         {
-            restartButtons.Add(button);
-            button.onClick.RemoveAllListeners(); // Remove all listeners to avoid duplicates
-            button.onClick.AddListener(RestartGame);
+            if (button.CompareTag("RestartButton") || button.CompareTag("PopUpRestartButton"))
+            {
+                restartButtons.Add(button);
+                button.onClick.RemoveAllListeners(); // Remove all listeners to avoid duplicates
+                button.onClick.AddListener(RestartGame);
+            }
         }
     }
-}
-
-
 
     public void RestartGame()
     {
