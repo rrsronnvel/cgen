@@ -9,6 +9,9 @@ public class TestingRestart : MonoBehaviour
 
     public static TestingRestart instance;
 
+    private List<Button> additionalButtons = new List<Button>();
+
+
     private void Awake()
     {
         if (instance == null)
@@ -35,7 +38,9 @@ public class TestingRestart : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         SetupRestartButtons();
+        SetupAdditionalButtons();
     }
+
 
     public void SetupRestartButtons()
     {
@@ -51,6 +56,33 @@ public class TestingRestart : MonoBehaviour
             }
         }
     }
+
+   
+
+    public void SetupAdditionalButtons()
+    {
+        Button[] buttons = FindObjectsOfType<Button>();
+
+        foreach (Button button in buttons)
+        {
+            if (button.CompareTag("MainMenuButton"))
+            {
+                button.onClick.RemoveAllListeners();
+                button.onClick.AddListener(Menu.instance.GoToMainMenu);
+            }
+            else if (button.CompareTag("QuitAppButton"))
+            {
+                button.onClick.RemoveAllListeners();
+                button.onClick.AddListener(Menu.instance.QuitApp);
+            }
+            else if (button.CompareTag("BackShipButton"))
+            {
+                button.onClick.RemoveAllListeners();
+                button.onClick.AddListener(Menu.instance.BackShip);
+            }
+        }
+    }
+
 
     public void RestartGame()
     {
