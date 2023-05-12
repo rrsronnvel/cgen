@@ -24,6 +24,8 @@ public class Menu : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        DataPersistenceManager.instance.SaveGame();
+
         SceneManager.LoadScene("MainMenu");
     }
 
