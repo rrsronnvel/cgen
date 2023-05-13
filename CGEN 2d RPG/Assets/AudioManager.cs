@@ -1,27 +1,60 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource SFXSource;
+    public static AudioManager Instance;
+    public Sound[] musicSounds, sfxSounds;
+    public AudioSource musicSource, sfxSource;
 
-
-    public AudioClip background; 
-    public AudioClip Arrowtrap;
-    public AudioClip Firetrap;
-
-
-
+    private void Awake()
+    {
+        if (Instance== null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
-        musicSource.clip = background;
-        musicSource.Play();
+        PlayMusic("bgmusic");
     }
-    public void PlaySFX(AudioClip clip)
+
+    public void PlayMusic (string name)
     {
-        SFXSource.PlayOneShot(clip);
+        Sound s = Array.Find(musicSounds, x => x.name == name);
+
+
+        if (s == null)
+        {
+            Debug.Log("Sound Not Found");
+        }
+        else
+        {
+            musicSource.clip = s.clip;
+            musicSource.Play();
+        }
     }
 
-}
+    public void PlaySFX(string name)
+    {
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
 
+        if (s == null)
+        {
+            Debug.Log("Sound Not Found");
+        }
+        else
+        {
+            sfxSource.PlayOneShot(s.clip);
+        }
+    }
+   
+}
+ 
