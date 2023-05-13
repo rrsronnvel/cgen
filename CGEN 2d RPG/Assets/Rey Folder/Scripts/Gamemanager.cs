@@ -53,7 +53,7 @@ public class Gamemanager : MonoBehaviour
     }
     public void LoadNewScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Spaceship");
     }
 
 
