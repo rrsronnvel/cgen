@@ -91,16 +91,16 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         {
             //comment this if want to change to button
             input = Vector3.zero;
-            input.x = Input.GetAxisRaw("Horizontal");
-            input.y = Input.GetAxisRaw("Vertical");
+           // input.x = Input.GetAxisRaw("Horizontal");
+           // input.y = Input.GetAxisRaw("Vertical");
 
 
             dirX = CrossPlatformInputManager.GetAxis("Horizontal");
             dirY = CrossPlatformInputManager.GetAxis("Vertical");
 
             //for button just switch it to this instead of input.x&y 
-           // input.x = dirX;
-           // input.y = dirY;
+            input.x = dirX;
+            input.y = dirY;
 
             if (input.sqrMagnitude > .1f)
             {
