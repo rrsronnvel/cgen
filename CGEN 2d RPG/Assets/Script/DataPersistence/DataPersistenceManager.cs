@@ -160,6 +160,8 @@ public class DataPersistenceManager : MonoBehaviour
     {
         IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistence>();
 
+        
+
         // Add the StageManager instance to the dataPersistenceObjects list
         if (StageManager.instance != null)
         {

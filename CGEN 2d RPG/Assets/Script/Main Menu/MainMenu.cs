@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
          DataPersistenceManager.instance.NewGame();
         //Load the gameplay scene - which will in turn save the game because of 
         //OnSceneUnloaded() in the DataPersistenceManager.
-          SceneManager.LoadSceneAsync("Spaceship");
+          SceneManager.LoadSceneAsync("House");
        
     }
 
