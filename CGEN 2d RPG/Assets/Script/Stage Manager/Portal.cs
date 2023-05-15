@@ -14,11 +14,14 @@ public class Portal : MonoBehaviour, Interactable
     private TextMeshProUGUI stageLevel;
     private TextMeshProUGUI stageDetail;
     private TextMeshProUGUI stageStatus;
+    private TextMeshProUGUI stageDetail2;
     private Button enterButton;
     private Button closeButton;
 
+
     public string stageLevelText; // Text for the stage level (e.g., "Stage 1")
     public string stageDetailText; // Text for the stage detail (e.g., "Complete the puzzle to advance")
+    public string stageDetail2Text;
 
 
 
@@ -26,6 +29,7 @@ public class Portal : MonoBehaviour, Interactable
     {
         stageLevel = stageUI.transform.Find("Stage level").GetComponent<TextMeshProUGUI>();
         stageDetail = stageUI.transform.Find("Stage detail").GetComponent<TextMeshProUGUI>();
+        stageDetail2 = stageUI.transform.Find("Stage detail2").GetComponent<TextMeshProUGUI>();
         stageStatus = stageUI.transform.Find("Stage status").GetComponent<TextMeshProUGUI>();
         enterButton = stageUI.transform.Find("Enter Button").GetComponent<Button>();
         closeButton = stageUI.transform.Find("Close Button").GetComponent<Button>();
@@ -46,6 +50,8 @@ public class Portal : MonoBehaviour, Interactable
     {
         stageLevel.text = stageLevelText;
         stageDetail.text = stageDetailText;
+        stageDetail2.text = stageDetail2Text;
+
 
         if (StageManager.instance.IsStageUnlocked(stageNumber))
         {
@@ -60,7 +66,7 @@ public class Portal : MonoBehaviour, Interactable
             enterButton.interactable = true;
         }
         else
-        {   
+        {
             stageStatus.text = "Locked";
             enterButton.interactable = false;
         }
@@ -98,7 +104,7 @@ public class Portal : MonoBehaviour, Interactable
         Debug.Log("Trying to load scene: " + sceneName);
         SceneManager.LoadScene(sceneName);
 
-        
+
     }
 
 
