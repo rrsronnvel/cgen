@@ -1,37 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SignGuide : MonoBehaviour, Interactable
 {
-    [SerializeField] private GameObject Panel;
+    [SerializeField] public Animator signGuidePopAnimator; // Reference to the animator of the Sign Guide Pop UI
+    public string triggerName = "return"; // The name of the trigger to show the Sign Guide Pop UI
 
     public void Interact()
     {
-        TogglePanel(true);
+        Debug.Log("Interacting");
+        ShowSignGuidePop();
     }
 
-    public void ClosePanel()
+    private void ShowSignGuidePop()
     {
-        Debug.Log("ClosePanel called");
-        TogglePanel(false);
-    }
-
-    private void TogglePanel(bool show)
-    {
-        Panel.SetActive(show);
-
-        if (show)
+        if (signGuidePopAnimator == null)
         {
-            PopupCloseOnClick popupCloseOnClick = Panel.GetComponent<PopupCloseOnClick>();
-            if (popupCloseOnClick != null)
+            // Assuming the pop-up UI object has a unique name, replace "SignGuidePop" with the actual name
+            GameObject signGuidePopObject = GameObject.Find("SignGuidePop");
+            if (signGuidePopObject != null)
             {
-                popupCloseOnClick.Initialize(ClosePanel);
+                signGuidePopAnimator = signGuidePopObject.GetComponent<Animator>();
             }
-            else
-            {
-                Debug.LogError("PopupCloseOnClick component not found on the panel.");
-            }
+        }
+
+        if (signGuidePopAnimator != null)
+        {
+            signGuidePopAnimator.SetTrigger(triggerName);
+        }
+    }
+
+    public void CloseSignGuidePop()
+    {
+        if (signGuidePopAnimator != null)
+        {
+            signGuidePopAnimator.SetTrigger("close");
         }
     }
 }

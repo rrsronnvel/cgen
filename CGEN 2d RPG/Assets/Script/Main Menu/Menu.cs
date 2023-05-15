@@ -41,7 +41,7 @@ public class Menu : MonoBehaviour
         // Call RestartGame method from TestingRestart class
         TestingRestart.instance.RestartGame();
 
-        SceneManager.LoadScene("SampleScene1");
+        SceneManager.LoadScene("Spaceship");
     }
 
 
