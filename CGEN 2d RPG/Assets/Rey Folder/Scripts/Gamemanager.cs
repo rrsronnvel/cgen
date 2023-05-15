@@ -17,6 +17,8 @@ public class Gamemanager : MonoBehaviour
     private bool shuffling = false;
     private bool gameComplete = false;
 
+    private bool puzzleCompleted = false;
+
 
     private void CreateGamePieces(float gapThickness)
     {
@@ -53,7 +55,14 @@ public class Gamemanager : MonoBehaviour
     }
     public void LoadNewScene()
     {
+        // set the new player position
+        DataPersistenceManager.instance.SetPlayerPosition(new Vector3(-12.0f, 1.0f, 0f));
         SceneManager.LoadScene("Spaceship");
+    }
+
+    public void OnPuzzleComplete()
+    {
+        puzzleCompleted = true;
     }
 
 
@@ -71,7 +80,7 @@ public class Gamemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
 
         if (!shuffling && CheckCompletion())
         {
@@ -103,8 +112,10 @@ public class Gamemanager : MonoBehaviour
     }
 
 
-    private bool SwapIfValid(int i, int offset, int colCheck){
-        if (((i % size ) != colCheck) && ((i+ offset) == emptyLocation)){
+    private bool SwapIfValid(int i, int offset, int colCheck)
+    {
+        if (((i % size) != colCheck) && ((i + offset) == emptyLocation))
+        {
             (pieces[i], pieces[i + offset]) = (pieces[i + offset], pieces[i]);
             (pieces[i].localPosition, pieces[i + offset].localPosition) = ((pieces[i + offset].localPosition, pieces[i].localPosition));
             emptyLocation = i;
@@ -136,26 +147,36 @@ public class Gamemanager : MonoBehaviour
 
 
 
-    private IEnumerator WaitShuffle(float duration){
+    private IEnumerator WaitShuffle(float duration)
+    {
         yield return new WaitForSeconds(duration);
         Shuffle();
         shuffling = false;
     }
 
-    private void Shuffle(){
+    private void Shuffle()
+    {
         int count = 0;
         int last = 0;
-        while (count<(size * size *size)){
+        while (count < (size * size * size))
+        {
             int rnd = Random.Range(0, size * size);
             if (rnd == last) { continue; }
             last = emptyLocation;
-            if (SwapIfValid(rnd,-size,size)){
+            if (SwapIfValid(rnd, -size, size))
+            {
                 count++;
-            }else if (SwapIfValid(rnd, +size, size)){
+            }
+            else if (SwapIfValid(rnd, +size, size))
+            {
                 count++;
-            }else if (SwapIfValid(rnd, -1, 0)){
+            }
+            else if (SwapIfValid(rnd, -1, 0))
+            {
                 count++;
-            }else if (SwapIfValid(rnd, +1, size - 1)){
+            }
+            else if (SwapIfValid(rnd, +1, size - 1))
+            {
                 count++;
             }
         }

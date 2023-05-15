@@ -195,6 +195,13 @@ public class DataPersistenceManager : MonoBehaviour
 
     }
 
+    public void SetPlayerPosition(Vector3 newPosition)
+    {
+        if (gameData != null)
+        {
+            gameData.playerPosition = newPosition;
+        }
+    }
 
 
 

@@ -33,6 +33,8 @@ public class GameData
 
     public SerializableDictionary<string, bool> partsCollected;
 
+    public SerializableDictionary<string, bool> triggerCollected;
+
     public bool cutscenePlayed;
 
 
@@ -66,6 +68,8 @@ public class GameData
         messagesCollected = new SerializableDictionary<string, bool>();
 
         partsCollected = new SerializableDictionary<string, bool>();
+
+        triggerCollected = new SerializableDictionary<string, bool>();
 
         cutscenePlayed = false;
 
