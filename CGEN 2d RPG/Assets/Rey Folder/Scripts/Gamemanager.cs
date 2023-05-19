@@ -57,7 +57,7 @@ public class Gamemanager : MonoBehaviour
     {
         // set the new player position
         DataPersistenceManager.instance.SetPlayerPosition(new Vector3(-12.0f, 1.0f, 0f));
-        SceneManager.LoadScene("Spaceship1");
+        SceneManager.LoadScene("Spaceship");
     }
 
     public void OnPuzzleComplete()
