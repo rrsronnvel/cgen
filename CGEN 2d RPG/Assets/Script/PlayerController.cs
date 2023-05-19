@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         else
         {
             this.transform.position = new Vector3(-12.0f, 1.0f, 0f); // Set this to your initial player position
+            //transform.position = data.playerPosition;
         }
     }
 
@@ -79,7 +80,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
 
 
-    public void HandleUpdate()
+    public void Update()
     {
         if (isGameOver)
         {
@@ -187,7 +188,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     private bool IsWalkable(Vector3 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 0.2f, solidObjectsLayer | interactableLayer) != null)
+        if (Physics2D.OverlapCircle(targetPos, 0.4f, solidObjectsLayer | interactableLayer) != null)
         {
             return false;
         }

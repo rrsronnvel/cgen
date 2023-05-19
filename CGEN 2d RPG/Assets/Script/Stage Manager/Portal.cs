@@ -23,6 +23,9 @@ public class Portal : MonoBehaviour, Interactable
     public string stageDetailText; // Text for the stage detail (e.g., "Complete the puzzle to advance")
     public string stageDetail2Text;
 
+    private Renderer objectRenderer;
+    private Animator objectAnimator;
+
 
 
     private void Initialize()
@@ -37,12 +40,21 @@ public class Portal : MonoBehaviour, Interactable
 
         enterButton.onClick.AddListener(EnterStage);
         closeButton.onClick.AddListener(CloseStageUI);
+        objectAnimator = GetComponent<Animator>();
 
     }
 
     private void Awake()
     {
         Initialize();
+
+        objectRenderer = GetComponent<Renderer>();
+
+        if (!StageManager.instance.IsStageUnlocked(stageNumber))
+        {
+            objectRenderer.material.color = Color.red;
+            objectAnimator.enabled = false;
+        }
     }
 
 
@@ -64,6 +76,8 @@ public class Portal : MonoBehaviour, Interactable
                 stageStatus.text = "Unlocked";
             }
             enterButton.interactable = true;
+            objectRenderer.material.color = Color.white;
+            objectAnimator.enabled = true;
         }
         else
         {

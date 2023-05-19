@@ -33,6 +33,14 @@ public class GameData
 
     public SerializableDictionary<string, bool> partsCollected;
 
+    public SerializableDictionary<string, bool> triggerCollected;
+
+    public SerializableDictionary<string, bool> triggerStageCollected;
+
+    public SerializableDictionary<string, bool> triggerCompleteCollected;
+
+
+
     public bool cutscenePlayed;
 
 
@@ -59,13 +67,20 @@ public class GameData
 
         hiddenPartsData = new SerializableDictionary<string, PartData>();
 
-        stageCompletionStatus = new List<bool> { false, false, false, false, false };
+         stageCompletionStatus = new List<bool> { false, false, false, false, false };
+       // stageCompletionStatus = new List<bool> { true, true, true, true, true };
 
         currentScene = "SampleScene";
 
         messagesCollected = new SerializableDictionary<string, bool>();
 
         partsCollected = new SerializableDictionary<string, bool>();
+
+        triggerCollected = new SerializableDictionary<string, bool>();
+
+        triggerStageCollected = new SerializableDictionary<string, bool>();
+
+        triggerCompleteCollected = new SerializableDictionary<string, bool>();
 
         cutscenePlayed = false;
 
