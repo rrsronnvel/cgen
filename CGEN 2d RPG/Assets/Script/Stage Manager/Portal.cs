@@ -26,7 +26,7 @@ public class Portal : MonoBehaviour, Interactable
     private Renderer objectRenderer;
     private Animator objectAnimator;
 
-
+    [SerializeField] private GameObject controlButtons;
 
     private void Initialize()
     {
@@ -92,6 +92,7 @@ public class Portal : MonoBehaviour, Interactable
         closeButton.onClick.AddListener(CloseStageUI);
 
         stageUI.SetActive(true);
+        controlButtons.SetActive(false); // Disable all control buttons
     }
 
 
@@ -127,6 +128,7 @@ public class Portal : MonoBehaviour, Interactable
     private void CloseStageUI()
     {
         stageUI.SetActive(false);
+        controlButtons.SetActive(true); // Enable all control buttons
     }
 
 }

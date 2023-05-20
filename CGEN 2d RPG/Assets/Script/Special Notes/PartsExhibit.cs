@@ -17,6 +17,7 @@ public class PartsExhibit : MonoBehaviour, Interactable
     [SerializeField] public Animator partsExhibitPopAnimator; // Reference to the animator of the Parts Exhibit Pop UI
     public string triggerName = "return"; // The name of the trigger to show the Parts Exhibit Pop UI
     public ExhibitPart exhibitPart;
+    [SerializeField] private GameObject controlButtons;
 
     private void Start()
     {
@@ -52,12 +53,14 @@ public class PartsExhibit : MonoBehaviour, Interactable
             GameObject partsExhibitPopObject = GameObject.Find("PartsExhibitPop");
             if (partsExhibitPopObject != null)
             {
+
                 partsExhibitPopAnimator = partsExhibitPopObject.GetComponent<Animator>();
             }
         }
 
         if (partsExhibitPopAnimator != null)
         {
+            controlButtons.SetActive(false); // Disable all control buttons
             partsExhibitPopAnimator.SetTrigger(triggerName);
         }
     }
@@ -67,6 +70,14 @@ public class PartsExhibit : MonoBehaviour, Interactable
         if (partsExhibitPopAnimator != null)
         {
             partsExhibitPopAnimator.SetTrigger("close");
+            controlButtons.SetActive(true); // Enable all control buttons
+
         }
+        controlButtons.SetActive(true); // Enable all control buttons
+    }
+
+    public void EnableControlButton()
+    {
+        controlButtons.SetActive(true);
     }
 }

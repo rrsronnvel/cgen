@@ -21,6 +21,8 @@ public class DialogManager : MonoBehaviour
         get; private set;
     }
 
+    public NPCController CurrentNPC { get; private set; }
+
     private void Awake()
     {
         Instance = this;
@@ -29,14 +31,15 @@ public class DialogManager : MonoBehaviour
     Dialog dialog;
     int currentLine = 0;
     bool isTyping;
-    
 
-    public IEnumerator ShowDialog(Dialog dialog)
+
+    public IEnumerator ShowDialog(Dialog dialog, NPCController npcController)
     {
+        CurrentNPC = npcController;
+
         yield return new WaitForEndOfFrame();
         OnShowDialog?.Invoke();
 
-       
         this.dialog = dialog;
         controlButton.SetActive(false);
         dialogBox.SetActive(true);
@@ -58,6 +61,7 @@ public class DialogManager : MonoBehaviour
                 currentLine = 0;
                 OnHideDialog?.Invoke();
                 controlButton.SetActive(true);
+                CurrentNPC = null; // Reset the NPC after the dialog
             }
         }
     }
