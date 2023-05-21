@@ -9,7 +9,8 @@ public class StageCompleteCutscene : MonoBehaviour, IDataPersistence
         Stage1,
         Stage2,
         Stage3,
-        Stage4
+        Stage4,
+        Stage5
     }
 
     [SerializeField] private string id;
@@ -40,14 +41,14 @@ public class StageCompleteCutscene : MonoBehaviour, IDataPersistence
      
             switch (stageComplete)
             {
-                case StageComplete.Stage1:
-                    if (StageManager.instance.stageCompletionStatus[0])
+                case StageComplete.Stage3:
+                    if (StageManager.instance.stageCompletionStatus[2])
                     {
                         transform.position = new Vector3(-4.54f, -3.61f, 0);
                     }
                     break;
-                case StageComplete.Stage2:
-                    if (StageManager.instance.stageCompletionStatus[1])
+                case StageComplete.Stage5:
+                    if (StageManager.instance.stageCompletionStatus[4])
                     {
                         transform.position = new Vector3(-4.54f, -3.61f, 0);
                     }
