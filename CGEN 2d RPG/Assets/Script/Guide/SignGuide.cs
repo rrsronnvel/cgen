@@ -7,6 +7,7 @@ public class SignGuide : MonoBehaviour, Interactable
 {
     [SerializeField] public Animator signGuidePopAnimator; // Reference to the animator of the Sign Guide Pop UI
     public string triggerName = "return"; // The name of the trigger to show the Sign Guide Pop UI
+    [SerializeField] private GameObject controlButtons;
 
     public void Interact()
     {
@@ -28,6 +29,7 @@ public class SignGuide : MonoBehaviour, Interactable
 
         if (signGuidePopAnimator != null)
         {
+            controlButtons.SetActive(false); // Disable all control buttons
             signGuidePopAnimator.SetTrigger(triggerName);
         }
     }
@@ -36,7 +38,13 @@ public class SignGuide : MonoBehaviour, Interactable
     {
         if (signGuidePopAnimator != null)
         {
+            
             signGuidePopAnimator.SetTrigger("close");
         }
+    }
+
+    public void EnableControlButton()
+    {
+        controlButtons.SetActive(true);
     }
 }

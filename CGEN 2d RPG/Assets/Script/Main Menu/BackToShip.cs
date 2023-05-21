@@ -6,7 +6,7 @@ public class BackToShip : MonoBehaviour, Interactable
 {
     [SerializeField] public Animator popupUIAnimator; // Reference to the animator of the Pop UI
     public string triggerName = "return"; // The name of the trigger to show the Pop UI
-
+    [SerializeField] private GameObject controlButtons;
 
 
     public void Interact()
@@ -29,8 +29,14 @@ public class BackToShip : MonoBehaviour, Interactable
 
         if (popupUIAnimator != null)
         {
+            controlButtons.SetActive(false); // Disable all control buttons
             popupUIAnimator.SetTrigger(triggerName);
         }
+    }
+
+    public void EnableControlButton()
+    {
+        controlButtons.SetActive(true);
     }
 
 }
