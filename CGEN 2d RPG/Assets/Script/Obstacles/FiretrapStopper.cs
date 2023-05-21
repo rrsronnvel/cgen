@@ -4,12 +4,20 @@ using UnityEngine;
 public class FiretrapStopper : MonoBehaviour
 {
     [SerializeField] private List<FiretrapDelay> firetraps;
+    public Animator animator;
 
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        animator.Play("NotPress");
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") || collision.attachedRigidbody != null)
         {
             Debug.Log("Pause");
+            animator.Play("Pressed");
             PauseAllFiretraps();
         }
     }
@@ -19,6 +27,7 @@ public class FiretrapStopper : MonoBehaviour
         if (collision.CompareTag("Player") || collision.attachedRigidbody != null)
         {
             Debug.Log("Resume");
+            animator.Play("NotPress");
             ResumeAllFiretraps();
         }
     }
