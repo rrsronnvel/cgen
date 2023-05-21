@@ -26,13 +26,31 @@ public class PartsExhibit : MonoBehaviour, Interactable
             case ExhibitPart.Part1:
                 if (StageManager.instance.stageCompletionStatus[0])
                 {
-                    transform.position = new Vector3(-6.92f, -10.96f, 0);
+                    transform.position = new Vector3(-7.0f, -10.8f, 0);
                 }
                 break;
             case ExhibitPart.Part2:
                 if (StageManager.instance.stageCompletionStatus[1])
                 {
-                    transform.position = new Vector3(-4.7f, -10.96f, 0);
+                    transform.position = new Vector3(-4.0f, -10.8f, 0);
+                }
+                break;
+            case ExhibitPart.Part3:
+                if (StageManager.instance.stageCompletionStatus[2])
+                {
+                    transform.position = new Vector3(-1.0f, -10.8f, 0);
+                }
+                break;
+            case ExhibitPart.Part4:
+                if (StageManager.instance.stageCompletionStatus[3])
+                {
+                    transform.position = new Vector3(2.0f, -10.8f, 0);
+                }
+                break;
+            case ExhibitPart.Part5:
+                if (StageManager.instance.stageCompletionStatus[4])
+                {
+                    transform.position = new Vector3(5.0f, -10.8f, 0);
                 }
                 break;
                 // Add similar cases for other parts here...
