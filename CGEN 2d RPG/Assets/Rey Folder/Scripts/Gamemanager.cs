@@ -56,6 +56,7 @@ public class Gamemanager : MonoBehaviour
     public void LoadNewScene()
     {
         // set the new player position
+        TestingRestart.instance.RestartGame();
         DataPersistenceManager.instance.SetPlayerPosition(new Vector3(-12.0f, 1.0f, 0f));
         SceneManager.LoadScene("Spaceship");
     }
