@@ -9445,6 +9445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 384423054}
   - component: {fileID: 384423053}
+  - component: {fileID: 384423055}
   m_Layer: 0
   m_Name: Cutscene_3rd gen_end
   m_TagString: Untagged
@@ -9508,6 +9509,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &384423055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384423052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc2a73f7884dba4e9917aadcf4369aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playableDirector: {fileID: 384423053}
 --- !u!1 &385892132
 GameObject:
   m_ObjectHideFlags: 0
@@ -16981,7 +16995,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -25.24646, y: 13.956512}
+  m_AnchoredPosition: {x: -25.246582, y: 13.956543}
   m_SizeDelta: {x: 121.50696, y: 78.08685}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &709691284
@@ -34773,6 +34787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1193655957}
   - component: {fileID: 1193655958}
+  - component: {fileID: 1193655959}
   m_Layer: 0
   m_Name: Final_Cutscene
   m_TagString: Untagged
@@ -34838,6 +34853,19 @@ PlayableDirector:
     value: {fileID: 317057106}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &1193655959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193655956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc2a73f7884dba4e9917aadcf4369aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playableDirector: {fileID: 1193655958}
 --- !u!1 &1206497188 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2508466184549046661, guid: 3d55c92b0503db042966b4349d4124f7, type: 3}
