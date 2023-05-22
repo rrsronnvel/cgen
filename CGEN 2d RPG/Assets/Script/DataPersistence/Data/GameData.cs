@@ -68,7 +68,7 @@ public class GameData
         hiddenPartsData = new SerializableDictionary<string, PartData>();
 
          stageCompletionStatus = new List<bool> { false, false, false, false, false };
-      //  stageCompletionStatus = new List<bool> { true, true, true, true, true };
+      // stageCompletionStatus = new List<bool> { true, true, true, true, true };
 
         currentScene = "SampleScene";
 
