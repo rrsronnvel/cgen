@@ -10,6 +10,7 @@ public class InteractableObject : MonoBehaviour, Interactable
     // This function will be called when the player interacts with this object
     public void Interact()
     {
+        Debug.Log("Interacting");
         panel.SetActive(true);
         controlButtons.SetActive(false); // Disable all control buttons
     }
