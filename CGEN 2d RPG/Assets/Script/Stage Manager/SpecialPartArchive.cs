@@ -13,16 +13,25 @@ public class SpecialPartArchive : MonoBehaviour, Interactable
 
     private Dictionary<string, SpecialPart> archivedParts = new Dictionary<string, SpecialPart>();
 
+    public bool IsInteracting { get; private set; } = false;
+
     public void Interact()
     {
         ToggleArchivePanel(true);
         controlButtons.SetActive(false);
+        IsInteracting = true;
     }
 
     public void ClosePanel()
     {
         ToggleArchivePanel(false);
-        controlButtons.SetActive(true);
+        if (!IsInteracting) controlButtons.SetActive(true);
+    }
+
+    public void EndInteraction()
+    {
+        IsInteracting = false;
+        ClosePanel();
     }
 
     private void ToggleArchivePanel(bool show)
@@ -37,7 +46,9 @@ public class SpecialPartArchive : MonoBehaviour, Interactable
             archivedParts[part.Id] = part;
             GameObject newButton = Instantiate(buttonPrefab, buttonContainer);
             newButton.GetComponentInChildren<TextMeshProUGUI>().text = part.Title;
-            newButton.GetComponent<Button>().onClick.AddListener(() => part.ShowPart(false));
+
+            // Pass reference to this SpecialPartArchive object
+            newButton.GetComponent<Button>().onClick.AddListener(() => part.ShowPart(this, false));
         }
     }
 

@@ -14,19 +14,28 @@ public class SpecialMessageArchive : MonoBehaviour, Interactable
 
     private Dictionary<string, SpecialMessage> archivedMessages = new Dictionary<string, SpecialMessage>();
 
+    public bool IsInteracting { get; private set; } = false;
+
     public void Interact()
     {
         ToggleArchivePanel(true);
         controlButtons.SetActive(false);
+        IsInteracting = true; // Set IsInteracting to true
     }
-
-
 
     public void ClosePanel()
     {
         ToggleArchivePanel(false);
-        controlButtons.SetActive(true);
+        // Only re-enable controlButtons if no longer interacting with this SpecialMessageArchive
+        if (!IsInteracting) controlButtons.SetActive(true);
     }
+
+    public void EndInteraction()
+    {
+        IsInteracting = false; // Set IsInteracting to false
+        ClosePanel(); // Close panel (which will now re-enable controlButtons since IsInteracting is false)
+    }
+
 
     private void ToggleArchivePanel(bool show)
     {
@@ -40,7 +49,9 @@ public class SpecialMessageArchive : MonoBehaviour, Interactable
             archivedMessages[message.Id] = message;
             GameObject newButton = Instantiate(buttonPrefab, buttonContainer);
             newButton.GetComponentInChildren<TextMeshProUGUI>().text = message.Title;
-            newButton.GetComponent<Button>().onClick.AddListener(() => message.ShowMessage());
+
+            // Pass reference to this SpecialMessageArchive object
+            newButton.GetComponent<Button>().onClick.AddListener(() => message.ShowMessage(this));
         }
     }
 

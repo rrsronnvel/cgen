@@ -63,29 +63,46 @@ public class SpecialPart : MonoBehaviour, IDataPersistence, Interactable
     public void Interact()
     {
         Debug.Log("interacting");
-        ShowPart();
+        ShowPart(null);
         specialPartArchive.AddPart(this);
         collected = true;
         //gameObject.SetActive(false);
     }
 
 
-    public void ShowPart(bool showPuzzlePopup = true)
+    public void ShowPart(SpecialPartArchive archive, bool showPuzzlePopup = true)
     {
         partPanel.SetActive(true);
         controlButtons.SetActive(false);
-        partPanel.AddComponent<PopupCloseOnClick>().Initialize(() => ClosePart(showPuzzlePopup));
+
+        if (archive != null)
+        {
+            // Hide the archive panel
+            archive.ClosePanel();
+        }
+
+        partPanel.AddComponent<PopupCloseOnClick>().Initialize(() => ClosePart(archive, showPuzzlePopup));
     }
 
-    private void ClosePart(bool showPuzzlePopup = true)
+    private void ClosePart(SpecialPartArchive archive, bool showPuzzlePopup = true)
     {
         partPanel.SetActive(false);
-        controlButtons.SetActive(true);
+
+        if (archive != null)
+        {
+            archive.EndInteraction();
+        }
+        else
+        {
+            controlButtons.SetActive(true);
+        }
+
         if (showPuzzlePopup)
         {
             ShowPuzzlePopup();
         }
     }
+
 
     private void ShowPuzzlePopup()
     {

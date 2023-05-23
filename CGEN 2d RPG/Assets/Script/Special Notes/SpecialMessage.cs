@@ -27,6 +27,8 @@ public class SpecialMessage : MonoBehaviour, IDataPersistence
     public bool Collected => collected;
 
 
+
+
     public void LoadData(GameData data, bool isRestarting)
     {
         data.messagesCollected.TryGetValue(id, out collected);
@@ -58,17 +60,35 @@ public class SpecialMessage : MonoBehaviour, IDataPersistence
     }
 
 
-    public void ShowMessage()
+    public void ShowMessage(SpecialMessageArchive archive = null)
     {
         messagePanel.SetActive(true);
         controlButtons.SetActive(false); // Disable all control buttons
-        messagePanel.AddComponent<PopupCloseOnClick>().Initialize(() => CloseMessage());
+
+        if (archive != null)
+        {
+            // Hide the archive panel
+            archive.ClosePanel();
+        }
+
+        messagePanel.AddComponent<PopupCloseOnClick>().Initialize(() => CloseMessage(archive));
     }
 
-    private void CloseMessage()
+    private void CloseMessage(SpecialMessageArchive archive = null)
     {
         messagePanel.SetActive(false);
-        controlButtons.SetActive(true); // Enable all control buttons
+        // Don't re-enable controlButtons here - let SpecialMessageArchive handle it
+        if (archive != null)
+        {
+            // End interaction with the archive (will show the archive panel and re-enable controlButtons if necessary)
+            archive.EndInteraction();
+        }
+        else
+        {
+            // No archive, so re-enable controlButtons
+            controlButtons.SetActive(true);
+        }
+
         gameObject.SetActive(false);
     }
 }
