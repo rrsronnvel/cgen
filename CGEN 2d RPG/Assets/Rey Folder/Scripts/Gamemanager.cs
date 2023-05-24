@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 
 public class Gamemanager : MonoBehaviour
@@ -17,7 +19,8 @@ public class Gamemanager : MonoBehaviour
     private bool shuffling = false;
     private bool gameComplete = false;
 
-    private bool puzzleCompleted = false;
+    [SerializeField] private Button autoCompleteButton;
+
 
 
     private void CreateGamePieces(float gapThickness)
@@ -61,21 +64,19 @@ public class Gamemanager : MonoBehaviour
         SceneManager.LoadScene("Spaceship");
     }
 
-    public void OnPuzzleComplete()
-    {
-        puzzleCompleted = true;
-    }
+
 
 
     void Start()
     {
         panel.SetActive(false);
         pieces = new List<Transform>();
-        size = 2;
+        size = 3;
         CreateGamePieces(0.01f);
         shuffling = true;
         StartCoroutine(WaitShuffle(0.5f));
 
+        autoCompleteButton.onClick.AddListener(AutoCompletePuzzle);
     }
 
     // Update is called once per frame
@@ -144,6 +145,23 @@ public class Gamemanager : MonoBehaviour
         gameComplete = true;
 
         return true;
+    }
+
+    public void AutoCompletePuzzle()
+    {
+        for (int i = 0; i < pieces.Count; i++)
+        {
+            pieces[i].localPosition = new Vector3(-1 + (2 * (1 / (float)size) * (i % size)) + (1 / (float)size),
+                                                   +1 - (2 * (1 / (float)size) * (i / size)) - (1 / (float)size),
+                                                   0);
+            pieces[i].name = $"{i}";
+        }
+
+        panel.SetActive(true);
+
+        StageManager.instance.CompleteCurrentStage(stageNumber);
+
+        gameComplete = true;
     }
 
 

@@ -52,4 +52,10 @@ public class SpecialPartArchive : MonoBehaviour, Interactable
         }
     }
 
+    public void EnableControlButton()
+    {
+        ToggleArchivePanel(false);
+        controlButtons.SetActive(true);
+    }
+
 }

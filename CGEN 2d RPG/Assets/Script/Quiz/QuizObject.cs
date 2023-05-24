@@ -15,24 +15,43 @@ public class QuizQuestion
 
 public class QuizObject : MonoBehaviour, Interactable
 {
+    [Header("Object Reference")]
     public GameObject panelQuiz;  // Assign this in Unity inspector
     [SerializeField] private GameObject controlButtons;
-
-    public QuizQuestion[] questions;  // Assign your questions in Unity inspector
-    private QuizQuestion currentQuestion;
 
     [SerializeField]  private QuizDoor door;  // Reference to QuizDoor script. Assign this in Unity inspector.
 
     // Reference to UI text elements
-    public TMP_Text questionText;  // Change this
-    public TMP_Text[] answerTexts;  // And this
+    public TMP_Text questionTextOnly; // Assign in Unity inspector
+    public TMP_Text questionTextWithImage; // Assign in Unity inspector
 
+    public TMP_Text[] answerTexts;  // And this
     // Reference to UI Image for question image
     public Image questionImage; // optional
 
+    public Health playerHealth; // Reference to Health script. Assign this in Unity inspector.
     [SerializeField] protected float damage;
 
-    public Health playerHealth; // Reference to Health script. Assign this in Unity inspector.
+    [Header("Question and Choices")]
+    public QuizQuestion[] questions;  // Assign your questions in Unity inspector
+    private QuizQuestion currentQuestion;
+
+    private bool isFirstTime = true;
+
+    public GameObject questionOnlyPanel; // Assign in Unity inspector
+    public GameObject questionWithImagePanel; // Assign in Unity inspector
+
+
+    private void Awake()
+    {
+        questionTextOnly.enableAutoSizing = false;
+        questionTextOnly.enableWordWrapping = true;
+
+        questionTextWithImage.enableAutoSizing = false;
+        questionTextWithImage.enableWordWrapping = true;
+
+
+    }
 
     // This function will be called when the player interacts with this object
     public void Interact()
@@ -41,8 +60,15 @@ public class QuizObject : MonoBehaviour, Interactable
         controlButtons.SetActive(false); // Disable all control buttons
 
         // Randomly select a question and display it
-        currentQuestion = questions[Random.Range(0, questions.Length)];
+        // Only select a new question the first time or after a wrong answer
+        if (isFirstTime)
+        {
+            currentQuestion = questions[Random.Range(0, questions.Length)];
+            isFirstTime = false;
+        }
+
         DisplayQuestion();
+        CheckAndResizeText();
     }
 
     // This function can be linked to the close button to close the panel
@@ -54,7 +80,11 @@ public class QuizObject : MonoBehaviour, Interactable
 
     private void DisplayQuestion()
     {
-        questionText.text = currentQuestion.question;
+        questionTextOnly.text = currentQuestion.question.Replace("<br>", "\n");
+        questionTextOnly.text = currentQuestion.question;
+
+        questionTextWithImage.text = currentQuestion.question.Replace("<br>", "\n");
+        questionTextWithImage.text = currentQuestion.question;
 
         // Display the answers
         for (int i = 0; i < currentQuestion.answers.Length; i++)
@@ -65,12 +95,41 @@ public class QuizObject : MonoBehaviour, Interactable
         // Display the question image
         if (currentQuestion.questionImage != null)
         {
+            questionWithImagePanel.SetActive(true);
+            questionOnlyPanel.SetActive(false);
+
+            questionTextWithImage.text = currentQuestion.question.Replace("<br>", "\n");
+            questionTextWithImage.text = currentQuestion.question;
+
             questionImage.sprite = Sprite.Create(currentQuestion.questionImage, new Rect(0.0f, 0.0f, currentQuestion.questionImage.width, currentQuestion.questionImage.height), new Vector2(0.5f, 0.5f), 100.0f);
             questionImage.gameObject.SetActive(true);  // Make sure the image is visible
         }
         else
         {
+            questionWithImagePanel.SetActive(false);
+            questionOnlyPanel.SetActive(true);
+
+            questionTextOnly.text = currentQuestion.question.Replace("<br>", "\n");
+            questionTextOnly.text = currentQuestion.question;
+
             questionImage.gameObject.SetActive(false);  // Hide the image
+        }
+
+        Invoke(nameof(CheckAndResizeText), 0.1f);
+    }
+
+
+
+    private void CheckAndResizeText()
+    {
+        if (questionTextOnly.preferredHeight > questionTextOnly.rectTransform.rect.height)
+        {
+            questionTextOnly.enableAutoSizing = true;
+        }
+
+        if (questionTextWithImage.preferredHeight > questionTextWithImage.rectTransform.rect.height)
+        {
+            questionTextWithImage.enableAutoSizing = true;
         }
     }
 
@@ -100,8 +159,9 @@ public class QuizObject : MonoBehaviour, Interactable
     IEnumerator ReshowPanelAfterIncorrectAnswer()
     {
         ClosePanel();
-        yield return new WaitForSeconds(0.5f); // Wait for 1 second
-        Interact(); // Reopen the panel
+        yield return new WaitForSeconds(0.5f);
+        isFirstTime = true; // Allow new question selection after a wrong answer
+        Interact();
     }
 
 }
