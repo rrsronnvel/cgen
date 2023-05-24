@@ -50,7 +50,7 @@ public class GameData
     // the game  starts with when there's no data to load
     public GameData()
     {
-        this.currentHealth = 3;
+        this.currentHealth = 5;
        // playerPosition = Vector3.zero;
         healthsCollected = new SerializableDictionary<string, bool>();
         keysCollected = new SerializableDictionary<string, bool>();
