@@ -162,7 +162,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         // Debug.Log(interactPos);
          Debug.DrawLine(transform.position, interactPos, Color.red, 1f);
 
-        var collider = Physics2D.OverlapCircle(interactPos, 0.2f, interactableLayer);
+        var collider = Physics2D.OverlapCircle(interactPos, 1f, interactableLayer);
 
         if (collider != null)
         {
