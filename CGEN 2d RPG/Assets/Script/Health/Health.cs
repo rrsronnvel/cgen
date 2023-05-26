@@ -5,9 +5,7 @@ using System.Collections;
 
 public class Health : MonoBehaviour, IDataPersistence
 {
-    //Might delete this later
-    /* [Header("Game Management")]
-     [SerializeField] private GameManager gameManager;*/
+
     public TestingRestart testingRestart;
 
     [Header("GameOver UI")]
@@ -27,6 +25,9 @@ public class Health : MonoBehaviour, IDataPersistence
 
     [Header("Player")]
     [SerializeField] private PlayerController playerController;
+
+    [Header("Immunity")]
+    [SerializeField] private int numberOfImmunityFlashes = 25;
 
     private void Awake()
     {
@@ -56,6 +57,11 @@ public class Health : MonoBehaviour, IDataPersistence
 
     public void TakeDamage(float _damage)
     {
+        if (Physics2D.GetIgnoreLayerCollision(9, 10)) // Do not take damage if immune
+        {
+            return;
+        }
+
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
 
         if (currentHealth > 0)
@@ -100,12 +106,6 @@ public class Health : MonoBehaviour, IDataPersistence
         gameOverUI.SetActive(false);
     }
 
-    //Might delete this later.
-    /* public void RestartGame()
-     {
-         gameManager.RestartGame();
-     }*/
-
 
     public void ResetHealthToFull()
     {
@@ -132,4 +132,29 @@ public class Health : MonoBehaviour, IDataPersistence
         }
         Physics2D.IgnoreLayerCollision(9, 10, false);
     }
+
+    public void CollectImmunity(float duration)
+    {
+        StartCoroutine(Immunity(duration));
+    }
+
+    private IEnumerator Immunity(float duration)
+    {
+        Physics2D.IgnoreLayerCollision(9, 10, true);
+
+        float flashInterval = duration / numberOfImmunityFlashes;
+
+        for (float i = 0; i < duration; i += flashInterval)
+        {
+            spriteRend.color = Color.black;
+            yield return new WaitForSeconds(flashInterval / 2);
+            spriteRend.color = Color.white;
+            yield return new WaitForSeconds(flashInterval / 2);
+        }
+        spriteRend.color = Color.white; // reset color to white after immunity
+
+        Physics2D.IgnoreLayerCollision(9, 10, false);
+    }
+
+
 }

@@ -1,11 +1,11 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
 public class MoveSpeed : MonoBehaviour
 {
-    public float speedBoost = 4.0f;
-    public float speedBoostDuration = 10f;
-    public float numberOfSpeedBoostFlashes = 20f;
+    public float speedBoost = 5.0f;
+    public float speedBoostDuration = 12f;
+    public float numberOfSpeedBoostFlashes = 10f;
 
     private float normalSpeed;
     private bool speedBoosted = false;
@@ -13,10 +13,14 @@ public class MoveSpeed : MonoBehaviour
 
     private PlayerController playerController;
 
+    private ParticleSystem particleSystem;
+
     private void Start()
     {
         playerController = GetComponent<PlayerController>();
         spriteRend = GetComponent<SpriteRenderer>();
+        particleSystem = GetComponent<ParticleSystem>();
+        particleSystem.Stop(); // Ensure the particle system is off by default
         normalSpeed = playerController.moveSpeed;
     }
 
@@ -26,7 +30,11 @@ public class MoveSpeed : MonoBehaviour
         {
             playerController.moveSpeed += speedBoost;
             speedBoosted = true;
+            particleSystem.Play(); // Turn on the particle system when the speed boost is active
+
+            // Call SpeedBoostFlash coroutine
             StartCoroutine(SpeedBoostFlash());
+
             StartCoroutine(RevertSpeedAfterDelay(speedBoostDuration));
         }
     }
@@ -48,5 +56,6 @@ public class MoveSpeed : MonoBehaviour
         yield return new WaitForSeconds(delay);
         playerController.moveSpeed = normalSpeed;
         speedBoosted = false;
+        particleSystem.Stop(); // Turn off the particle system when the speed boost ends
     }
 }

@@ -14,6 +14,8 @@ public class GameData
 
     public SerializableDictionary<string, bool> speedsCollected;
 
+    public SerializableDictionary<string, bool> immunityCollected;
+
     public SerializableDictionary<string, bool> keysCollected;
 
     public List<Key.KeyType> keyList; // Add this line
@@ -56,6 +58,7 @@ public class GameData
        // playerPosition = Vector3.zero;
         healthsCollected = new SerializableDictionary<string, bool>();
         speedsCollected = new SerializableDictionary<string, bool>();
+        immunityCollected = new SerializableDictionary<string, bool>();
         keysCollected = new SerializableDictionary<string, bool>();
 
         keyList = new List<Key.KeyType>();
