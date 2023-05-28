@@ -150,7 +150,7 @@ public class QuizObject : MonoBehaviour, Interactable
         {
             // The answer is incorrect, handle accordingly
             Debug.Log("Incorrect answer!");
-            playerHealth.TakeDamage(damage);
+           // playerHealth.TakeDamage(damage);
             // You could give feedback to the player, subtract points, etc.
             StartCoroutine(ReshowPanelAfterIncorrectAnswer());
         }
