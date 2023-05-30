@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
 
             //stop diagonal movement
-            // if (input.x != 0) input.y = 0 ;
+             if (input.x != 0) input.y = 0 ;
           
             if (input != Vector2.zero )
             {
