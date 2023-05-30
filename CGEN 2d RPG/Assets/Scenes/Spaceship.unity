@@ -9040,6 +9040,7 @@ GameObject:
   - component: {fileID: 305703568}
   - component: {fileID: 305703567}
   - component: {fileID: 305703566}
+  - component: {fileID: 305703570}
   m_Layer: 8
   m_Name: Colider5
   m_TagString: Untagged
@@ -9161,6 +9162,25 @@ Transform:
   m_Father: {fileID: 416249217}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &305703570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305703564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0abaf17d0f735042a4dd1f5f7fcff74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog:
+    name: Dado
+    lines:
+    - This must be the ship's mainframe - a titan among machines. It controls the
+      pulse of this vessel, humming with the power of the stars.
+    - If I've got it right, it's also our ticket home. Gotta make sure it's always
+      up and running.
 --- !u!1 &308115058
 GameObject:
   m_ObjectHideFlags: 0
@@ -15459,7 +15479,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mainframe computer
+  m_text: Artificial Intelligence
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 005d4e6637452374fa9bba80a3270cf2, type: 2}
   m_sharedMaterial: {fileID: -6394758670268714790, guid: 005d4e6637452374fa9bba80a3270cf2, type: 2}
@@ -16649,7 +16669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &580553550
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45440,7 +45460,9 @@ MonoBehaviour:
   dialog:
     name: Byte
     lines:
-    - Hello!
+    - The history of computers is generally divided into five generations.
+    - And here we are trying to know about each of the generation.
+    - Lets go!
   animator: {fileID: 0}
   defaultDirection: 1
 --- !u!1 &1425183582
