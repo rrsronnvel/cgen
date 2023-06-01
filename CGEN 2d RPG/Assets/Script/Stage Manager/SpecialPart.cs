@@ -13,10 +13,8 @@ public class SpecialPart : MonoBehaviour, IDataPersistence, Interactable
 
     [SerializeField] private SpecialPartArchive specialPartArchive;
 
-    [SerializeField] private GameObject puzzlePopupPrefab;
-
-    [SerializeField] private string stageIdentifier;
-    [SerializeField] private List<StageMiniGamePair> stageMiniGamePairs;
+   
+    public int stageNumber;
 
     private Canvas canvas;
 
@@ -90,47 +88,22 @@ public class SpecialPart : MonoBehaviour, IDataPersistence, Interactable
 
         if (archive != null)
         {
+          
             archive.EndInteraction();
         }
         else
         {
+            StageManager.instance.CompleteCurrentStage(stageNumber);
+            SceneManager.LoadScene("Spaceship");
             controlButtons.SetActive(true);
+            
         }
-
-        if (showPuzzlePopup)
-        {
-            ShowPuzzlePopup();
-        }
+       
     }
 
+   
 
-    private void ShowPuzzlePopup()
-    {
-        GameObject puzzlePopupInstance = Instantiate(puzzlePopupPrefab, canvas.transform);
-        puzzlePopupInstance.SetActive(true);
-        puzzlePopupInstance.AddComponent<PopupCloseOnClick>().Initialize(() => ClosePuzzlePopup(puzzlePopupInstance));
-    }
-
-    private void ClosePuzzlePopup(GameObject puzzlePopupInstance)
-    {
-        Destroy(puzzlePopupInstance);
-        LoadMiniGameScene();
-    }
-
-    private void LoadMiniGameScene()
-    {
-        // Find the mini-game scene name for the current stage
-        StageMiniGamePair pair = stageMiniGamePairs.Find(pair => pair.StageIdentifier == stageIdentifier);
-
-        if (!string.IsNullOrEmpty(pair.MiniGameScene))
-        {
-            SceneManager.LoadScene(pair.MiniGameScene);
-        }
-        else
-        {
-            Debug.LogError("No mini-game scene defined for the current stage.");
-        }
-    }
+   
 }
 
 
