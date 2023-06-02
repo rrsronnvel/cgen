@@ -1,23 +1,23 @@
 Using pre-set license
 Built from '2021.3/staging' branch; Version is '2021.3.14f1 (eee1884e7226) revision 15655304'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'en' Physical Memory: 16330 MB
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'en' Physical Memory: 15799 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-D:\Unity\Director\2021.3.14f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker1
 -projectPath
-D:/Git/Repositories/cgen/CGEN 2d RPG
+C:/Users/Cholo/Documents/GitHub/cgen/CGEN 2d RPG
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-49518
-Successfully changed project path to: D:/Git/Repositories/cgen/CGEN 2d RPG
-D:/Git/Repositories/cgen/CGEN 2d RPG
+58806
+Successfully changed project path to: C:/Users/Cholo/Documents/GitHub/cgen/CGEN 2d RPG
+C:/Users/Cholo/Documents/GitHub/cgen/CGEN 2d RPG
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,105 +47,369 @@ D:/Git/Repositories/cgen/CGEN 2d RPG
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 243.78 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 152.79 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.14f1 (eee1884e7226)
-[Subsystems] Discovering subsystems at path D:/Unity/Director/2021.3.14f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Git/Repositories/cgen/CGEN 2d RPG/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Cholo/Documents/GitHub/cgen/CGEN 2d RPG/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1660 SUPER (ID=0x21c4)
-    Vendor:   NVIDIA
-    VRAM:     5980 MB
-    Driver:   31.0.15.3118
+    Renderer: AMD Radeon(TM) Graphics (ID=0x1638)
+    Vendor:   ATI
+    VRAM:     7899 MB
+    Driver:   31.0.12002.92
 Initialize mono
-Mono path[0] = 'D:/Unity/Director/2021.3.14f1/Editor/Data/Managed'
-Mono path[1] = 'D:/Unity/Director/2021.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'D:/Unity/Director/2021.3.14f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56812
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56304
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/Director/2021.3.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004767 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.006356 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 252.11 ms, found 3 plugins.
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 152.58 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.168 seconds
+- Completed reload, in  0.647 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1169ms)
-		BeginReloadAssembly (139ms)
+	ReloadAssembly (647ms)
+		BeginReloadAssembly (67ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (868ms)
-			LoadAssemblies (138ms)
+		EndReloadAssembly (482ms)
+			LoadAssemblies (65ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (158ms)
+			SetupTypeCache (82ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (46ms)
-			SetupLoadedEditorAssemblies (592ms)
+			RebuildScriptCaches (23ms)
+			SetupLoadedEditorAssemblies (328ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (10ms)
+				InitializePlatformSupportModulesInManaged (49ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (252ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (243ms)
-				ProcessInitializeOnLoadMethodAttributes (85ms)
+				RefreshPlugins (153ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (85ms)
+				ProcessInitializeOnLoadMethodAttributes (41ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008890 seconds.
+Registered in 0.004771 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Git\Repositories\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Git\Repositories\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.77 ms, found 3 plugins.
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.54 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.577 seconds
+- Completed reload, in  1.045 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1578ms)
-		BeginReloadAssembly (181ms)
+	ReloadAssembly (1046ms)
+		BeginReloadAssembly (219ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (9ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (25ms)
-		EndReloadAssembly (1221ms)
-			LoadAssemblies (155ms)
+			CreateAndSetChildDomain (127ms)
+		EndReloadAssembly (726ms)
+			LoadAssemblies (73ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (373ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (82ms)
-			SetupLoadedEditorAssemblies (579ms)
+			SetupTypeCache (198ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (368ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (108ms)
-				ProcessInitializeOnLoadAttributes (404ms)
-				ProcessInitializeOnLoadMethodAttributes (52ms)
-				AfterProcessingInitializeOnLoad (5ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (74ms)
+				ProcessInitializeOnLoadAttributes (240ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.15 seconds
-Refreshing native plugins compatible for Editor in 3.74 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 2.56 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3477 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 28 unused Assets / (56.1 KB). Loaded Objects now: 3939.
-Memory consumption went from 126.8 MB to 126.7 MB.
-Total: 5.182700 ms (FindLiveObjects: 0.477800 ms CreateObjectMapping: 0.452000 ms MarkObjects: 4.096700 ms  DeleteObjects: 0.154600 ms)
+Unloading 28 unused Assets / (56.5 KB). Loaded Objects now: 3946.
+Memory consumption went from 127.5 MB to 127.5 MB.
+Total: 27.189100 ms (FindLiveObjects: 0.571100 ms CreateObjectMapping: 0.418300 ms MarkObjects: 26.039200 ms  DeleteObjects: 0.158100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 195411.484935 seconds.
+  path: Assets/Scenes/Turned Base
+  artifactKey: Guid(cad1a4207830fae4ba6f2d5e46cfad9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Turned Base using Guid(cad1a4207830fae4ba6f2d5e46cfad9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c32406a3d120cd659029670bdf0d8e9') in 0.015763 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1351.973409 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF.asset
+  artifactKey: Guid(5302535af1044152a457ed104f1f4b91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF.asset using Guid(5302535af1044152a457ed104f1f4b91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef7381be1518d7144fa3ab8767b43b86') in 0.121383 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.162073 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF - Surface.mat
+  artifactKey: Guid(e6b276ec991f467aa14ef1f3cc665993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF - Surface.mat using Guid(e6b276ec991f467aa14ef1f3cc665993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e814fe73e4c638432d98528e1a819c1') in 0.036072 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 397.647435 seconds.
+  path: Assets/old asset mess/Textures/yu.png
+  artifactKey: Guid(540c884f183dd3943950ea93e2d298cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Textures/yu.png using Guid(540c884f183dd3943950ea93e2d298cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c785ab967294fa7f5ef6d4944e71528d') in 0.078956 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2130.950426 seconds.
+  path: Assets/old asset mess/Rey Folder/Textures/Walter Houser Brattain_2nd_Gen.jpg
+  artifactKey: Guid(96d88ef88bb274041a02639a91b94273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Rey Folder/Textures/Walter Houser Brattain_2nd_Gen.jpg using Guid(96d88ef88bb274041a02639a91b94273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '066511b2319b274c8b4aaf904ef87c44') in 0.091833 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/old asset mess/Roof/open_tileset.png
+  artifactKey: Guid(9a02958559bb5324e8293bae72331c33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Roof/open_tileset.png using Guid(9a02958559bb5324e8293bae72331c33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6091b592a4e29b862e177187217c482f') in 2.395456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_22.png
+  artifactKey: Guid(093cf536effc265bc938fbf8b855b9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_22.png using Guid(093cf536effc265bc938fbf8b855b9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19a3e63134586ffb3592049bde3d33eb') in 0.023903 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_04.png
+  artifactKey: Guid(b4840b0eb55ad9db9bd697510780430d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_04.png using Guid(b4840b0eb55ad9db9bd697510780430d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '716d22d413583d41589a6a207e728b24') in 0.026761 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/old asset mess/Buttons/PNG/11Button_Midl_Blue.png
+  artifactKey: Guid(779b95c4bc6a9534299af022ce6c4d5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Buttons/PNG/11Button_Midl_Blue.png using Guid(779b95c4bc6a9534299af022ce6c4d5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48440da26fe4d898981c6ca344977be2') in 0.020747 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_pressed_18.png
+  artifactKey: Guid(c46a4b7274ba01ab5a6e0741bacfeca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_pressed_18.png using Guid(c46a4b7274ba01ab5a6e0741bacfeca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c29814210aa11c294f4bce58f03d84f') in 0.021035 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_pressed_27.png
+  artifactKey: Guid(eac44b138abca337ea7ac88d3c763510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_pressed_27.png using Guid(eac44b138abca337ea7ac88d3c763510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3a3f5df1478ad4a333cfb637b6f35cf') in 0.019678 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_26.png
+  artifactKey: Guid(b8cd989331fac3cf69d0866b8253dd9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_26.png using Guid(b8cd989331fac3cf69d0866b8253dd9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bcfeac67211b98f93184e7ba7d51074') in 0.019064 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/old asset mess/Textures/bgImage.jpg
+  artifactKey: Guid(226846f6f48812e45a3f7b92a8c20ee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Textures/bgImage.jpg using Guid(226846f6f48812e45a3f7b92a8c20ee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86c5a964d21d98583e8d2109d7c14934') in 0.157797 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/old asset mess/Buttons/PNG/23Button_Midl_Red.png
+  artifactKey: Guid(cb1fee516d444164abc17d4b2050d4c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Buttons/PNG/23Button_Midl_Red.png using Guid(cb1fee516d444164abc17d4b2050d4c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff99abb4a801b72cf3f9360f96c418a2') in 0.019567 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_01.png
+  artifactKey: Guid(307822c5a3ce7220bbb0f03527d10495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_01.png using Guid(307822c5a3ce7220bbb0f03527d10495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fb930323b8da3ca06c1374a4b452320') in 0.022591 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_pressed_20.png
+  artifactKey: Guid(98853a4e57b8d98c3a67ed3c8071e316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_pressed_20.png using Guid(98853a4e57b8d98c3a67ed3c8071e316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8cd250b8308c5f6247b8e8867f3369f') in 0.017457 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/old asset mess/Buttons/PNG/4button_green_middle.png
+  artifactKey: Guid(fafb57e9cc0c62245a6bd4d42a895309) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Buttons/PNG/4button_green_middle.png using Guid(fafb57e9cc0c62245a6bd4d42a895309) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9570f8acc5b21969fccf48a195d7ead') in 0.021306 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_31.png
+  artifactKey: Guid(fdb33f26e5fe3011da0e2b0a6b4218d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_31.png using Guid(fdb33f26e5fe3011da0e2b0a6b4218d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2aa6d4368551ce3a0845518bbcb2b9a8') in 0.020952 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/old asset mess/Buttons/PNG/30button_red.png
+  artifactKey: Guid(8fc9feebf624bba43a9df1301ccf1d8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Buttons/PNG/30button_red.png using Guid(8fc9feebf624bba43a9df1301ccf1d8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a05931508bec066cdc68e31e6597127') in 0.020130 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/old asset mess/Buttons/PNG/1button_green_middle.png
+  artifactKey: Guid(233e23c919e7ad548a3ffa20d2c1d7be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Buttons/PNG/1button_green_middle.png using Guid(233e23c919e7ad548a3ffa20d2c1d7be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b1273f12edca3454004cc9a47d2285f') in 0.024447 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/old asset mess/Rey Folder/Textures/bg.jpg
+  artifactKey: Guid(da76235a3121ce543bfc6a50d04797f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Rey Folder/Textures/bg.jpg using Guid(da76235a3121ce543bfc6a50d04797f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccf4b20e6a510bee02fd3165324b0f18') in 0.083157 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_pressed_29.png
+  artifactKey: Guid(293027e02e5dda2a4b054a0ef7e07608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_pressed_29.png using Guid(293027e02e5dda2a4b054a0ef7e07608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90759fa374e87dd99e997d5b00821f9a') in 0.022863 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_12.png
+  artifactKey: Guid(cc159ad0f018f72e195e5ba7f6656594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_12.png using Guid(cc159ad0f018f72e195e5ba7f6656594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff49b395fc059f3a507f17c76ee1dbd6') in 0.017413 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_pressed_34.png
+  artifactKey: Guid(479d01d60795dca15b72627fdd7f91cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_pressed_34.png using Guid(479d01d60795dca15b72627fdd7f91cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c19788f1f8f37861f78929bfdd4e2f8') in 0.019847 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_07.png
+  artifactKey: Guid(f278790fd4b481c8c98f53d8fe3b40e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_07.png using Guid(f278790fd4b481c8c98f53d8fe3b40e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23c30f7f81751dea069a1c186ebd3fb9') in 0.021451 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/old asset mess/Buttons/PNG/22Button_Midl_Green.png
+  artifactKey: Guid(bf625ae84f769384fb0cd1cc52d14971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Buttons/PNG/22Button_Midl_Green.png using Guid(bf625ae84f769384fb0cd1cc52d14971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82cba5bf802f4cc9350ad0c333ad3611') in 0.017856 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/old asset mess/Buttons/PNG/15Button_Long_Yellow.png
+  artifactKey: Guid(89bbc17355dc0064aae767e8f31a93aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Buttons/PNG/15Button_Long_Yellow.png using Guid(89bbc17355dc0064aae767e8f31a93aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c98cf00475120e5578c55ae9736f039') in 0.022005 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/old asset mess/Buttons/PNG/9Button_Midl_Green.png
+  artifactKey: Guid(70ce67e982fddb74289530c17f57aac3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Buttons/PNG/9Button_Midl_Green.png using Guid(70ce67e982fddb74289530c17f57aac3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00684cdfa4dadcf8008e708a988689cc') in 0.019725 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/old asset mess/Buttons/buttons.psd
+  artifactKey: Guid(feb7f06d7faf71543b5d62cfec54ed7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Buttons/buttons.psd using Guid(feb7f06d7faf71543b5d62cfec54ed7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07eee1c7a698c46c638011d8aa5be810') in 0.150216 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/old asset mess/Buttons/PNG/14Button_Long_Red.png
+  artifactKey: Guid(5e73cb0b2d2843f479811a41ea243999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Buttons/PNG/14Button_Long_Red.png using Guid(5e73cb0b2d2843f479811a41ea243999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11843d659b629ce8c5db2c13518a4677') in 0.020289 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/old asset mess/Buttons/PNG/25Button_Long_Green.png
+  artifactKey: Guid(75b6e4700f21ab04198e8b1f956968a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Buttons/PNG/25Button_Long_Green.png using Guid(75b6e4700f21ab04198e8b1f956968a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c9bec9f23ab8cd7cdf8f3cc130e6822') in 0.020282 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_24.png
+  artifactKey: Guid(fb4977fc70327a5c9bf748a061877f1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_24.png using Guid(fb4977fc70327a5c9bf748a061877f1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af6277992b98fb6115e43e770c4e5e74') in 0.018985 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/old asset mess/Buttons/PNG/28button_green.png
+  artifactKey: Guid(131de190cb93c60499d0da6a2b7c592d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/Buttons/PNG/28button_green.png using Guid(131de190cb93c60499d0da6a2b7c592d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa3ebc7919d2742a26c6adaf18f5c720') in 0.017621 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_25.png
+  artifactKey: Guid(bfad6529dac651e61aba14747dc5c2d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/buttons/button_25.png using Guid(bfad6529dac651e61aba14747dc5c2d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3601a4f55d8edf4c89bf697ece0e791e') in 0.018648 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004107 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 2.37 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.968 seconds
+Domain Reload Profiling:
+	ReloadAssembly (969ms)
+		BeginReloadAssembly (166ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (73ms)
+		EndReloadAssembly (721ms)
+			LoadAssemblies (72ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (241ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (41ms)
+			SetupLoadedEditorAssemblies (317ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (22ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (66ms)
+				ProcessInitializeOnLoadAttributes (188ms)
+				ProcessInitializeOnLoadMethodAttributes (30ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.45 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3458 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.6 KB). Loaded Objects now: 4039.
+Memory consumption went from 131.8 MB to 131.8 MB.
+Total: 4.048400 ms (FindLiveObjects: 0.398600 ms CreateObjectMapping: 0.102800 ms MarkObjects: 3.474700 ms  DeleteObjects: 0.070900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -160,48 +424,226 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.008626 seconds.
+Registered in 0.005256 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Git\Repositories\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Git\Repositories\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 3.32 ms, found 3 plugins.
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 3.27 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.563 seconds
+- Completed reload, in  0.848 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1564ms)
-		BeginReloadAssembly (216ms)
+	ReloadAssembly (849ms)
+		BeginReloadAssembly (103ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (13ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (44ms)
-		EndReloadAssembly (1173ms)
-			LoadAssemblies (167ms)
+			CreateAndSetChildDomain (27ms)
+		EndReloadAssembly (658ms)
+			LoadAssemblies (65ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (396ms)
+			SetupTypeCache (200ms)
 			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (66ms)
-			SetupLoadedEditorAssemblies (502ms)
+			RebuildScriptCaches (43ms)
+			SetupLoadedEditorAssemblies (299ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (24ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (59ms)
+				ProcessInitializeOnLoadAttributes (174ms)
+				ProcessInitializeOnLoadMethodAttributes (31ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.49 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3458 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.6 KB). Loaded Objects now: 4042.
+Memory consumption went from 131.8 MB to 131.8 MB.
+Total: 2.528300 ms (FindLiveObjects: 0.194300 ms CreateObjectMapping: 0.072200 ms MarkObjects: 2.239900 ms  DeleteObjects: 0.021300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1248.008518 seconds.
+  path: Assets/Scenes/Turned Base/Turn Base Art/Rock.psd
+  artifactKey: Guid(d81012b86f821b44f869dcfe93cc7fc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Turned Base/Turn Base Art/Rock.psd using Guid(d81012b86f821b44f869dcfe93cc7fc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85d030a515ebb8ea2923c4e353a4a4c6') in 0.056229 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005001 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.64 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.742 seconds
+Domain Reload Profiling:
+	ReloadAssembly (742ms)
+		BeginReloadAssembly (117ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (550ms)
+			LoadAssemblies (75ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (170ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (252ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (51ms)
+				ProcessInitializeOnLoadAttributes (153ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.84 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3459 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.6 KB). Loaded Objects now: 4046.
+Memory consumption went from 131.9 MB to 131.8 MB.
+Total: 2.639600 ms (FindLiveObjects: 0.242200 ms CreateObjectMapping: 0.084400 ms MarkObjects: 2.288600 ms  DeleteObjects: 0.022900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004016 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.51 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.731 seconds
+Domain Reload Profiling:
+	ReloadAssembly (731ms)
+		BeginReloadAssembly (110ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (27ms)
+		EndReloadAssembly (545ms)
+			LoadAssemblies (72ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (169ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (248ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (48ms)
+				ProcessInitializeOnLoadAttributes (152ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.91 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3458 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 18 unused Assets / (24.7 KB). Loaded Objects now: 4048.
+Memory consumption went from 131.8 MB to 131.8 MB.
+Total: 2.578000 ms (FindLiveObjects: 0.221800 ms CreateObjectMapping: 0.083700 ms MarkObjects: 2.253700 ms  DeleteObjects: 0.018400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004390 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 2.81 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.816 seconds
+Domain Reload Profiling:
+	ReloadAssembly (817ms)
+		BeginReloadAssembly (119ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (606ms)
+			LoadAssemblies (74ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (179ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (285ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (20ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (90ms)
-				ProcessInitializeOnLoadAttributes (332ms)
-				ProcessInitializeOnLoadMethodAttributes (51ms)
-				AfterProcessingInitializeOnLoad (5ms)
+				BeforeProcessingInitializeOnLoad (54ms)
+				ProcessInitializeOnLoadAttributes (173ms)
+				ProcessInitializeOnLoadMethodAttributes (26ms)
+				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (12ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 5.33 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.22 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3458 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 17 unused Assets / (24.6 KB). Loaded Objects now: 3942.
-Memory consumption went from 125.2 MB to 125.2 MB.
-Total: 5.233300 ms (FindLiveObjects: 0.318900 ms CreateObjectMapping: 0.115300 ms MarkObjects: 4.755400 ms  DeleteObjects: 0.042400 ms)
+Unloading 3459 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.6 KB). Loaded Objects now: 4052.
+Memory consumption went from 131.9 MB to 131.8 MB.
+Total: 2.928200 ms (FindLiveObjects: 0.254500 ms CreateObjectMapping: 0.088200 ms MarkObjects: 2.546200 ms  DeleteObjects: 0.038000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -216,48 +658,49 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.008444 seconds.
+Registered in 0.006452 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Git\Repositories\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Git\Repositories\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.80 ms, found 3 plugins.
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.51 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.534 seconds
+- Completed reload, in  0.721 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1536ms)
-		BeginReloadAssembly (215ms)
+	ReloadAssembly (722ms)
+		BeginReloadAssembly (111ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (11ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (49ms)
-		EndReloadAssembly (1173ms)
-			LoadAssemblies (164ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (530ms)
+			LoadAssemblies (68ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (389ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (62ms)
-			SetupLoadedEditorAssemblies (521ms)
+			SetupTypeCache (161ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (246ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (17ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (93ms)
-				ProcessInitializeOnLoadAttributes (348ms)
-				ProcessInitializeOnLoadMethodAttributes (53ms)
-				AfterProcessingInitializeOnLoad (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (49ms)
+				ProcessInitializeOnLoadAttributes (148ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (12ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 5.60 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 4.24 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3458 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 17 unused Assets / (24.6 KB). Loaded Objects now: 3945.
-Memory consumption went from 125.2 MB to 125.2 MB.
-Total: 12.769100 ms (FindLiveObjects: 4.014400 ms CreateObjectMapping: 0.586100 ms MarkObjects: 8.128300 ms  DeleteObjects: 0.038800 ms)
+Unloading 3459 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (24.7 KB). Loaded Objects now: 4055.
+Memory consumption went from 131.9 MB to 131.9 MB.
+Total: 3.263100 ms (FindLiveObjects: 0.477900 ms CreateObjectMapping: 0.076400 ms MarkObjects: 2.655900 ms  DeleteObjects: 0.051900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -269,3 +712,61 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 3267.752087 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_11.png
+  artifactKey: Guid(8756bf63e5ab72449814468177c97fcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_11.png using Guid(8756bf63e5ab72449814468177c97fcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f81d24134f50f548c7c2a8b9bfabfd05') in 0.249148 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_19.png
+  artifactKey: Guid(381f99abe46d892f599ee4fb6d875e78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_19.png using Guid(381f99abe46d892f599ee4fb6d875e78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0eac0556cc6bc6089f0d7465db2380a') in 0.030184 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Art/Traps/electric ball/disintegrate04.png
+  artifactKey: Guid(a63a12eff359aad419fbf3e3f2a3434f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Traps/electric ball/disintegrate04.png using Guid(a63a12eff359aad419fbf3e3f2a3434f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42d2e6141821f390c2cee385235ecc3c') in 0.024067 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_14.png
+  artifactKey: Guid(04e3d02776d5ad19d80abcc76cd27d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_14.png using Guid(04e3d02776d5ad19d80abcc76cd27d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8577a048e59be638b4f6d2c49c06f0c5') in 0.027839 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_15.png
+  artifactKey: Guid(246e33c46cbb14f0ba9bbae25e81cf0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_15.png using Guid(246e33c46cbb14f0ba9bbae25e81cf0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f376605597250a99ab2610b7c917062') in 0.085309 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_20.png
+  artifactKey: Guid(0449582f8f60b96cfb9555e0ba3bad2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_20.png using Guid(0449582f8f60b96cfb9555e0ba3bad2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c389730f90a6dec7e396ccc6a076296f') in 0.024835 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_13.png
+  artifactKey: Guid(a2639745f31ad3e028306edd7ed885fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_13.png using Guid(a2639745f31ad3e028306edd7ed885fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53126bab0cbf1e5a08791111430e18b9') in 0.025444 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_18.png
+  artifactKey: Guid(4779d8937e1464a72ba2ecc3f3deaffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/old asset mess/RPG&Fantasy Mobile GUI/titles/title_18.png using Guid(4779d8937e1464a72ba2ecc3f3deaffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8433bc6c6d7dd67e898fa830de9211e') in 0.035389 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Art/Traps/electric ball/disintegrate06.png
+  artifactKey: Guid(5956f8e1251a4de4b98c9f10c0a465dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Traps/electric ball/disintegrate06.png using Guid(5956f8e1251a4de4b98c9f10c0a465dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '142c00fa2405e84dd2628bfb52fd5ae6') in 0.019785 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
