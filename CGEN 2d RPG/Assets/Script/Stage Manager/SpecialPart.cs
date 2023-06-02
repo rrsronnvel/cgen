@@ -94,7 +94,7 @@ public class SpecialPart : MonoBehaviour, IDataPersistence, Interactable
         else
         {
             StageManager.instance.CompleteCurrentStage(stageNumber);
-            SceneManager.LoadScene("Spaceship");
+            SceneManager.LoadScene("BOSS1");
             controlButtons.SetActive(true);
             
         }
