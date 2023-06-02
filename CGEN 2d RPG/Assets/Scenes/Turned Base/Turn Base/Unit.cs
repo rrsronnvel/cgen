@@ -8,14 +8,24 @@ public class Unit : MonoBehaviour
 	public string unitName;
 	public int unitLevel;
 
-	public int damage;
+	public float damage;
 
-	public int maxHP;
-	public int currentHP;
+	public float maxHP;
+	public float currentHP;
 
-	public bool TakeDamage(int dmg)
+	public bool TakeDamage(float dmg)
 	{
 		currentHP -= dmg;
+
+		// Update game data with new health
+		if (DataPersistenceManager.instance != null)
+		{
+			GameData gameData = DataPersistenceManager.instance.GetGameData();
+			if (gameData != null)
+			{
+				gameData.currentHealth = currentHP;
+			}
+		}
 
 		if (currentHP <= 0)
 			return true;
@@ -23,11 +33,24 @@ public class Unit : MonoBehaviour
 			return false;
 	}
 
-	public void Heal(int amount)
+
+	public void Heal(float amount)
 	{
 		currentHP += amount;
 		if (currentHP > maxHP)
 			currentHP = maxHP;
+	}
+
+	public void LoadHealth()
+	{
+		if (DataPersistenceManager.instance != null)
+		{
+			GameData gameData = DataPersistenceManager.instance.GetGameData();
+			if (gameData != null)
+			{
+				currentHP = gameData.currentHealth;
+			}
+		}
 	}
 
 }

@@ -88,15 +88,7 @@ public class Health : MonoBehaviour, IDataPersistence
         gameOverUI.SetActive(true);
         TestingRestart.instance.SetupRestartButtons();
 
-     /*   if (TestingRestart.instance.button2 != null)
-        {
-            // Add this line
-            TestingRestart.instance.button2.onClick.AddListener(TestingRestart.instance.RestartGame);
-        }
-        else
-        {
-            Debug.LogError("Button2 is not found.");
-        }*/
+     
     }
 
 
