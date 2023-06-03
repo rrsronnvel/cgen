@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
@@ -32,6 +33,7 @@ public class BattleSystem : MonoBehaviour
     private int specialAttackCount = 2;
     public TextMeshProUGUI specialAttackText;
     public GameObject rewardPopPanel;
+    public GameObject lostPopPanel;
 
     public RewardType rewardType;
     public BattleState state;
@@ -158,20 +160,61 @@ public class BattleSystem : MonoBehaviour
                         rewardText.text = "Your Move Speed is increased!";
                     }
                     gameData.currentHealth = playerUnit.currentHP; // Add this line
+
+                    // Set the TBC as won
+                    if (gameData.TBCWon.ContainsKey(gameData.activeTBC))
+                    {
+                        gameData.TBCWon[gameData.activeTBC] = true;
+                    }
+                    else
+                    {
+                        gameData.TBCWon.Add(gameData.activeTBC, true);
+                    }
                 }
             }
         }
         else if (state == BattleState.LOST)
         {
             dialogueText.text = "You were defeated.";
+            lostPopPanel.SetActive(true); // Show the "Lost" panel
         }
     }
 
 
+
     public void OnOkButton()
     {
+
+
+        // Load the previous scene
+        if (DataPersistenceManager.instance != null)
+        {
+            GameData gameData = DataPersistenceManager.instance.GetGameData();
+            if (gameData != null && !string.IsNullOrEmpty(gameData.previousScene))
+            {
+                SceneManager.LoadScene(gameData.previousScene);
+            }
+        }
+
         rewardPopPanel.SetActive(false);
     }
+
+    public void OnLostOkButton()
+    {
+        // Load the previous scene
+        if (DataPersistenceManager.instance != null)
+        {
+            GameData gameData = DataPersistenceManager.instance.GetGameData();
+            if (gameData != null && !string.IsNullOrEmpty(gameData.previousScene))
+            {
+                TestingRestart.instance.RestartGame();
+                SceneManager.LoadScene(gameData.previousScene);
+            }
+        }
+
+        lostPopPanel.SetActive(false); // Hide the "Lost" panel
+    }
+
 
 
     void PlayerTurn()

@@ -24,6 +24,8 @@ public class SpecialPart : MonoBehaviour, IDataPersistence, Interactable
         id = System.Guid.NewGuid().ToString();
     }
 
+    public string sceneName;
+
     private bool collected = false;
 
     public string Id => id;
@@ -94,7 +96,7 @@ public class SpecialPart : MonoBehaviour, IDataPersistence, Interactable
         else
         {
             StageManager.instance.CompleteCurrentStage(stageNumber);
-            SceneManager.LoadScene("BOSS1");
+            SceneManager.LoadScene(sceneName);
             controlButtons.SetActive(true);
             
         }
