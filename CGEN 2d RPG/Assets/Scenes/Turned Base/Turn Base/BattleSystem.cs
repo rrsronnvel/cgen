@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
+
+public enum RewardType { Health, Speed }
 public class BattleSystem : MonoBehaviour
 {
     public GameObject playerPrefab;
@@ -20,16 +22,18 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD enemyHUD;
 
     public Text dialogueText;
+    public TextMeshProUGUI rewardText;
 
     public ComputerHistoryBattle quizBattle;
 
     public Button attackButton;
 
     public Button specialAttackButton; 
-    private int specialAttackCount = 2; 
+    private int specialAttackCount = 2;
     public TextMeshProUGUI specialAttackText;
+    public GameObject rewardPopPanel;
 
-
+    public RewardType rewardType;
     public BattleState state;
 
 
@@ -134,15 +138,25 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             dialogueText.text = "You won the battle!";
-            // Increase the player's maximum health
-            playerUnit.maxHP += 0.5f;
-            // Update the game data with the new maximum health
+            rewardPopPanel.SetActive(true);
             if (DataPersistenceManager.instance != null)
             {
                 GameData gameData = DataPersistenceManager.instance.GetGameData();
                 if (gameData != null)
                 {
-                    gameData.maxHealth = playerUnit.maxHP;
+                    if (rewardType == RewardType.Health)
+                    {
+                        // Increase the player's maximum health
+                        playerUnit.maxHP += 0.5f;
+                        gameData.maxHealth = playerUnit.maxHP;
+                        rewardText.text = "Your Max Health is increased!";
+                    }
+                    else if (rewardType == RewardType.Speed)
+                    {
+                        // Increase the player's speed
+                        gameData.playerSpeed += 0.5f;
+                        rewardText.text = "Your Move Speed is increased!";
+                    }
                     gameData.currentHealth = playerUnit.currentHP; // Add this line
                 }
             }
@@ -153,6 +167,11 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+
+    public void OnOkButton()
+    {
+        rewardPopPanel.SetActive(false);
+    }
 
 
     void PlayerTurn()

@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data, bool isRestarting)
     {
+        this.moveSpeed = data.playerSpeed;
         if (!isRestarting)
         {
             this.transform.position = data.playerPosition;
