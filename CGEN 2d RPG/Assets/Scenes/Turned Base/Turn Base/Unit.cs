@@ -34,12 +34,7 @@ public class Unit : MonoBehaviour
 	}
 
 
-	public void Heal(float amount)
-	{
-		currentHP += amount;
-		if (currentHP > maxHP)
-			currentHP = maxHP;
-	}
+	
 
 	public void LoadHealth()
 	{

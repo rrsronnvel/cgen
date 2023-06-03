@@ -13,6 +13,9 @@ public class ComputerHistoryBattle : MonoBehaviour
     private List<ComputerHistoryQuestion> questions = new List<ComputerHistoryQuestion>();
     private ComputerHistoryQuestion currentQuestion;
 
+    public BattleSystem battleSystem;
+
+
     void Start()
     {
         // Display the first question
@@ -61,11 +64,23 @@ public class ComputerHistoryBattle : MonoBehaviour
         {
             // The player answered correctly
             Debug.Log("Correct answer!");
+
+            // Set the dialogue text
+            battleSystem.dialogueText.text = "Your answer is correct. Now you could attack the enemy.";
         }
         else
         {
             // The player answered incorrectly
             Debug.Log("Incorrect answer.");
+
+            // Set the dialogue text
+            battleSystem.dialogueText.text = "You got the wrong answer. You couldn't attack this round.";
+
+            // Disable the attack button
+            battleSystem.attackButton.interactable = false;
+
+            // It's the enemy's turn
+            battleSystem.StartCoroutine(battleSystem.EnemyTurn());
         }
 
         // Remove the click listeners from the buttons
@@ -74,7 +89,20 @@ public class ComputerHistoryBattle : MonoBehaviour
             button.onClick.RemoveAllListeners();
         }
 
-        // Display the next question
+        // Deactivate the Quiz Panel
+        gameObject.SetActive(false);
+    }
+
+
+
+
+    public void StartQuiz()
+    {
+        // Activate the Quiz Panel
+        gameObject.SetActive(true);
+
+        // Display the first question
         DisplayQuestion(GetRandomQuestion());
     }
+
 }

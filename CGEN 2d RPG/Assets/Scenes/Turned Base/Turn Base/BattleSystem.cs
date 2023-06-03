@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 public class BattleSystem : MonoBehaviour
@@ -21,6 +21,15 @@ public class BattleSystem : MonoBehaviour
 
     public Text dialogueText;
 
+    public ComputerHistoryBattle quizBattle;
+
+    public Button attackButton;
+
+    public Button specialAttackButton; 
+    private int specialAttackCount = 2; 
+    public TextMeshProUGUI specialAttackText;
+
+
     public BattleState state;
 
 
@@ -28,6 +37,7 @@ public class BattleSystem : MonoBehaviour
     {
         state = BattleState.START;
         StartCoroutine(SetupBattle());
+        UpdateSpecialAttackText();
     }
 
     IEnumerator SetupBattle()
@@ -82,8 +92,10 @@ public class BattleSystem : MonoBehaviour
     }
 
 
-    IEnumerator EnemyTurn()
+    public IEnumerator EnemyTurn()
     {
+        
+        yield return new WaitForSeconds(2f);
         dialogueText.text = enemyUnit.unitName + " attacks!";
 
         yield return new WaitForSeconds(1f);
@@ -123,7 +135,12 @@ public class BattleSystem : MonoBehaviour
     void PlayerTurn()
     {
         dialogueText.text = "Choose an action:";
+        attackButton.interactable = true; // Enable the attack button
+        quizBattle.StartQuiz();
     }
+
+
+
 
     public void OnAttackButton()
     {
@@ -133,26 +150,61 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(PlayerAttack());
     }
 
-    IEnumerator PlayerHeal()
+    IEnumerator PlayerSpecialAttack() // Add this
     {
-        playerUnit.Heal(5f);
+        if (specialAttackCount <= 0)
+        {
+            dialogueText.text = "You have no special attacks left!";
+            yield break;
+        }
 
-        playerHUD.SetHP(playerUnit.currentHP);
-        dialogueText.text = "You feel renewed strength!";
+        // Get the Animator component from the player
+        Animator animator = playerUnit.GetComponent<Animator>();
+
+        // Set the "attacking" parameter to true to start the attack animation
+        animator.SetBool("attacking2", true);
+        yield return new WaitForSeconds(1.5f);
+
+        // Deal more damage for the special attack
+        bool isDead = enemyUnit.TakeDamage(playerUnit.damage + .5f);
+
+        enemyHUD.SetHP(enemyUnit.currentHP);
+        dialogueText.text = "The special attack is successful!";
 
         yield return new WaitForSeconds(2f);
 
-        state = BattleState.ENEMYTURN;
-        StartCoroutine(EnemyTurn());
+        // Set the "attacking" parameter back to false to return to the idle animation
+        animator.SetBool("attacking2", false);
+
+        // Decrease the special attack count
+        specialAttackCount--;
+
+        UpdateSpecialAttackText();
+        if (isDead)
+        {
+            state = BattleState.WON;
+            EndBattle();
+        }
+        else
+        {
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+        }
     }
 
-    public void OnHealButton()
+    public void OnSpecialAttackButton() // Add this
     {
         if (state != BattleState.PLAYERTURN)
             return;
 
-        StartCoroutine(PlayerHeal());
+        StartCoroutine(PlayerSpecialAttack());
     }
+
+    void UpdateSpecialAttackText()
+    {
+        specialAttackText.text = $"SS<sup>{specialAttackCount}/2</sup>";
+    }
+
 
 
 }
