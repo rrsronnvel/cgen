@@ -25,6 +25,12 @@ public class DataPersistenceManager : MonoBehaviour
 
     public bool IsRestarting { get; private set; } = false;
 
+    public GameData GetGameData()
+    {
+        return gameData;
+    }
+
+
     public string GetCurrentSceneName()
     {
         if (gameData != null)

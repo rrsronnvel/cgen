@@ -37,11 +37,14 @@ public class Health : MonoBehaviour, IDataPersistence
         HideGameOverUI();
     }
 
+
     public void LoadData(GameData data, bool isRestarting)
     {
+        this.startingHealth = data.maxHealth;
         if (!isRestarting)
         {
             this.currentHealth = data.currentHealth;
+            
         }
         else
         {
@@ -88,15 +91,7 @@ public class Health : MonoBehaviour, IDataPersistence
         gameOverUI.SetActive(true);
         TestingRestart.instance.SetupRestartButtons();
 
-     /*   if (TestingRestart.instance.button2 != null)
-        {
-            // Add this line
-            TestingRestart.instance.button2.onClick.AddListener(TestingRestart.instance.RestartGame);
-        }
-        else
-        {
-            Debug.LogError("Button2 is not found.");
-        }*/
+     
     }
 
 
