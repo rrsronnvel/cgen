@@ -62,6 +62,10 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerAttack()
     {
+        // Disable the attack button
+        attackButton.interactable = false;
+        specialAttackButton.interactable = false;
+
         // Get the Animator component from the player
         Animator animator = playerUnit.GetComponent<Animator>();
 
@@ -89,7 +93,12 @@ public class BattleSystem : MonoBehaviour
             state = BattleState.ENEMYTURN;
             StartCoroutine(EnemyTurn());
         }
+
+        // Re-enable the attack button
+        attackButton.interactable = true;
+        specialAttackButton.interactable = true;
     }
+
 
 
     public IEnumerator EnemyTurn()
@@ -125,6 +134,18 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             dialogueText.text = "You won the battle!";
+            // Increase the player's maximum health
+            playerUnit.maxHP += 0.5f;
+            // Update the game data with the new maximum health
+            if (DataPersistenceManager.instance != null)
+            {
+                GameData gameData = DataPersistenceManager.instance.GetGameData();
+                if (gameData != null)
+                {
+                    gameData.maxHealth = playerUnit.maxHP;
+                    gameData.currentHealth = playerUnit.currentHP; // Add this line
+                }
+            }
         }
         else if (state == BattleState.LOST)
         {
@@ -132,10 +153,13 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
+
+
     void PlayerTurn()
     {
         dialogueText.text = "Choose an action:";
         attackButton.interactable = true; // Enable the attack button
+        specialAttackButton.interactable = true;
         quizBattle.StartQuiz();
     }
 
@@ -152,6 +176,11 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerSpecialAttack() // Add this
     {
+
+        // Disable the attack button
+        attackButton.interactable = false;
+        specialAttackButton.interactable = false;
+
         if (specialAttackCount <= 0)
         {
             dialogueText.text = "You have no special attacks left!";
@@ -190,6 +219,8 @@ public class BattleSystem : MonoBehaviour
             state = BattleState.ENEMYTURN;
             StartCoroutine(EnemyTurn());
         }
+        attackButton.interactable = true;
+        specialAttackButton.interactable = true;
     }
 
     public void OnSpecialAttackButton() // Add this

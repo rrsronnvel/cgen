@@ -79,6 +79,8 @@ public class ComputerHistoryBattle : MonoBehaviour
             // Disable the attack button
             battleSystem.attackButton.interactable = false;
 
+            battleSystem.specialAttackButton.interactable = false;
+
             // It's the enemy's turn
             battleSystem.StartCoroutine(battleSystem.EnemyTurn());
         }

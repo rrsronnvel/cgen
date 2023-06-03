@@ -37,11 +37,14 @@ public class Health : MonoBehaviour, IDataPersistence
         HideGameOverUI();
     }
 
+
     public void LoadData(GameData data, bool isRestarting)
     {
+        this.startingHealth = data.maxHealth;
         if (!isRestarting)
         {
             this.currentHealth = data.currentHealth;
+            
         }
         else
         {

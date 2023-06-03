@@ -7,6 +7,7 @@ using UnityEngine;
 public class GameData 
 {
     public float currentHealth;
+    public float maxHealth;
 
     public Vector3 playerPosition;
 
@@ -55,7 +56,8 @@ public class GameData
     public GameData()
     {
         this.currentHealth = 5;
-       // playerPosition = Vector3.zero;
+        this.maxHealth = 5;
+        // playerPosition = Vector3.zero;
         healthsCollected = new SerializableDictionary<string, bool>();
         speedsCollected = new SerializableDictionary<string, bool>();
         immunityCollected = new SerializableDictionary<string, bool>();

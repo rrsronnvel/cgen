@@ -34,7 +34,7 @@ public class Unit : MonoBehaviour
 	}
 
 
-	
+
 
 	public void LoadHealth()
 	{
@@ -44,8 +44,10 @@ public class Unit : MonoBehaviour
 			if (gameData != null)
 			{
 				currentHP = gameData.currentHealth;
+				maxHP = gameData.maxHealth; // Add this line
 			}
 		}
 	}
+
 
 }
