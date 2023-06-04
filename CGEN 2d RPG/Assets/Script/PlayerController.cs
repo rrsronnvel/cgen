@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         else
         {
             this.transform.position = new Vector3(-12.0f, 1.0f, 0f); // Set this to your initial player position
-            //transform.position = data.playerPosition;
+          
         }
     }
 

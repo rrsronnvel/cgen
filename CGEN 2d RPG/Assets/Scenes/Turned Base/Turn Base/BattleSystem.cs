@@ -193,7 +193,6 @@ public class BattleSystem : MonoBehaviour
     public void OnOkButton()
     {
 
-
         // Load the previous scene
         if (DataPersistenceManager.instance != null)
         {
@@ -201,6 +200,9 @@ public class BattleSystem : MonoBehaviour
             if (gameData != null && !string.IsNullOrEmpty(gameData.previousScene))
             {
                 SceneManager.LoadScene(gameData.previousScene);
+
+                // Load the game after returning to the previous scene
+               // DataPersistenceManager.instance.LoadGame();
             }
         }
 
@@ -217,6 +219,7 @@ public class BattleSystem : MonoBehaviour
             {
                 TestingRestart.instance.RestartGame();
                 SceneManager.LoadScene(gameData.previousScene);
+                
             }
         }
 

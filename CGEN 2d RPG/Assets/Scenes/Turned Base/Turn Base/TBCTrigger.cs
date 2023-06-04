@@ -66,6 +66,9 @@ public class TBCTrigger : MonoBehaviour, IDataPersistence, Interactable
                 gameData.previousScene = SceneManager.GetActiveScene().name;
                 gameData.activeTBC = id; // Store the ID of the TBCTrigger
             }
+
+            // Save the game before loading the TBC scene
+            DataPersistenceManager.instance.SaveGame();
         }
 
         // Load the specified scene

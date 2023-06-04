@@ -12,6 +12,10 @@ public class BulletPool : MonoBehaviour
 
     private List<GameObject> bullets;
 
+    // Add a serialized field for the parent object
+    [SerializeField]
+    private Transform bulletParent;
+
     private void Awake()
     {
         bulletPoolInstanse = this;
@@ -24,10 +28,13 @@ public class BulletPool : MonoBehaviour
 
     public GameObject GetBullet()
     {
+
+
         if (bullets.Count > 0)
         {
-            for (int i = 0; i < bullets.Count; i++) { 
-            if (!bullets[i].activeInHierarchy)
+            for (int i = 0; i < bullets.Count; i++)
+            {
+                if (!bullets[i].activeInHierarchy)
                 {
                     return bullets[i];
                 }
@@ -36,7 +43,8 @@ public class BulletPool : MonoBehaviour
 
         if (notEnoughBulletsInPool)
         {
-            GameObject bul = Instantiate(poolBullet);
+            // Instantiate the bullet as a child of bulletParent
+            GameObject bul = Instantiate(poolBullet, bulletParent);
             bul.SetActive(false);
             bullets.Add(bul);
             return bul;
