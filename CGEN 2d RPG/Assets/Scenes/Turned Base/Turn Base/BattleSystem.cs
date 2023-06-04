@@ -30,7 +30,7 @@ public class BattleSystem : MonoBehaviour
     public Button attackButton;
 
     public Button specialAttackButton; 
-    private int specialAttackCount = 2;
+    private int specialAttackCount = 1;
     public TextMeshProUGUI specialAttackText;
     public GameObject rewardPopPanel;
     public GameObject lostPopPanel;
@@ -112,6 +112,11 @@ public class BattleSystem : MonoBehaviour
         
         yield return new WaitForSeconds(2f);
         dialogueText.text = enemyUnit.unitName + " attacks!";
+        // Get the Animator component from the player
+        Animator animator = enemyUnit.GetComponent<Animator>();
+
+        // Set the "attacking" parameter to true to start the attack animation
+        animator.SetBool("attacking", true);
 
         yield return new WaitForSeconds(1f);
 
@@ -119,7 +124,10 @@ public class BattleSystem : MonoBehaviour
 
         playerHUD.SetHP(playerUnit.currentHP);
 
-        yield return new WaitForSeconds(1f);
+        // Set the "attacking" parameter back to false to return to the idle animation
+        animator.SetBool("attacking", false);
+
+        yield return new WaitForSeconds(1.5f);
 
         if (isDead)
         {
@@ -295,7 +303,7 @@ public class BattleSystem : MonoBehaviour
 
     void UpdateSpecialAttackText()
     {
-        specialAttackText.text = $"SS<sup>{specialAttackCount}/2</sup>";
+        specialAttackText.text = $"SS<sup>{specialAttackCount}/1</sup>";
     }
 
 
