@@ -75,7 +75,7 @@ public class Boss1 : EnemyDamage
         while (true)
         {
             // Wait for a random time between 4 and 10 seconds
-            yield return new WaitForSeconds(Random.Range(4f, 10f));
+            yield return new WaitForSeconds(Random.Range(3f, 7f));
             float dashTime = 1.2f; // Dash for 1.2 seconds
 
             // Calculate direction to player

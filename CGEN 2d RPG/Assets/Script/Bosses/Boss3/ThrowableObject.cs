@@ -35,7 +35,7 @@ public class ThrowableObject : MonoBehaviour, Interactable
                 collision.gameObject.GetComponent<Boss3>().TakeDamage(damage);
 
                 // Destroy the throwable object
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

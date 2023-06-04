@@ -22,12 +22,12 @@ public class Boss3 : EnemyDamage
 
     private bool dashing;
 
-    private float health = 4f; // The boss's health
+    private float health = 5f; // The boss's health
 
-    /*public float GetHealth()
+    public float GetHealth()
     {
         return health;
-    }*/
+    }
 
 
     private void OnEnable()
