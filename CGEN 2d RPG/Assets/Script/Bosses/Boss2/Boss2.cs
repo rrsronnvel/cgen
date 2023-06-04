@@ -44,6 +44,10 @@ public class Boss2 : MonoBehaviour
 
     private void Fire()
     {
+        // Randomize the number of bullets
+        bulletsAmount = Random.Range(10, 30); // Change these numbers to the minimum and maximum number of bullets you want
+
+
         float angleStep = (endAngle - startAngle) / bulletsAmount;
         float angle = startAngle;
 
@@ -74,7 +78,7 @@ public class Boss2 : MonoBehaviour
             }
 
             // Randomize the bullet's speed
-            float bulletSpeed = Random.Range(6f, 15f);
+            float bulletSpeed = Random.Range(6f, 20f);
             bul.GetComponent<Bullet>().SetSpeed(bulletSpeed);
 
             angle += angleStep;

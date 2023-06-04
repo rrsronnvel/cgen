@@ -10,6 +10,9 @@ public class PotSpawner : MonoBehaviour
     public Vector2 minSpawnPosition;
     public Vector2 maxSpawnPosition;
 
+    public int maxPots = 6; // Maximum number of pots to spawn
+    private int potsSpawned = 0; // Counter for the number of pots spawned
+
     private void Start()
     {
         // Start the spawn coroutine
@@ -18,7 +21,7 @@ public class PotSpawner : MonoBehaviour
 
     private IEnumerator SpawnPots()
     {
-        while (true)
+        while (potsSpawned < maxPots)
         {
             // Wait for the specified interval
             yield return new WaitForSeconds(spawnInterval);
@@ -31,6 +34,9 @@ public class PotSpawner : MonoBehaviour
 
             // Instantiate the pot at the generated position
             Instantiate(potPrefab, spawnPosition, Quaternion.identity);
+
+            // Increase the counter
+            potsSpawned++;
         }
     }
 }
