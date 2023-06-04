@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boss2 : MonoBehaviour
 {
-    public BulletPool bulletPool;
+   
 
 
     [SerializeField]

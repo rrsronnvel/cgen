@@ -60,8 +60,8 @@ public class GameData
     // the game  starts with when there's no data to load
     public GameData()
     {
-        this.currentHealth = 2;
-        this.maxHealth = 2;
+        this.currentHealth = 10;
+        this.maxHealth = 10;
         this.playerSpeed = 6;
         // playerPosition = Vector3.zero;
 
