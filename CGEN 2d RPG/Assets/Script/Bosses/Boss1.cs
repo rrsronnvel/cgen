@@ -18,6 +18,8 @@ public class Boss1 : EnemyDamage
     private Rigidbody2D rb; // Rigidbody2D component
 
     private SpriteRenderer spriteRenderer; // SpriteRenderer component
+    private Animator animator; // Animator component
+    private bool isDying = false;
 
     private void OnEnable()
     {
@@ -25,10 +27,15 @@ public class Boss1 : EnemyDamage
         spriteRenderer = GetComponent<SpriteRenderer>(); // Get the SpriteRenderer component
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform; // Replace "Player" with your player's tag
         StartCoroutine(Dash()); // Start the Dash coroutine
+
+        animator = GetComponent<Animator>(); // Get the Animator component
     }
 
     private void Update()
     {
+        if (isDying) // Check if the boss is dying
+            return; // If so, return early to prevent further actions
+
         // If attacking, update destination to current player's position
         if (attacking)
         {
@@ -74,6 +81,8 @@ public class Boss1 : EnemyDamage
     {
         while (true)
         {
+            if (isDying) // Check if the boss is dying
+                yield break; // If so, stop the coroutine
             // Wait for a random time between 4 and 10 seconds
             yield return new WaitForSeconds(Random.Range(3f, 7f));
             float dashTime = 1.2f; // Dash for 1.2 seconds
@@ -99,6 +108,9 @@ public class Boss1 : EnemyDamage
 
             while (dashTime > 0)
             {
+                if (isDying) // Check if the boss is dying
+                    yield break; // If so, stop the coroutine
+
                 dashTime -= Time.deltaTime;
                 MoveInDirection(dashDirection, dashSpeed);
                 yield return null;
@@ -129,11 +141,20 @@ public class Boss1 : EnemyDamage
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isDying) // Check if the boss is dying
+            return; // If so, return early to prevent further actions
+
         // Check if the other collider is the player
         if (collision.gameObject.CompareTag("Player"))
         {
             // Apply damage to the player
             base.OnTriggerEnter2D(collision);
         }
+    }
+
+    public void Die()
+    {
+        isDying = true; // Set isDying to true when the boss starts dying
+        animator.SetBool("died", true); // Trigger the death animation
     }
 }
