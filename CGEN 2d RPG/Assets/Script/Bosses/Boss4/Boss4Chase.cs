@@ -1,9 +1,9 @@
 using UnityEngine;
 using System.Collections;
-
+using TMPro;
 public class Boss4Chase : EnemyDamage
 {
-    [Header("SpikeHead Attributes")]
+    [Header("Boss4Chase Attributes")]
     [SerializeField] private float speed;
     [SerializeField] private float range;
     [SerializeField] private float checkDelay;
@@ -20,6 +20,11 @@ public class Boss4Chase : EnemyDamage
     private SpriteRenderer spriteRenderer; // SpriteRenderer component
     private Animator animator; // Animator component
     private bool isDying = false;
+
+    public static bool isAlive = true; // Add this line
+    public TMP_Text countdownText; // Add this line
+
+
 
     private void OnEnable()
     {
@@ -76,7 +81,7 @@ public class Boss4Chase : EnemyDamage
     }
 
     // Dash coroutine
-    // Dash coroutine
+   
     IEnumerator Dash()
     {
         while (true)
