@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Boss2 : MonoBehaviour
 {
-   
-
 
     [SerializeField]
     private int bulletsAmount = 15;
@@ -20,6 +18,11 @@ public class Boss2 : MonoBehaviour
     private float rightEdge;
     private float movementDistance;
     private float speed;
+
+    public GameObject victoryPanel;
+
+    private bool isDying = false; // Add this line
+
 
 
     // Start is called before the first frame update
@@ -39,11 +42,14 @@ public class Boss2 : MonoBehaviour
         // Cancel the invocation of the Fire method
         CancelInvoke("Fire");
 
-      
+
     }
 
     private void Fire()
     {
+        // Don't fire bullets if the boss is dying
+        if (isDying) return; // Add this line
+
         // Randomize the number of bullets
         bulletsAmount = Random.Range(10, 30); // Change these numbers to the minimum and maximum number of bullets you want
 
@@ -88,6 +94,10 @@ public class Boss2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Don't move if the boss is dying
+        if (isDying) return; // Add this line
+
+
         // Sideways movement logic
         if (movingLeft)
         {
@@ -100,7 +110,7 @@ public class Boss2 : MonoBehaviour
                 movingLeft = false;
                 speed = Random.Range(8f, 15f); // Randomize speed again when direction changes
 
-                
+
             }
         }
         else
@@ -114,7 +124,7 @@ public class Boss2 : MonoBehaviour
                 movingLeft = true;
                 speed = Random.Range(8f, 15f); // Randomize speed again when direction changes
 
-                
+
             }
         }
 
@@ -127,11 +137,33 @@ public class Boss2 : MonoBehaviour
 
     private void KillBoss()
     {
+        // Set isDying to true
+        isDying = true; // Add this line
+
         // Here, you can add code to "kill" the boss.
         // For example, you could disable the boss's scripts, stop it from moving, play a death animation, etc.
         // For now, let's just disable the boss object.
-        Destroy(gameObject);
+        // Get a reference to the Animator component
+        Animator animator = GetComponent<Animator>();
 
+        // Set the "Die" parameter to true
+        animator.SetBool("die", true);
+
+        // Wait for a few seconds before disabling the boss
+        StartCoroutine(WaitAndDisable());
+
+    }
+
+    private IEnumerator WaitAndDisable()
+    {
+        // Wait for 3 seconds
+        yield return new WaitForSeconds(3f);
+
+        // Show the VictoryPanel
+        victoryPanel.SetActive(true); // Modify this line
+
+        // Disable the boss
+        Destroy(gameObject);
     }
 
 

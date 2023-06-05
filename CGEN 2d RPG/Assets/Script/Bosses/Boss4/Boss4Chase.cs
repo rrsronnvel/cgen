@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
-public class Boss3 : EnemyDamage
+public class Boss4Chase : EnemyDamage
 {
-    [Header("Boss Attributes")]
+    [Header("SpikeHead Attributes")]
     [SerializeField] private float speed;
     [SerializeField] private float range;
     [SerializeField] private float checkDelay;
@@ -19,40 +18,26 @@ public class Boss3 : EnemyDamage
     private Rigidbody2D rb; // Rigidbody2D component
 
     private SpriteRenderer spriteRenderer; // SpriteRenderer component
-
-    private bool dashing;
-
-    private float health = 5f; // The boss's health
-
     private Animator animator; // Animator component
-    public GameObject victoryPanel;
-
-    public bool isDying = false; // Add this line
-
-    public float GetHealth()
-    {
-        return health;
-    }
-
+    private bool isDying = false;
 
     private void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>(); // Get the Rigidbody2D component
         spriteRenderer = GetComponent<SpriteRenderer>(); // Get the SpriteRenderer component
-        animator = GetComponent<Animator>(); // Get the Animator component
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform; // Replace "Player" with your player's tag
         StartCoroutine(Dash()); // Start the Dash coroutine
-    }
 
+        animator = GetComponent<Animator>(); // Get the Animator component
+    }
 
     private void Update()
     {
-        // If the boss is dying, don't do anything
-        if (isDying)
-            return;
+        if (isDying) // Check if the boss is dying
+            return; // If so, return early to prevent further actions
 
-        // If not dashing and attacking, update destination to current player's position
-        if (!dashing && attacking)
+        // If attacking, update destination to current player's position
+        if (attacking)
         {
             destination = playerTransform.position;
             Vector2 direction = (destination - transform.position).normalized;
@@ -91,18 +76,15 @@ public class Boss3 : EnemyDamage
     }
 
     // Dash coroutine
-
+    // Dash coroutine
     IEnumerator Dash()
     {
         while (true)
         {
-            // If the boss is dying, don't do anything
-            if (isDying)
-                yield break;
-
-            // Wait for a random time between 2 and 5 seconds before starting the dash
-            yield return new WaitForSeconds(Random.Range(1f, 4f));
-
+            if (isDying) // Check if the boss is dying
+                yield break; // If so, stop the coroutine
+            // Wait for a random time between 4 and 10 seconds
+            yield return new WaitForSeconds(Random.Range(3f, 7f));
             float dashTime = 1.2f; // Dash for 1.2 seconds
 
             // Calculate direction to player
@@ -124,11 +106,11 @@ public class Boss3 : EnemyDamage
             // Change color to red
             spriteRenderer.color = Color.red;
 
-            // Start dashing
-            dashing = true;
-
             while (dashTime > 0)
             {
+                if (isDying) // Check if the boss is dying
+                    yield break; // If so, stop the coroutine
+
                 dashTime -= Time.deltaTime;
                 MoveInDirection(dashDirection, dashSpeed);
                 yield return null;
@@ -137,30 +119,8 @@ public class Boss3 : EnemyDamage
             // Stop dashing and change color back to white
             rb.velocity = Vector2.zero;
             spriteRenderer.color = Color.white;
-
-            // Stop dashing
-            dashing = false;
-
-            // Stop attacking
-            attacking = false;
-
-            // Stop for 3 seconds
-            yield return new WaitForSeconds(3f);
-
-            // Fire bullets
-            GetComponent<Boss3Bullet>().Fire();
-
-            // Stop for 1.5 seconds
-            yield return new WaitForSeconds(1.5f);
-            // Fire bullets
-            GetComponent<Boss3Bullet>().Fire();
-
-            // Wait for 1.5 seconds before starting the next dash
-            yield return new WaitForSeconds(1.5f);
         }
     }
-
-
 
 
     private void MoveInDirection(Vector2 direction, float speed)
@@ -170,14 +130,7 @@ public class Boss3 : EnemyDamage
         if (hit.collider == null)
         {
             // If no collision is detected, move the boss
-            if (dashing) // If the boss is dashing
-            {
-                rb.velocity = direction * dashSpeed; // Use the dash speed
-            }
-            else // If the boss is not dashing
-            {
-                rb.velocity = direction * speed; // Use the normal speed
-            }
+            rb.velocity = direction * speed;
         }
         else
         {
@@ -186,10 +139,11 @@ public class Boss3 : EnemyDamage
         }
     }
 
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isDying) // Check if the boss is dying
+            return; // If so, return early to prevent further actions
+
         // Check if the other collider is the player
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -198,28 +152,9 @@ public class Boss3 : EnemyDamage
         }
     }
 
-    public void TakeDamage(float damage)
+    public void Die()
     {
-        health -= damage;
-
-        // Log a message to the console
-        Debug.Log("Boss took " + damage + " damage. Current health: " + health);
-
-        // If the boss's health is 0 or less, play the death animation and then destroy the boss
-        if (health <= 0)
-        {
-            isDying = true; // The boss is dying
-            animator.SetBool("die", true); // Start the death animation
-            StartCoroutine(DestroyAfterDelay(3f)); // Wait for 3 seconds before destroying the boss
-        }
+        isDying = true; // Set isDying to true when the boss starts dying
+        animator.SetBool("died", true); // Trigger the death animation
     }
-
-    IEnumerator DestroyAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        victoryPanel.SetActive(true); // Show the VictoryPanel
-        Destroy(gameObject);
-    }
-
-
 }
