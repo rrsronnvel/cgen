@@ -12,6 +12,10 @@ public class GameData
 
     public Vector3 playerPosition;
 
+    public SerializableDictionary<string, bool> TBCWon;
+    public string previousScene;
+    public string activeTBC;
+
     public SerializableDictionary<string, bool> healthsCollected;
 
     public SerializableDictionary<string, bool> speedsCollected;
@@ -56,10 +60,13 @@ public class GameData
     // the game  starts with when there's no data to load
     public GameData()
     {
-        this.currentHealth = 2;
-        this.maxHealth = 2;
+        this.currentHealth = 10;
+        this.maxHealth = 10;
         this.playerSpeed = 6;
         // playerPosition = Vector3.zero;
+
+        TBCWon = new SerializableDictionary<string, bool>();
+
         healthsCollected = new SerializableDictionary<string, bool>();
         speedsCollected = new SerializableDictionary<string, bool>();
         immunityCollected = new SerializableDictionary<string, bool>();

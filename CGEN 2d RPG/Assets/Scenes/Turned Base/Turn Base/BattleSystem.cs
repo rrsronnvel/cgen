@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
@@ -29,9 +30,10 @@ public class BattleSystem : MonoBehaviour
     public Button attackButton;
 
     public Button specialAttackButton; 
-    private int specialAttackCount = 2;
+    private int specialAttackCount = 1;
     public TextMeshProUGUI specialAttackText;
     public GameObject rewardPopPanel;
+    public GameObject lostPopPanel;
 
     public RewardType rewardType;
     public BattleState state;
@@ -110,6 +112,11 @@ public class BattleSystem : MonoBehaviour
         
         yield return new WaitForSeconds(2f);
         dialogueText.text = enemyUnit.unitName + " attacks!";
+        // Get the Animator component from the player
+        Animator animator = enemyUnit.GetComponent<Animator>();
+
+        // Set the "attacking" parameter to true to start the attack animation
+        animator.SetBool("attacking", true);
 
         yield return new WaitForSeconds(1f);
 
@@ -117,7 +124,10 @@ public class BattleSystem : MonoBehaviour
 
         playerHUD.SetHP(playerUnit.currentHP);
 
-        yield return new WaitForSeconds(1f);
+        // Set the "attacking" parameter back to false to return to the idle animation
+        animator.SetBool("attacking", false);
+
+        yield return new WaitForSeconds(1.5f);
 
         if (isDead)
         {
@@ -158,20 +168,64 @@ public class BattleSystem : MonoBehaviour
                         rewardText.text = "Your Move Speed is increased!";
                     }
                     gameData.currentHealth = playerUnit.currentHP; // Add this line
+
+                    // Set the TBC as won
+                    if (gameData.TBCWon.ContainsKey(gameData.activeTBC))
+                    {
+                        gameData.TBCWon[gameData.activeTBC] = true;
+                    }
+                    else
+                    {
+                        gameData.TBCWon.Add(gameData.activeTBC, true);
+                    }
                 }
             }
         }
         else if (state == BattleState.LOST)
         {
             dialogueText.text = "You were defeated.";
+            lostPopPanel.SetActive(true); // Show the "Lost" panel
         }
     }
 
 
+
     public void OnOkButton()
     {
+
+        // Load the previous scene
+        if (DataPersistenceManager.instance != null)
+        {
+            GameData gameData = DataPersistenceManager.instance.GetGameData();
+            if (gameData != null && !string.IsNullOrEmpty(gameData.previousScene))
+            {
+                SceneManager.LoadScene(gameData.previousScene);
+
+                // Load the game after returning to the previous scene
+               // DataPersistenceManager.instance.LoadGame();
+            }
+        }
+
         rewardPopPanel.SetActive(false);
     }
+
+    public void OnLostOkButton()
+    {
+        // Load the previous scene
+        if (DataPersistenceManager.instance != null)
+        {
+            GameData gameData = DataPersistenceManager.instance.GetGameData();
+            if (gameData != null && !string.IsNullOrEmpty(gameData.previousScene))
+            {
+                TestingRestart.instance.RestartGame();
+                SceneManager.LoadScene(gameData.previousScene);
+                
+            }
+        }
+
+        lostPopPanel.SetActive(false); // Hide the "Lost" panel
+    }
+
 
 
     void PlayerTurn()
@@ -252,7 +306,7 @@ public class BattleSystem : MonoBehaviour
 
     void UpdateSpecialAttackText()
     {
-        specialAttackText.text = $"SS<sup>{specialAttackCount}/2</sup>";
+        specialAttackText.text = $"SS<sup>{specialAttackCount}/1</sup>";
     }
 
 

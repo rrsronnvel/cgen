@@ -7,24 +7,20 @@ public class Spikehead : EnemyDamage
     [SerializeField] private float range;
     [SerializeField] private float checkDelay;
     [SerializeField] private LayerMask playerLayer;
+    private Vector3[] directions = new Vector3[4];
     private Vector3 destination;
     private float checkTimer;
     private bool attacking;
-    private Transform playerTransform;
 
     private void OnEnable()
     {
         Stop();
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform; // Replace "Player" with your player's tag
     }
     private void Update()
     {
-        // If attacking, update destination to current player's position
+        //Move spikehead to destination only if attacking
         if (attacking)
-        {
-            destination = playerTransform.position;
-            transform.position = Vector2.MoveTowards(transform.position, destination, speed * Time.deltaTime);
-        }
+            transform.Translate(destination * Time.deltaTime * speed);
         else
         {
             checkTimer += Time.deltaTime;
@@ -34,23 +30,29 @@ public class Spikehead : EnemyDamage
     }
     private void CheckForPlayer()
     {
-        var direction = playerTransform.position - transform.position;
-        direction.Normalize();
+        CalculateDirections();
 
-        Debug.DrawRay(transform.position, direction * range, Color.red);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, range, playerLayer);
+        //Check if spikehead sees player in all 4 directions
+        for (int i = 0; i < directions.Length; i++)
+        {
+            Debug.DrawRay(transform.position, directions[i], Color.red);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, directions[i], range, playerLayer);
 
-        if (hit.collider != null)
-        {
-            attacking = true;
-            checkTimer = 0;
-        }
-        else
-        {
-            attacking = false;
+            if (hit.collider != null && !attacking)
+            {
+                attacking = true;
+                destination = directions[i];
+                checkTimer = 0;
+            }
         }
     }
-
+    private void CalculateDirections()
+    {
+        directions[0] = transform.right * range; //Right direction
+        directions[1] = -transform.right * range; //Left direction
+        directions[2] = transform.up * range; //Up direction
+        directions[3] = -transform.up * range; //Down direction
+    }
     private void Stop()
     {
         destination = transform.position; //Set destination as current position so it doesn't move

@@ -7,4 +7,6 @@ public interface IDataPersistence
     void LoadData(GameData data, bool isRestarting);
 
     void SaveData(ref GameData data);
+
+
 }
