@@ -96,6 +96,7 @@ public class SpecialPart : MonoBehaviour, IDataPersistence, Interactable
         else
         {
             StageManager.instance.CompleteCurrentStage(stageNumber);
+            TestingRestart.instance.RestartGame();
             SceneManager.LoadScene(sceneName);
             controlButtons.SetActive(true);
             

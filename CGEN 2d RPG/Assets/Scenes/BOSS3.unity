@@ -507,8 +507,8 @@ MonoBehaviour:
   - {fileID: 4916837006644519106, guid: ecc5b3dfe8638fb45918546c73ae595a, type: 3}
   - {fileID: 3596498666536410863, guid: fdbca7b6d282feb4984a88f9dfcbcb98, type: 3}
   spawnInterval: 9
-  minSpawnPosition: {x: -18, y: 2.5}
-  maxSpawnPosition: {x: 9, y: -16}
+  minSpawnPosition: {x: -17, y: 1}
+  maxSpawnPosition: {x: -7, y: -22}
   maxCollectibles: 15
 --- !u!4 &38230406
 Transform:
@@ -2753,6 +2753,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278701642}
   m_CullTransparentMesh: 1
+--- !u!1 &282440051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 282440052}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &282440052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282440051}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7, y: -22, z: 0.17859441}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &313169322
 GameObject:
   m_ObjectHideFlags: 0
@@ -25441,8 +25472,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   okButton: {fileID: 278701644}
-  instructionText: {fileID: 1331886917}
-  instructionString: Survive for 60 seconds
+  instructionText: {fileID: 512605210}
+  instructionString: Throw the RAM to defeat the boss.
 --- !u!114 &1224536060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26852,9 +26883,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   potPrefab: {fileID: 212226954}
-  spawnInterval: 10
-  minSpawnPosition: {x: -18, y: 2.5}
-  maxSpawnPosition: {x: 9, y: -16}
+  spawnInterval: 15
+  minSpawnPosition: {x: -17, y: 1}
+  maxSpawnPosition: {x: -7, y: -22}
   maxPots: 5
 --- !u!4 &1408448359
 Transform:

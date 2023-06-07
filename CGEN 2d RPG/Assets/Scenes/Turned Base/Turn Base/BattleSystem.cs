@@ -30,7 +30,7 @@ public class BattleSystem : MonoBehaviour
     public Button attackButton;
 
     public Button specialAttackButton; 
-    private int specialAttackCount = 1;
+    private int specialAttackCount = 2;
     public TextMeshProUGUI specialAttackText;
     public GameObject rewardPopPanel;
     public GameObject lostPopPanel;
@@ -306,7 +306,7 @@ public class BattleSystem : MonoBehaviour
 
     void UpdateSpecialAttackText()
     {
-        specialAttackText.text = $"SS<sup>{specialAttackCount}/1</sup>";
+        specialAttackText.text = $"SS<sup>{specialAttackCount}/2</sup>";
     }
 
 
