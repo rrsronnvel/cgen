@@ -11,6 +11,8 @@ public class Boss4Chase : EnemyDamage
     [SerializeField] private float dashSpeed; // Add this for dash speed
     [SerializeField] private LayerMask solidObjectsLayer; // LayerMask for solid objects
 
+    [SerializeField] private GameObject objectToMove;
+
     private Vector3 destination;
     private float checkTimer;
     private bool attacking;
@@ -161,5 +163,17 @@ public class Boss4Chase : EnemyDamage
     {
         isDying = true; // Set isDying to true when the boss starts dying
         animator.SetBool("died", true); // Trigger the death animation
+
+        // Move the object to the position where the boss died
+        StartCoroutine(MoveObjectAfterDelay(4f));
+    }
+
+    private IEnumerator MoveObjectAfterDelay(float delay)
+    {
+        // Wait for the specified delay
+        yield return new WaitForSeconds(delay);
+
+        // Move the object to the position where the boss died
+        objectToMove.transform.position = transform.position;
     }
 }

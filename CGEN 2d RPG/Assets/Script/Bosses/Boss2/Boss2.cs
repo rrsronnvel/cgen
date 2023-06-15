@@ -10,6 +10,8 @@ public class Boss2 : MonoBehaviour
     [SerializeField]
     private float startAngle = 90f, endAngle = 270f;
 
+    [SerializeField] private GameObject objectToMove;
+
     private Vector2 bulletMoveDirection;
 
     // Sideways movement variables
@@ -152,6 +154,9 @@ public class Boss2 : MonoBehaviour
         // Wait for a few seconds before disabling the boss
         StartCoroutine(WaitAndDisable());
 
+        // Move the object to the position where the boss died
+        StartCoroutine(MoveObjectAfterDelay(3f));
+
     }
 
     private IEnumerator WaitAndDisable()
@@ -164,6 +169,15 @@ public class Boss2 : MonoBehaviour
 
         // Disable the boss
         Destroy(gameObject);
+    }
+
+    private IEnumerator MoveObjectAfterDelay(float delay)
+    {
+        // Wait for the specified delay
+        yield return new WaitForSeconds(delay);
+
+        // Move the object to the position where the boss died
+        objectToMove.transform.position = transform.position;
     }
 
 

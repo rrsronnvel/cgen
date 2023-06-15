@@ -12,6 +12,8 @@ public class Boss3 : EnemyDamage
     [SerializeField] private float dashSpeed; // Add this for dash speed
     [SerializeField] private LayerMask solidObjectsLayer; // LayerMask for solid objects
 
+    [SerializeField] private GameObject objectToMove;
+
     private Vector3 destination;
     private float checkTimer;
     private bool attacking;
@@ -22,7 +24,7 @@ public class Boss3 : EnemyDamage
 
     private bool dashing;
 
-    private float health = 5f; // The boss's health
+    private float health = 1f; // The boss's health
 
     private Animator animator; // Animator component
     public GameObject victoryPanel;
@@ -211,6 +213,9 @@ public class Boss3 : EnemyDamage
             isDying = true; // The boss is dying
             animator.SetBool("die", true); // Start the death animation
             StartCoroutine(DestroyAfterDelay(3f)); // Wait for 3 seconds before destroying the boss
+
+            // Move the object to the position where the boss died
+            StartCoroutine(MoveObjectAfterDelay(3f));
         }
     }
 
@@ -219,6 +224,15 @@ public class Boss3 : EnemyDamage
         yield return new WaitForSeconds(delay);
         victoryPanel.SetActive(true); // Show the VictoryPanel
         Destroy(gameObject);
+    }
+
+    private IEnumerator MoveObjectAfterDelay(float delay)
+    {
+        // Wait for the specified delay
+        yield return new WaitForSeconds(delay);
+
+        // Move the object to the position where the boss died
+        objectToMove.transform.position = transform.position;
     }
 
 
