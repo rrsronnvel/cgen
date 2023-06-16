@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCController : MonoBehaviour, Interactable
+public class NPCController : MonoBehaviour, Interactable, IDataPersistence
 {
     [SerializeField] Dialog dialog;
     public Animator animator; // Add a reference to the NPC's Animator
@@ -10,6 +10,9 @@ public class NPCController : MonoBehaviour, Interactable
     [SerializeField] private Direction defaultDirection; // Change the defaultDirection variable to use the Direction enum
 
      [SerializeField] GameObject additionalPanel;
+
+    public bool hasBeenInteractedWith = false;
+    public string id;
 
     private void Awake()
     {
@@ -24,6 +27,34 @@ public class NPCController : MonoBehaviour, Interactable
         DialogManager.Instance.OnHideDialog += HideAdditionalPanel; // Subscribe to the OnHideDialog event
     }
 
+    public void ResetInteraction()
+    {
+        hasBeenInteractedWith = false;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        if (data.interactionsCompleted.ContainsKey(id))
+        {
+            data.interactionsCompleted[id] = hasBeenInteractedWith;
+        }
+        else
+        {
+            data.interactionsCompleted.Add(id, hasBeenInteractedWith);
+        }
+    }
+
+    public void LoadData(GameData data, bool isRestarting)
+    {
+        if (isRestarting)
+        {
+            hasBeenInteractedWith = false;
+        }
+        else if (data.interactionsCompleted.ContainsKey(id))
+        {
+            hasBeenInteractedWith = data.interactionsCompleted[id];
+        }
+    }
 
 
     private void OnDestroy()
@@ -51,6 +82,7 @@ public class NPCController : MonoBehaviour, Interactable
 
     public void Interact()
     {
+        hasBeenInteractedWith = true;
         FacePlayer(); // Call the FacePlayer method when the player interacts with the NPC
         StartCoroutine(DialogManager.Instance.ShowDialog(dialog, this)); // Add 'this' reference to ShowDialog method
     }

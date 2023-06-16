@@ -53,6 +53,7 @@ public class GameData
 
     public bool cutscenePlayed;
 
+    public SerializableDictionary<string, bool> interactionsCompleted;
 
 
 
