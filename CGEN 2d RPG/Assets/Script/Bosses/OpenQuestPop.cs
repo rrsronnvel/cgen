@@ -10,6 +10,8 @@ public class OpenQuestPop : MonoBehaviour
     [SerializeField] private BossPortal bossPortal; // BossPortal object
     [SerializeField] private QuestPop questPop; // QuestPop script
 
+    [SerializeField] private GameObject controlButtons;
+
     public void Start()
     {
         // Add listener for the open button
@@ -20,9 +22,16 @@ public class OpenQuestPop : MonoBehaviour
     {
         // Show the QuestPop panel
         questPopPanel.SetActive(true);
+        controlButtons.SetActive(false);
 
         // Update the QuestPop content
         questPop.UpdateQuestPop(bossPortal.GetRequiredInteractions());
+    }
+
+    public void ClosePanel()
+    {
+        questPopPanel.SetActive(false);
+        controlButtons.SetActive(true);
     }
 }
 

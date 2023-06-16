@@ -8,6 +8,7 @@ using TMPro;
 public class BossPortal : MonoBehaviour, Interactable
 {
     [SerializeField] private QuestPop questPop; // Reference to your QuestPop script
+    [SerializeField] private GameObject controlButtons;
 
     [SerializeField] private string sceneName;
     [SerializeField] private GameObject bossPortalUI;
@@ -20,6 +21,8 @@ public class BossPortal : MonoBehaviour, Interactable
     [SerializeField] private TextMeshProUGUI[] goalTexts2; // Array of goal texts for Goal 2
     [SerializeField] private Image[] checkImages3; // Array of check images for Goal 3
     [SerializeField] private Image[] checkImages2; // Array of check images for Goal 2
+
+   
 
     public NPCController[] GetRequiredInteractions()
     {
@@ -46,6 +49,8 @@ public class BossPortal : MonoBehaviour, Interactable
     public void Interact()
     {
         Debug.Log("interacting");
+
+        controlButtons.SetActive(false);
         // Show the BossPortal UI when player interacts with the BossPortal
         bossPortalUI.SetActive(true);
 
@@ -95,6 +100,7 @@ public class BossPortal : MonoBehaviour, Interactable
     private void OnCloseButton()
     {
         bossPortalUI.SetActive(false);
+        controlButtons.SetActive(true);
     }
 }
 
