@@ -57338,7 +57338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!320 &1396440722
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -57360,16 +57360,12 @@ PlayableDirector:
     value: {fileID: 1678011885}
   - key: {fileID: -3956521990899078248, guid: 4c7229b1e6f4382449a1daf818bd434c, type: 2}
     value: {fileID: 2107742870}
-  - key: {fileID: -1295070618541070374, guid: 4c7229b1e6f4382449a1daf818bd434c, type: 2}
-    value: {fileID: 278005862}
   - key: {fileID: 6887547207972342172, guid: 4c7229b1e6f4382449a1daf818bd434c, type: 2}
     value: {fileID: 1415695193}
   - key: {fileID: -4889864373181232067, guid: 4c7229b1e6f4382449a1daf818bd434c, type: 2}
     value: {fileID: 1415695193}
   - key: {fileID: 7531945207802813307, guid: 4c7229b1e6f4382449a1daf818bd434c, type: 2}
     value: {fileID: 2054531535}
-  - key: {fileID: -3839482381874200459, guid: 4c7229b1e6f4382449a1daf818bd434c, type: 2}
-    value: {fileID: 1488232619}
   - key: {fileID: -2901799909136604959, guid: 4c7229b1e6f4382449a1daf818bd434c, type: 2}
     value: {fileID: 627665757}
   - key: {fileID: -5744229570047080451, guid: 4c7229b1e6f4382449a1daf818bd434c, type: 2}
@@ -58068,6 +58064,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   defaultDirection: 3
   additionalPanel: {fileID: 951558694}
+  hasBeenInteractedWith: 0
+  id: 
 --- !u!95 &1415695193
 Animator:
   serializedVersion: 4
@@ -123678,8 +123676,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Hello, Dado! Your goal in this level is \rto find the missing microprocessor.
-    To do that, you must \rsolve another picture puzzle."
+  m_Text: "Hello, Dado! Your goal in this level is \rto evade the boss and acquire
+    the microprocessor to proceed in the next level."
 --- !u!222 &1853138780
 CanvasRenderer:
   m_ObjectHideFlags: 0

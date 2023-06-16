@@ -4888,7 +4888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!320 &180793101
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -4924,10 +4924,6 @@ PlayableDirector:
     value: {fileID: 1415695193}
   - key: {fileID: -2647365639569327047, guid: d4de56b3e6c931c49a53e9ed88eec514, type: 2}
     value: {fileID: 1364760422}
-  - key: {fileID: -5386281185219420107, guid: d4de56b3e6c931c49a53e9ed88eec514, type: 2}
-    value: {fileID: 1603683915}
-  - key: {fileID: 6237743111220452534, guid: d4de56b3e6c931c49a53e9ed88eec514, type: 2}
-    value: {fileID: 1392093146}
   - key: {fileID: 2857896020226814982, guid: d4de56b3e6c931c49a53e9ed88eec514, type: 2}
     value: {fileID: 1195189445}
   - key: {fileID: 2377354510134830542, guid: d4de56b3e6c931c49a53e9ed88eec514, type: 2}
@@ -55182,6 +55178,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   defaultDirection: 0
   additionalPanel: {fileID: 2040386542}
+  hasBeenInteractedWith: 0
+  id: 
 --- !u!95 &1415695193
 Animator:
   serializedVersion: 4
@@ -113852,8 +113850,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Welcome to the third generation, Dado! Your \r\ntask is to find the missing
-    integrated circuit."
+  m_Text: "Welcome to the third generation, Dado! Your \rtask is to find the missing
+    integrated circuit. To accomplish you must evade the boss and acquire the integrated
+    circuit."
 --- !u!222 &1610763806
 CanvasRenderer:
   m_ObjectHideFlags: 0
