@@ -47302,7 +47302,7 @@ GameObject:
   - component: {fileID: 1798916510}
   - component: {fileID: 1798916509}
   - component: {fileID: 1798916508}
-  - component: {fileID: 1798916507}
+  - component: {fileID: 1798916513}
   m_Layer: 10
   m_Name: BOSS1
   m_TagString: Enemy
@@ -47325,26 +47325,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1798916507
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798916505}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f0ed3570c7da63748993975b3141546d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1798916508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47483,7 +47463,7 @@ SpriteRenderer:
   m_SortingLayerID: -513031075
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 597389872, guid: dcd6ceb54976efe4e86fcab6c1ffc75e, type: 3}
+  m_Sprite: {fileID: 1494810928, guid: dcd6ceb54976efe4e86fcab6c1ffc75e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -47494,6 +47474,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1798916513
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798916505}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ab49d9ea3415b146bec63441aaf16ae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1807262308
 GameObject:
   m_ObjectHideFlags: 0
