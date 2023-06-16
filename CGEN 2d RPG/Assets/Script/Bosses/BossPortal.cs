@@ -21,6 +21,11 @@ public class BossPortal : MonoBehaviour, Interactable
     [SerializeField] private Image[] checkImages3; // Array of check images for Goal 3
     [SerializeField] private Image[] checkImages2; // Array of check images for Goal 2
 
+    public NPCController[] GetRequiredInteractions()
+    {
+        return requiredInteractions;
+    }
+
     private void Start()
     {
         // Add listeners for your buttons
@@ -31,7 +36,12 @@ public class BossPortal : MonoBehaviour, Interactable
         bossPortalUI.SetActive(false);
         goal3.SetActive(false);
         goal2.SetActive(false);
+
+        // Initialize the QuestPop
+        questPop.InitializeQuestPop(requiredInteractions.Length);
     }
+
+
 
     public void Interact()
     {

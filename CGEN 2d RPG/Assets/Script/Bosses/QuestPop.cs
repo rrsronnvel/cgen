@@ -13,6 +13,29 @@ public class QuestPop : MonoBehaviour
     [SerializeField] private Image[] checkImages3; // Array of check images for Goal 3
     [SerializeField] private Image[] checkImages2; // Array of check images for Goal 2
 
+
+    public void InitializeQuestPop(int numberOfRequiredInteractions)
+    {
+        // Initialize the goal texts and check images
+        if (numberOfRequiredInteractions == 3)
+        {
+            goal3.SetActive(true);
+            for (int i = 0; i < goalTexts3.Length; i++)
+            {
+                goalTexts3[i].color = Color.red;
+                checkImages3[i].enabled = false;
+            }
+        }
+        else if (numberOfRequiredInteractions == 2)
+        {
+            goal2.SetActive(true);
+            for (int i = 0; i < goalTexts2.Length; i++)
+            {
+                goalTexts2[i].color = Color.red;
+                checkImages2[i].enabled = false;
+            }
+        }
+    }
     public void UpdateQuestPop(NPCController[] requiredInteractions)
     {
         for (int i = 0; i < requiredInteractions.Length; i++)
@@ -34,5 +57,7 @@ public class QuestPop : MonoBehaviour
             }
         }
     }
+
+
 }
 
