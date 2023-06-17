@@ -1,7 +1,4 @@
-using UnityEngine;
-using UnityEngine.UI; // If you're using Unity's legacy UI system
-// using TMPro; // Uncomment this line if you're using TextMeshPro
-
+[System.Serializable]
 public class ComputerHistoryQuestion
 {
     public string question;
