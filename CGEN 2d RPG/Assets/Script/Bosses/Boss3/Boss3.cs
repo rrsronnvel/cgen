@@ -5,6 +5,8 @@ using UnityEngine;
 public class Boss3 : EnemyDamage
 {
     [Header("Boss Attributes")]
+
+    [SerializeField] private float health = 5f; // The boss's health
     [SerializeField] private float speed;
     [SerializeField] private float range;
     [SerializeField] private float checkDelay;
@@ -24,7 +26,7 @@ public class Boss3 : EnemyDamage
 
     private bool dashing;
 
-    private float health = 1f; // The boss's health
+
 
     private Animator animator; // Animator component
     public GameObject victoryPanel;

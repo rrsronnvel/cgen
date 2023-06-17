@@ -94,6 +94,9 @@ public class BossPortal : MonoBehaviour, Interactable
             obj.ResetInteraction();
         }
 
+        // Call RestartGame method from TestingRestart class
+        TestingRestart.instance.RestartGame();
+
         SceneManager.LoadScene(sceneName);
     }
 

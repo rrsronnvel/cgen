@@ -5,11 +5,13 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
-public enum RewardType { Health, Speed }
-public class BattleSystem : MonoBehaviour
+public class BattleSystemBoss : MonoBehaviour
 {
+    public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
+
+    public enum RewardType { Health, Speed }
+
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
 
@@ -25,12 +27,12 @@ public class BattleSystem : MonoBehaviour
     public Text dialogueText;
     public TextMeshProUGUI rewardText;
 
-    public ComputerHistoryBattle quizBattle;
+    public ComputerHistoryBattleBoss quizBattle;
 
     public Button attackButton;
 
-    public Button specialAttackButton; 
-    private int specialAttackCount = 1;
+    public Button specialAttackButton;
+    private int specialAttackCount = 2;
     public TextMeshProUGUI specialAttackText;
     public GameObject rewardPopPanel;
     public GameObject lostPopPanel;
@@ -109,7 +111,7 @@ public class BattleSystem : MonoBehaviour
 
     public IEnumerator EnemyTurn()
     {
-        
+
         yield return new WaitForSeconds(2f);
         dialogueText.text = enemyUnit.unitName + " attacks!";
         // Get the Animator component from the player
@@ -199,10 +201,10 @@ public class BattleSystem : MonoBehaviour
             GameData gameData = DataPersistenceManager.instance.GetGameData();
             if (gameData != null && !string.IsNullOrEmpty(gameData.previousScene))
             {
-                SceneManager.LoadScene(gameData.previousScene);
+                SceneManager.LoadScene("BOSS5end");
 
                 // Load the game after returning to the previous scene
-               // DataPersistenceManager.instance.LoadGame();
+                // DataPersistenceManager.instance.LoadGame();
             }
         }
 
@@ -219,7 +221,7 @@ public class BattleSystem : MonoBehaviour
             {
                 TestingRestart.instance.RestartGame();
                 SceneManager.LoadScene(gameData.previousScene);
-                
+
             }
         }
 
@@ -314,7 +316,7 @@ public class BattleSystem : MonoBehaviour
 
     void UpdateSpecialAttackText()
     {
-        specialAttackText.text = $"SS<sup>{specialAttackCount}/1</sup>";
+        specialAttackText.text = $"SS<sup>{specialAttackCount}/2</sup>";
     }
 
 
