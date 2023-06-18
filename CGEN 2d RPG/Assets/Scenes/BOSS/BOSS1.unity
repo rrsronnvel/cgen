@@ -259,7 +259,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   okButton: {fileID: 1242145676}
   instructionText: {fileID: 1629155044}
-  instructionString: To win the game place the 5 pots on the button.
+  instructionString: To defeat the boss you need to place the stone on the randomly
+    place button.
 --- !u!114 &18409888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6262,7 +6263,7 @@ MonoBehaviour:
   bulletsAmount: 15
   startAngle: 90
   endAngle: 270
-  objectToMove: {fileID: 1134656693}
+  objectToMove: {fileID: 738759504}
   victoryPanel: {fileID: 757717805}
 --- !u!95 &605695858
 Animator:
@@ -7292,8 +7293,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738759504}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.62, y: 6.63, z: 0}
-  m_LocalScale: {x: 0.5107374, y: 0.49047998, z: 0.2278036}
+  m_LocalPosition: {x: -4.6143, y: 6.6158, z: 0}
+  m_LocalScale: {x: 0.16061896, y: 0.09900181, z: 0.2278036}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1831710890}
@@ -7313,7 +7314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5b2ea84f-46be-4a91-a4f5-9e8b527c3c52
   partPanel: {fileID: 106803840}
-  controlButtons: {fileID: 0}
+  controlButtons: {fileID: 696620666}
   title: Vacuum Tubes
   specialPartArchive: {fileID: 1685727980}
   stageNumber: 1
@@ -7352,18 +7353,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.056330588, y: 0.051396623}
+  m_Offset: {x: 0.042538583, y: 0.3310709}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 0.96}
+    oldSize: {x: 5, y: 5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32235447, y: 0.31054658}
+  m_Size: {x: 0.98431385, y: 3.241541}
   m_EdgeRadius: 0
 --- !u!212 &738759509
 SpriteRenderer:
@@ -7406,7 +7407,7 @@ SpriteRenderer:
   m_SortingLayerID: -513031075
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e785c5bc94fa09b4485c85539fce7b0d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2766444de017654dbce0cc1ce2a03f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -27740,7 +27741,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: To win the game place the pot on the button.
+  m_text: To defeat the boss you need to place the stone on the randomly place button.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 203c055106f479544838a634b9b6594f, type: 2}
   m_sharedMaterial: {fileID: -4862333370903328641, guid: 203c055106f479544838a634b9b6594f, type: 2}
@@ -35204,7 +35205,7 @@ MonoBehaviour:
   spawnInterval: 10
   minSpawnPosition: {x: -15, y: 4}
   maxSpawnPosition: {x: 7, y: -13}
-  maxPots: 8
+  maxPots: 5
 --- !u!4 &1909254411
 Transform:
   m_ObjectHideFlags: 0

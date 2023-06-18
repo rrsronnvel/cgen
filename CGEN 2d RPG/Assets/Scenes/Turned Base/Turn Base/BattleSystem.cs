@@ -55,7 +55,7 @@ public class BattleSystem : MonoBehaviour
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
-        dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
+        dialogueText.text = "Engaging " + enemyUnit.unitName + " ...";
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
@@ -157,14 +157,14 @@ public class BattleSystem : MonoBehaviour
                     if (rewardType == RewardType.Health)
                     {
                         // Increase the player's maximum health
-                        playerUnit.maxHP += 0.5f;
+                        playerUnit.maxHP += 1f;
                         gameData.maxHealth = playerUnit.maxHP;
                         rewardText.text = "Your Max Health is increased!";
                     }
                     else if (rewardType == RewardType.Speed)
                     {
                         // Increase the player's speed
-                        gameData.playerSpeed += 0.5f;
+                        gameData.playerSpeed += 0.6f;
                         rewardText.text = "Your Move Speed is increased!";
                     }
                     gameData.currentHealth = playerUnit.currentHP; // Add this line
@@ -201,8 +201,8 @@ public class BattleSystem : MonoBehaviour
             {
                 SceneManager.LoadScene(gameData.previousScene);
 
-                // Load the game after returning to the previous scene
-               // DataPersistenceManager.instance.LoadGame();
+                // Stop restarting
+                DataPersistenceManager.instance.StopRestarting();
             }
         }
 
@@ -314,7 +314,7 @@ public class BattleSystem : MonoBehaviour
 
     void UpdateSpecialAttackText()
     {
-        specialAttackText.text = $"SS<sup>{specialAttackCount}/1</sup>";
+        specialAttackText.text = $"Special Skill<sup>{specialAttackCount}/1</sup>";
     }
 
 

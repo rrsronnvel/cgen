@@ -57,7 +57,7 @@ public class BattleSystemBoss : MonoBehaviour
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
-        dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
+        dialogueText.text = "Engaging " + enemyUnit.unitName + " ...";
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
@@ -167,7 +167,7 @@ public class BattleSystemBoss : MonoBehaviour
                     {
                         // Increase the player's speed
                         gameData.playerSpeed += 0.5f;
-                        rewardText.text = "Your Move Speed is increased!";
+                        rewardText.text = "You finally defeated the final boss";
                     }
                     gameData.currentHealth = playerUnit.currentHP; // Add this line
 
@@ -316,7 +316,7 @@ public class BattleSystemBoss : MonoBehaviour
 
     void UpdateSpecialAttackText()
     {
-        specialAttackText.text = $"SS<sup>{specialAttackCount}/2</sup>";
+        specialAttackText.text = $"Special Skill<sup>{specialAttackCount}/2</sup>";
     }
 
 

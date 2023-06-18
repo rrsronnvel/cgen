@@ -63,7 +63,7 @@ public class GameData
     {
         this.currentHealth = 3;
         this.maxHealth = 3;
-        this.playerSpeed = 6;
+        this.playerSpeed = 20;
         // playerPosition = Vector3.zero;
 
         TBCWon = new SerializableDictionary<string, bool>();

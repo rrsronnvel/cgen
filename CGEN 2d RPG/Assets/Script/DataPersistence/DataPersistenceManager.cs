@@ -209,7 +209,9 @@ public class DataPersistenceManager : MonoBehaviour
         }
     }
 
-
-
+    public void StopRestarting()
+    {
+        IsRestarting = false;
+    }
 
 }
