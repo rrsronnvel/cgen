@@ -1,23 +1,23 @@
 Using pre-set license
 Built from '2021.3/staging' branch; Version is '2021.3.14f1 (eee1884e7226) revision 15655304'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'en' Physical Memory: 16330 MB
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'en' Physical Memory: 15799 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-D:\Unity\Director\2021.3.14f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/Git/Repositories/cgen/CGEN 2d RPG
+C:/Users/Cholo/Documents/GitHub/cgen/CGEN 2d RPG
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57590
-Successfully changed project path to: D:/Git/Repositories/cgen/CGEN 2d RPG
-D:/Git/Repositories/cgen/CGEN 2d RPG
+62642
+Successfully changed project path to: C:/Users/Cholo/Documents/GitHub/cgen/CGEN 2d RPG
+C:/Users/Cholo/Documents/GitHub/cgen/CGEN 2d RPG
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,105 +47,109 @@ D:/Git/Repositories/cgen/CGEN 2d RPG
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 221.00 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 140.99 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.14f1 (eee1884e7226)
-[Subsystems] Discovering subsystems at path D:/Unity/Director/2021.3.14f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Git/Repositories/cgen/CGEN 2d RPG/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Cholo/Documents/GitHub/cgen/CGEN 2d RPG/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1660 SUPER (ID=0x21c4)
-    Vendor:   NVIDIA
-    VRAM:     5980 MB
-    Driver:   31.0.15.3598
+    Renderer: AMD Radeon(TM) Graphics (ID=0x1638)
+    Vendor:   ATI
+    VRAM:     7899 MB
+    Driver:   31.0.12002.92
 Initialize mono
-Mono path[0] = 'D:/Unity/Director/2021.3.14f1/Editor/Data/Managed'
-Mono path[1] = 'D:/Unity/Director/2021.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'D:/Unity/Director/2021.3.14f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56600
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56988
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/Director/2021.3.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005048 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.006587 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 227.59 ms, found 3 plugins.
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 127.82 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.066 seconds
+- Completed reload, in  0.602 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1067ms)
-		BeginReloadAssembly (141ms)
+	ReloadAssembly (603ms)
+		BeginReloadAssembly (60ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (751ms)
-			LoadAssemblies (141ms)
+		EndReloadAssembly (447ms)
+			LoadAssemblies (59ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (162ms)
+			SetupTypeCache (80ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (36ms)
-			SetupLoadedEditorAssemblies (480ms)
+			RebuildScriptCaches (21ms)
+			SetupLoadedEditorAssemblies (302ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (10ms)
+				InitializePlatformSupportModulesInManaged (47ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (228ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (177ms)
-				ProcessInitializeOnLoadMethodAttributes (64ms)
+				RefreshPlugins (128ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (87ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008670 seconds.
+Registered in 0.005388 seconds.
+Android Extension - Scanning For ADB Devices 694 ms
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Git\Repositories\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Git\Repositories\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.20 ms, found 3 plugins.
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.80 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.673 seconds
+- Completed reload, in  0.898 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1674ms)
-		BeginReloadAssembly (188ms)
+	ReloadAssembly (898ms)
+		BeginReloadAssembly (105ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (26ms)
-		EndReloadAssembly (1304ms)
-			LoadAssemblies (155ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (692ms)
+			LoadAssemblies (67ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (364ms)
+			SetupTypeCache (205ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (80ms)
-			SetupLoadedEditorAssemblies (649ms)
+			RebuildScriptCaches (44ms)
+			SetupLoadedEditorAssemblies (339ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (10ms)
-				SetLoadedEditorAssemblies (1ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (114ms)
-				ProcessInitializeOnLoadAttributes (450ms)
-				ProcessInitializeOnLoadMethodAttributes (66ms)
+				BeforeProcessingInitializeOnLoad (70ms)
+				ProcessInitializeOnLoadAttributes (218ms)
+				ProcessInitializeOnLoadMethodAttributes (30ms)
 				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 3.22 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 2.73 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3531 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (56.8 KB). Loaded Objects now: 3998.
-Memory consumption went from 128.4 MB to 128.3 MB.
-Total: 6.020400 ms (FindLiveObjects: 0.379900 ms CreateObjectMapping: 0.154300 ms MarkObjects: 5.354900 ms  DeleteObjects: 0.129700 ms)
+Unloading 30 unused Assets / (56.6 KB). Loaded Objects now: 4003.
+Memory consumption went from 129.0 MB to 128.9 MB.
+Total: 3.173200 ms (FindLiveObjects: 0.292500 ms CreateObjectMapping: 0.120600 ms MarkObjects: 2.676200 ms  DeleteObjects: 0.083100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -159,187 +163,260 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 38473.451017 seconds.
-  path: Assets/Scenes/Sprites/01.png
-  artifactKey: Guid(6244beef710310f4f9cd87cd2466b3b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Sprites/01.png using Guid(6244beef710310f4f9cd87cd2466b3b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ded9c226757af15c98213ce6cd99911') in 0.225338 seconds 
+  Time since last request: 1004.103723 seconds.
+  path: Assets/Scenes/BOSS/BOSS2.unity
+  artifactKey: Guid(c9f132df8abc906429722a6ff1ae5463) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/BOSS/BOSS2.unity using Guid(c9f132df8abc906429722a6ff1ae5463) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39f0cff164af7670b6dcf4a3d044388c') in 0.014555 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.615852 seconds.
-  path: Assets/old asset mess/SunnyLand Artwork/Environment/9sprite_8bit_circle.png
-  artifactKey: Guid(483d8c4e4f37dfc499c8258aeaf049f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/old asset mess/SunnyLand Artwork/Environment/9sprite_8bit_circle.png using Guid(483d8c4e4f37dfc499c8258aeaf049f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ea61d18fec1e5f56885f796ced5d470') in 0.070146 seconds 
+  Time since last request: 20.138657 seconds.
+  path: Assets/Scenes/BOSS/BOSS4.unity
+  artifactKey: Guid(0ee8819925f4cff42a4eb8d91cacb6f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/BOSS/BOSS4.unity using Guid(0ee8819925f4cff42a4eb8d91cacb6f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe2396f93d8b0b17c3c2e0a3101e3a08') in 0.009256 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Art/Simple Fantasy GUI/PNG/Icons/Accept_Icon.png
-  artifactKey: Guid(391f97da05cf45240a8ecdec752cd9be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Simple Fantasy GUI/PNG/Icons/Accept_Icon.png using Guid(391f97da05cf45240a8ecdec752cd9be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1df077179d6887871d2e57939e72340a') in 0.051264 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Art/Simple Fantasy GUI/PNG/Icons/Armor_Icon.png
-  artifactKey: Guid(65a9410232dbc154c9cec96a5fbd07b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Simple Fantasy GUI/PNG/Icons/Armor_Icon.png using Guid(65a9410232dbc154c9cec96a5fbd07b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42c2b88c265de4eb8eca7d6ae36b8438') in 0.093324 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Art/Archive_container.png
-  artifactKey: Guid(27217ef46cb340c49b6856c4be10f5b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Archive_container.png using Guid(27217ef46cb340c49b6856c4be10f5b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09fda6c617a852aaa4edbcbb2dd1064e') in 0.250829 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 94.374302 seconds.
-  path: Assets/Scenes/Stages/Stage2.unity
-  artifactKey: Guid(9ddd322d47f1c1d4985f2bde3b82e766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stages/Stage2.unity using Guid(9ddd322d47f1c1d4985f2bde3b82e766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0635ebce57d41e3898e9f09c77b774d5') in 0.003438 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 228.425797 seconds.
-  path: Assets/Scenes/Stages/Stage3.unity
-  artifactKey: Guid(f9b815ea9bf580d45a155cebea7144f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stages/Stage3.unity using Guid(f9b815ea9bf580d45a155cebea7144f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dc0bea5a721a46763f22e27a00c4be2') in 0.014944 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 119.410566 seconds.
-  path: Assets/Scenes/Stages/Stage4.unity
-  artifactKey: Guid(30051b8c6f841324daca00dfada072f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stages/Stage4.unity using Guid(30051b8c6f841324daca00dfada072f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa614772296de90c5250ec549b3b0f46') in 0.014872 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 121.041974 seconds.
-  path: Assets/Scenes/Stages/Stage5.unity
-  artifactKey: Guid(427f7bb071a558a4d9569e6d51635b68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stages/Stage5.unity using Guid(427f7bb071a558a4d9569e6d51635b68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f132ab722085bc30a39985e49f284dc') in 0.014193 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 171.404459 seconds.
-  path: Assets/Scenes/Stages/Stage4.unity
-  artifactKey: Guid(30051b8c6f841324daca00dfada072f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stages/Stage4.unity using Guid(30051b8c6f841324daca00dfada072f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7819d56e0d284b96f7924d86b39d0da2') in 0.012094 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 39.329220 seconds.
-  path: Assets/Scenes/Stages/Stage3.unity
-  artifactKey: Guid(f9b815ea9bf580d45a155cebea7144f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stages/Stage3.unity using Guid(f9b815ea9bf580d45a155cebea7144f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bb6955bc9e99d0c16f1662a05674cad') in 0.003894 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 103.455678 seconds.
-  path: Assets/Scenes/Stages/Stage2.unity
-  artifactKey: Guid(9ddd322d47f1c1d4985f2bde3b82e766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stages/Stage2.unity using Guid(9ddd322d47f1c1d4985f2bde3b82e766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9acbf1347cef9ce75fb27778bb012d20') in 0.004113 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 63.162801 seconds.
-  path: Assets/Scenes/Stages/Stage1.unity
-  artifactKey: Guid(76c97c314dbb13946a1f1d2636930a2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stages/Stage1.unity using Guid(76c97c314dbb13946a1f1d2636930a2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b549ae5b17662e5652ded1fe7480133') in 0.014096 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 74.456275 seconds.
-  path: Assets/Scenes/Stages/Stage2.unity
-  artifactKey: Guid(9ddd322d47f1c1d4985f2bde3b82e766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stages/Stage2.unity using Guid(9ddd322d47f1c1d4985f2bde3b82e766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f02145601c6b81bfa2e83c7603ad8956') in 0.003005 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.204954 seconds.
-  path: Assets/Scenes/Stages/Stage1.unity
-  artifactKey: Guid(76c97c314dbb13946a1f1d2636930a2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stages/Stage1.unity using Guid(76c97c314dbb13946a1f1d2636930a2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '381164baec174f661abc57943110ffe6') in 0.003476 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.443422 seconds.
-  path: Assets/Scenes/Stages/Stage1Experiment.unity
-  artifactKey: Guid(8a90ae146b5362548ad1596f4029c276) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stages/Stage1Experiment.unity using Guid(8a90ae146b5362548ad1596f4029c276) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c006bcb622039e7b835be25e7a097ca7') in 0.011813 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 26.940894 seconds.
-  path: Assets/Scenes/Stages/Stage3.unity
-  artifactKey: Guid(f9b815ea9bf580d45a155cebea7144f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stages/Stage3.unity using Guid(f9b815ea9bf580d45a155cebea7144f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e14a7546fb5422bbb60705aa95fc2b48') in 0.003020 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.048535 seconds.
-  path: Assets/Scenes/Stages/Stage4.unity
-  artifactKey: Guid(30051b8c6f841324daca00dfada072f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stages/Stage4.unity using Guid(30051b8c6f841324daca00dfada072f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64b4ecd104cfb5e50451cc14f90e8494') in 0.003574 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 73.893710 seconds.
+  Time since last request: 9.610951 seconds.
   path: Assets/Scenes/BOSS/BOSS5.unity
   artifactKey: Guid(a30ff3de46e36cb4eb4eb117bd91e19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/BOSS/BOSS5.unity using Guid(a30ff3de46e36cb4eb4eb117bd91e19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '043f622d7640aa8df39183665af79ad7') in 0.013621 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 54.209376 seconds.
-  path: Assets/Scenes/BOSS/BOSS5.unity
-  artifactKey: Guid(a30ff3de46e36cb4eb4eb117bd91e19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/BOSS/BOSS5.unity using Guid(a30ff3de46e36cb4eb4eb117bd91e19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '773de7274375f9903bdf4a13a089013c') in 0.003224 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 251.795442 seconds.
-  path: Assets/Scenes/BOSS/BOSS5end.unity
-  artifactKey: Guid(345e818e431eef642bacc5f2555a8407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/BOSS/BOSS5end.unity using Guid(345e818e431eef642bacc5f2555a8407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b83ab92a71e50d2fabe2c38bf897baae') in 0.012612 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.963681 seconds.
-  path: Assets/Scenes/BOSS/BOSS5OneTime.unity
-  artifactKey: Guid(c2f3e22045e802a41bc7c6d9a30e3d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/BOSS/BOSS5OneTime.unity using Guid(c2f3e22045e802a41bc7c6d9a30e3d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72bb258ce86d83d9e726de2f2398c77c') in 0.011409 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 170.827616 seconds.
-  path: Assets/Scenes/BOSS/BOSS5.unity
-  artifactKey: Guid(a30ff3de46e36cb4eb4eb117bd91e19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/BOSS/BOSS5.unity using Guid(a30ff3de46e36cb4eb4eb117bd91e19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c2d4fe295185e1a6ce6135b82d49436') in 0.003069 seconds 
+Start importing Assets/Scenes/BOSS/BOSS5.unity using Guid(a30ff3de46e36cb4eb4eb117bd91e19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a710130ac1b7225e7b88f98b6e03858') in 0.009098 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.010484 seconds.
+Registered in 0.006080 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Git\Repositories\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Git\Repositories\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.17 ms, found 3 plugins.
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 2.21 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.580 seconds
+- Completed reload, in  0.890 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1582ms)
-		BeginReloadAssembly (212ms)
+	ReloadAssembly (890ms)
+		BeginReloadAssembly (116ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (12ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (53ms)
-		EndReloadAssembly (1205ms)
-			LoadAssemblies (158ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (686ms)
+			LoadAssemblies (71ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (418ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (67ms)
-			SetupLoadedEditorAssemblies (510ms)
+			SetupTypeCache (237ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (41ms)
+			SetupLoadedEditorAssemblies (296ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (17ms)
-				SetLoadedEditorAssemblies (1ms)
+				InitializePlatformSupportModulesInManaged (23ms)
+				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (82ms)
-				ProcessInitializeOnLoadAttributes (345ms)
-				ProcessInitializeOnLoadMethodAttributes (57ms)
+				BeforeProcessingInitializeOnLoad (63ms)
+				ProcessInitializeOnLoadAttributes (176ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
 				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (13ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 5.08 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.54 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3512 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 19 unused Assets / (24.8 KB). Loaded Objects now: 4018.
-Memory consumption went from 131.2 MB to 131.2 MB.
-Total: 4.443400 ms (FindLiveObjects: 0.334500 ms CreateObjectMapping: 0.156400 ms MarkObjects: 3.920200 ms  DeleteObjects: 0.030500 ms)
+Unloading 19 unused Assets / (24.9 KB). Loaded Objects now: 4006.
+Memory consumption went from 127.4 MB to 127.4 MB.
+Total: 2.901500 ms (FindLiveObjects: 0.207800 ms CreateObjectMapping: 0.155700 ms MarkObjects: 2.504500 ms  DeleteObjects: 0.032700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 948.853726 seconds.
+  path: Assets/Scenes/Stages/Stage2.unity
+  artifactKey: Guid(9ddd322d47f1c1d4985f2bde3b82e766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Stages/Stage2.unity using Guid(9ddd322d47f1c1d4985f2bde3b82e766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b235345107bc56eb33dac711c50a2ffb') in 0.015499 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.533846 seconds.
+  path: Assets/Scenes/Stages/Stage3.unity
+  artifactKey: Guid(f9b815ea9bf580d45a155cebea7144f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Stages/Stage3.unity using Guid(f9b815ea9bf580d45a155cebea7144f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfd9ad239eb77f7eabfc1d48b7cf3fe3') in 0.010131 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.625309 seconds.
+  path: Assets/Scenes/Stages/Stage4.unity
+  artifactKey: Guid(30051b8c6f841324daca00dfada072f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Stages/Stage4.unity using Guid(30051b8c6f841324daca00dfada072f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e95e08f5b98f7e4e20f7514318f0f5e') in 0.009546 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.976677 seconds.
+  path: Assets/Scenes/Stages/Stage5.unity
+  artifactKey: Guid(427f7bb071a558a4d9569e6d51635b68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Stages/Stage5.unity using Guid(427f7bb071a558a4d9569e6d51635b68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60d8ceb3e3c221c3b47aaa3a8893e98a') in 0.008155 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.427141 seconds.
+  path: Assets/Scenes/BOSS/BOSS1.unity
+  artifactKey: Guid(d1f14f6fc909c7c4d985a22575b5b1c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/BOSS/BOSS1.unity using Guid(d1f14f6fc909c7c4d985a22575b5b1c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e309426767be148bdb9e1e526d687555') in 0.007847 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.120593 seconds.
+  path: Assets/Scenes/BOSS/BOSS2.unity
+  artifactKey: Guid(c9f132df8abc906429722a6ff1ae5463) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/BOSS/BOSS2.unity using Guid(c9f132df8abc906429722a6ff1ae5463) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58e2eb626e06c4e70aa918d894a4f36c') in 0.008214 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.166766 seconds.
+  path: Assets/Scenes/BOSS/BOSS3.unity
+  artifactKey: Guid(91125246c982a7449a372de13fdf149a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/BOSS/BOSS3.unity using Guid(91125246c982a7449a372de13fdf149a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a25ef77a2519330d459ce288c75d20c2') in 0.010038 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.015244 seconds.
+  path: Assets/Scenes/BOSS/BOSS4.unity
+  artifactKey: Guid(0ee8819925f4cff42a4eb8d91cacb6f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/BOSS/BOSS4.unity using Guid(0ee8819925f4cff42a4eb8d91cacb6f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '186072bf01fe53bbce43f75b9c78709e') in 0.002053 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.093660 seconds.
+  path: Assets/Scenes/BOSS/BOSS5.unity
+  artifactKey: Guid(a30ff3de46e36cb4eb4eb117bd91e19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/BOSS/BOSS5.unity using Guid(a30ff3de46e36cb4eb4eb117bd91e19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edcf4b0a77a2490c00b630325578f77d') in 0.002273 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.023493 seconds.
+  path: Assets/Scenes/BOSS/BOSS5end.unity
+  artifactKey: Guid(345e818e431eef642bacc5f2555a8407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/BOSS/BOSS5end.unity using Guid(345e818e431eef642bacc5f2555a8407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f607594292b4fcea7b3c8a92296f02e') in 0.008133 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.722834 seconds.
+  path: Assets/Scenes/BOSS/BOSS5OneTime.unity
+  artifactKey: Guid(c2f3e22045e802a41bc7c6d9a30e3d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/BOSS/BOSS5OneTime.unity using Guid(c2f3e22045e802a41bc7c6d9a30e3d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80dafe965791ad6c276fd541491c9469') in 0.007859 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.223502 seconds.
+  path: Assets/Scenes/BOSS/BOSS5OneTime.unity
+  artifactKey: Guid(c2f3e22045e802a41bc7c6d9a30e3d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/BOSS/BOSS5OneTime.unity using Guid(c2f3e22045e802a41bc7c6d9a30e3d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '648d9dbc10c0e8c5602d794acd861751') in 0.002579 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22.114085 seconds.
+  path: Assets/Scenes/BOSS/BOSS5end.unity
+  artifactKey: Guid(345e818e431eef642bacc5f2555a8407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/BOSS/BOSS5end.unity using Guid(345e818e431eef642bacc5f2555a8407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdf5a22e08244416baeb70b9bf002d6d') in 0.001890 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005750 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 2.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.835 seconds
+Domain Reload Profiling:
+	ReloadAssembly (835ms)
+		BeginReloadAssembly (111ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (646ms)
+			LoadAssemblies (68ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (175ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (323ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (23ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (65ms)
+				ProcessInitializeOnLoadAttributes (192ms)
+				ProcessInitializeOnLoadMethodAttributes (31ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.01 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3512 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (24.9 KB). Loaded Objects now: 4009.
+Memory consumption went from 127.4 MB to 127.4 MB.
+Total: 2.592600 ms (FindLiveObjects: 0.205500 ms CreateObjectMapping: 0.080200 ms MarkObjects: 2.276000 ms  DeleteObjects: 0.030200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004820 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Cholo\Documents\GitHub\cgen\CGEN 2d RPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 2.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.952 seconds
+Domain Reload Profiling:
+	ReloadAssembly (953ms)
+		BeginReloadAssembly (115ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (755ms)
+			LoadAssemblies (75ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (224ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (350ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (25ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (70ms)
+				ProcessInitializeOnLoadAttributes (211ms)
+				ProcessInitializeOnLoadMethodAttributes (33ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.99 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3512 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (24.8 KB). Loaded Objects now: 4012.
+Memory consumption went from 127.4 MB to 127.4 MB.
+Total: 5.202000 ms (FindLiveObjects: 0.575400 ms CreateObjectMapping: 0.344800 ms MarkObjects: 4.252900 ms  DeleteObjects: 0.027400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
