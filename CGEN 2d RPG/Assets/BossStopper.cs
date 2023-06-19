@@ -12,6 +12,9 @@ public class BossStopper : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         animator.Play("NotPress");
+
+        // Reset the count of pressed stoppers
+        stoppersPressed = 0; // Add this line
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

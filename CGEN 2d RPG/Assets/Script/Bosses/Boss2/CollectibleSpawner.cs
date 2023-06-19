@@ -36,15 +36,15 @@ public class CollectibleSpawner : MonoBehaviour
             int randomWeight = Random.Range(0, 100);
             GameObject collectiblePrefab;
 
-            if (randomWeight < 50) // 50% chance for HealthCollectible
+            if (randomWeight < 60) // 60% chance for HealthCollectible
             {
                 collectiblePrefab = collectiblePrefabs[0]; // Assuming HealthCollectible is at index 0
             }
-            else if (randomWeight < 75) // 25% chance for SpeedCollectible
+            else if (randomWeight < 80) // 20% chance for SpeedCollectible
             {
                 collectiblePrefab = collectiblePrefabs[1]; // Assuming SpeedCollectible is at index 1
             }
-            else // 25% chance for ImmunityCollectible
+            else // 20% chance for ImmunityCollectible
             {
                 collectiblePrefab = collectiblePrefabs[2]; // Assuming ImmunityCollectible is at index 2
             }

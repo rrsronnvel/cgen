@@ -57,7 +57,7 @@ public class Bullet : EnemyDamage
         base.OnTriggerEnter2D(collision); //Execute logic from parent script first
 
         // Check if the object collided with is in the SolidObjects or Player layer
-        if (collision.gameObject.layer == LayerMask.NameToLayer("SolidObjects") || collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("SolidObjects") || collision.gameObject.layer == LayerMask.NameToLayer("Player") || collision.gameObject.layer == LayerMask.NameToLayer("Interactable"))
         {
             Destroy();
         }
