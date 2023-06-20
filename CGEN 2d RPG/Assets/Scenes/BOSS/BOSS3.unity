@@ -3807,11 +3807,11 @@ RectTransform:
   m_Father: {fileID: 497676412}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 141.95789}
-  m_Pivot: {x: 0.5, y: 1}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &345441672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3832,7 +3832,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You win.
+  m_text: Congratulations! You've successfully defeated the Boss in Stage 3.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 203c055106f479544838a634b9b6594f, type: 2}
   m_sharedMaterial: {fileID: -4862333370903328641, guid: 203c055106f479544838a634b9b6594f, type: 2}
@@ -3859,15 +3859,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87.4
+  m_fontSize: 72
   m_fontSizeBase: 87.4
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4896,12 +4896,12 @@ RectTransform:
   - {fileID: 345441671}
   - {fileID: 1543453454}
   m_Father: {fileID: 794271275}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1146, y: -702}
+  m_SizeDelta: {x: 1000, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &497676413
 MonoBehaviour:
@@ -8350,8 +8350,8 @@ RectTransform:
   - {fileID: 834199390}
   - {fileID: 1258697322}
   - {fileID: 1477320385}
-  - {fileID: 497676412}
   - {fileID: 1224536058}
+  - {fileID: 497676412}
   - {fileID: 1089372252}
   - {fileID: 1206497189}
   m_Father: {fileID: 0}
@@ -27982,7 +27982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1224536058
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27999,7 +27999,7 @@ RectTransform:
   - {fileID: 590358186}
   - {fileID: 358262026}
   m_Father: {fileID: 794271275}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -31242,8 +31242,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000029892, y: -91}
-  m_SizeDelta: {x: 160.9207, y: 44.2716}
+  m_AnchoredPosition: {x: 0, y: -180}
+  m_SizeDelta: {x: 160, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1543453455
 MonoBehaviour:
@@ -33296,6 +33296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controlButton: {fileID: 696620666}
   moveSpeed: 6
+  isMoving: 0
   interactButton: {fileID: 85204206}
   animator: {fileID: 0}
   solidObjectsLayer:
@@ -33305,6 +33306,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isGameOver: 0
+  isKnockback: 0
 --- !u!95 &1678011885
 Animator:
   serializedVersion: 4
@@ -33380,6 +33382,7 @@ MonoBehaviour:
   iFramesDuration: 1
   numberOfFlashes: 3
   playerController: {fileID: 1678011884}
+  rb: {fileID: 0}
   numberOfImmunityFlashes: 25
 --- !u!114 &1678011890
 MonoBehaviour:
