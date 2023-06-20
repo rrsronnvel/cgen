@@ -6,7 +6,7 @@ using TMPro;
 
 public class ComputerHistoryBattle : MonoBehaviour
 {
-    public Text questionText; // Change this to TMP_Text if you're using TextMeshPro
+    public TMP_Text questionText; // Changed Text to TMP_Text
     public Button[] answerButtons; // An array of Buttons for the answer choices
     public ComputerHistoryQuestionBank questionBank; // The question bank
 
@@ -94,9 +94,6 @@ public class ComputerHistoryBattle : MonoBehaviour
         // Deactivate the Quiz Panel
         gameObject.SetActive(false);
     }
-
-
-
 
     public void StartQuiz()
     {

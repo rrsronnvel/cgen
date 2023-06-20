@@ -6,7 +6,7 @@ using TMPro;
 
 public class ComputerHistoryBattleBoss : MonoBehaviour
 {
-    public Text questionText; // Change this to TMP_Text if you're using TextMeshPro
+    public TMP_Text questionText; // Changed Text to TMP_Text
     public Button[] answerButtons; // An array of Buttons for the answer choices
     public ComputerHistoryQuestionBank questionBank; // The question bank
 
