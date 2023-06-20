@@ -15,7 +15,7 @@ public class Enemy_Sideways : MonoBehaviour
     {
         leftEdge = transform.position.x - movementDistance;
         rightEdge = transform.position.x + movementDistance;
-    } 
+    }
 
     private void Update()
     {
@@ -23,7 +23,7 @@ public class Enemy_Sideways : MonoBehaviour
         {
             if (transform.position.x > leftEdge)
             {
-                transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, transform.position.y , transform.position.z);
+                transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, transform.position.y, transform.position.z);
             }
             else
             {
@@ -38,7 +38,7 @@ public class Enemy_Sideways : MonoBehaviour
             }
             else
             {
-                movingLeft = true ;
+                movingLeft = true;
             }
         }
     }
@@ -46,7 +46,9 @@ public class Enemy_Sideways : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<Health>().TakeDamage(damage);
+            Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
+            float knockbackForce = 5f; // Adjust this value as needed
+            collision.GetComponent<Health>().TakeDamage(damage, knockbackDirection, knockbackForce);
         }
     }
 }

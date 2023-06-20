@@ -31,7 +31,9 @@ public class Firetrap : MonoBehaviour
             }
             if (active)
             {
-                collision.GetComponent<Health>().TakeDamage(damage);
+                Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
+                float knockbackForce = 5f; // Adjust this value as needed
+                collision.GetComponent<Health>().TakeDamage(damage, knockbackDirection, knockbackForce);
             }
         }
     }
@@ -40,7 +42,7 @@ public class Firetrap : MonoBehaviour
     {
         // turn the sprite red to notify the player
         triggered = true;
-        spriteRend.color = Color.red; 
+        spriteRend.color = Color.red;
 
         //Wait for delay, activate trap, turn on animation, return color back to normal
         yield return new WaitForSeconds(activationDelay);

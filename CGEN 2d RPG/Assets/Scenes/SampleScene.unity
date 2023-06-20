@@ -35461,6 +35461,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   defaultDirection: 1
   additionalPanel: {fileID: 0}
+  hasBeenInteractedWith: 0
+  id: 
 --- !u!95 &1415695193
 Animator:
   serializedVersion: 4
@@ -39800,6 +39802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controlButton: {fileID: 696620666}
   moveSpeed: 6
+  isMoving: 0
   interactButton: {fileID: 85204206}
   animator: {fileID: 0}
   solidObjectsLayer:
@@ -39809,6 +39812,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isGameOver: 0
+  isKnockback: 0
 --- !u!95 &1678011885
 Animator:
   serializedVersion: 4
@@ -39884,6 +39888,7 @@ MonoBehaviour:
   iFramesDuration: 1
   numberOfFlashes: 3
   playerController: {fileID: 1678011884}
+  rb: {fileID: 0}
   numberOfImmunityFlashes: 25
 --- !u!114 &1678011890
 MonoBehaviour:
@@ -48669,6 +48674,7 @@ MonoBehaviour:
   iFramesDuration: 1
   numberOfFlashes: 3
   playerController: {fileID: 1958667429}
+  rb: {fileID: 0}
   numberOfImmunityFlashes: 10
 --- !u!58 &1958667426
 CircleCollider2D:
@@ -48741,6 +48747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controlButton: {fileID: 696620666}
   moveSpeed: 5
+  isMoving: 0
   interactButton: {fileID: 85204206}
   animator: {fileID: 0}
   solidObjectsLayer:
@@ -48750,6 +48757,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isGameOver: 0
+  isKnockback: 0
 --- !u!212 &1958667430
 SpriteRenderer:
   m_ObjectHideFlags: 0

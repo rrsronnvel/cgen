@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     public float moveSpeed;
 
-    private bool isMoving;
+    public bool isMoving;
 
     private Vector2 input;
 
@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     public Animator animator;
 
-    
+
     public LayerMask solidObjectsLayer;
     public LayerMask interactableLayer;
 
@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     private PickUp pickUp;
 
-
+    // Add this line
+    public bool isKnockback;
 
     private void Awake()
     {
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         else
         {
             this.transform.position = new Vector3(-12.0f, 1.0f, 0f); // Set this to your initial player position
-          
+
         }
     }
 
@@ -83,18 +84,18 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     public void Update()
     {
-        if (isGameOver)
+        if (isGameOver || isKnockback) // Add isKnockback here
         {
             return;
         }
 
-       // controlButton.SetActive(true);
+        // controlButton.SetActive(true);
         if (!isMoving)
         {
             //comment this if want to change to button
             input = Vector3.zero;
-           // input.x = Input.GetAxisRaw("Horizontal");
-           // input.y = Input.GetAxisRaw("Vertical");
+            // input.x = Input.GetAxisRaw("Horizontal");
+            // input.y = Input.GetAxisRaw("Vertical");
 
 
             dirX = CrossPlatformInputManager.GetAxis("Horizontal");
@@ -109,17 +110,17 @@ public class PlayerController : MonoBehaviour, IDataPersistence
                 pickUp.Direction = input.normalized;
             }
 
-            
-            //Debug.Log("This is input.x " + input.x);
-          //  Debug.Log("This is input.y " + input.y);
 
-        
+            //Debug.Log("This is input.x " + input.x);
+            //  Debug.Log("This is input.y " + input.y);
+
+
 
 
             //stop diagonal movement
-             if (input.x != 0) input.y = 0 ;
-          
-            if (input != Vector2.zero )
+            if (input.x != 0) input.y = 0;
+
+            if (input != Vector2.zero)
             {
 
                 animator.SetFloat("moveX", input.x);
@@ -129,19 +130,19 @@ public class PlayerController : MonoBehaviour, IDataPersistence
                 targetPos.x += input.x;
                 targetPos.y += input.y;
 
-               
 
-                if (IsWalkable(targetPos))    
+
+                if (IsWalkable(targetPos))
                     StartCoroutine(Move(targetPos));
-                
-              
+
+
             }
         }
 
         animator.SetBool("isMoving", isMoving);
         // || Input.GetMouseButtonDown(0)
 
-      //  Input.GetKeyDown(KeyCode.Z)
+        //  Input.GetKeyDown(KeyCode.Z)
         if (Input.GetButtonDown("InteractButton") || Input.GetKeyDown(KeyCode.Z))
         {
             Debug.Log("Hello World!");
@@ -161,7 +162,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         //facing
         // Debug.Log(facingDir);
         // Debug.Log(interactPos);
-         Debug.DrawLine(transform.position, interactPos, Color.red, 1f);
+        Debug.DrawLine(transform.position, interactPos, Color.red, 1f);
 
         var collider = Physics2D.OverlapCircle(interactPos, 0.7f, interactableLayer);
 
@@ -175,17 +176,23 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     IEnumerator Move(Vector3 targetPos)
     {
         isMoving = true;
-        
+
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
+            if (isKnockback) // Add this check
+            {
+                yield break;
+            }
+
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
-      
+
             yield return null;
         }
         transform.position = targetPos;
 
         isMoving = false;
     }
+
 
     private bool IsWalkable(Vector3 targetPos)
     {

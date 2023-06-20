@@ -7,6 +7,11 @@ public class EnemyDamage : MonoBehaviour
     protected void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
-            collision.GetComponent<Health>().TakeDamage(damage);
+        {
+            Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
+            float knockbackForce = 5f; // Adjust this value as needed
+            collision.GetComponent<Health>().TakeDamage(damage, knockbackDirection, knockbackForce);
+        }
     }
+
 }

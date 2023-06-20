@@ -19,7 +19,7 @@ public class QuizObject : MonoBehaviour, Interactable
     public GameObject panelQuiz;  // Assign this in Unity inspector
     [SerializeField] private GameObject controlButtons;
 
-    [SerializeField]  private QuizDoor door;  // Reference to QuizDoor script. Assign this in Unity inspector.
+    [SerializeField] private QuizDoor door;  // Reference to QuizDoor script. Assign this in Unity inspector.
 
     // Reference to UI text elements
     public TMP_Text questionTextOnly; // Assign in Unity inspector
