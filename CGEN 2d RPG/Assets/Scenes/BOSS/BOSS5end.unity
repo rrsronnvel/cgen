@@ -1839,7 +1839,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 203c055106f479544838a634b9b6594f, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: -4862333370903328641, guid: 203c055106f479544838a634b9b6594f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1863,7 +1863,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.75
+  m_fontSize: 40.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -25517,7 +25517,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -241.67145, y: -71.49954}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1638819145
@@ -25840,6 +25840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controlButton: {fileID: 696620666}
   moveSpeed: 6
+  isMoving: 0
   interactButton: {fileID: 85204206}
   animator: {fileID: 0}
   solidObjectsLayer:
@@ -25848,7 +25849,11 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 256
+  pickUpNoPushLayer:
+    serializedVersion: 2
+    m_Bits: 0
   isGameOver: 0
+  isKnockback: 0
 --- !u!95 &1678011885
 Animator:
   serializedVersion: 4
@@ -25924,6 +25929,7 @@ MonoBehaviour:
   iFramesDuration: 1
   numberOfFlashes: 3
   playerController: {fileID: 1678011884}
+  rb: {fileID: 0}
   numberOfImmunityFlashes: 25
 --- !u!114 &1678011890
 MonoBehaviour:
@@ -25953,6 +25959,9 @@ MonoBehaviour:
   pickUpMask:
     serializedVersion: 2
     m_Bits: 2048
+  pickUpNoPushLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1678011892
 MonoBehaviour:
   m_ObjectHideFlags: 0
