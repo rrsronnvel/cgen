@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     public LayerMask solidObjectsLayer;
     public LayerMask interactableLayer;
+    public LayerMask pickUpNoPushLayer;
 
     private bool isDestroyed = false;
 
@@ -211,7 +212,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     private bool IsWalkable(Vector3 targetPos)
     {
-        var hitCollider = Physics2D.OverlapCircle(targetPos, 0.4f, solidObjectsLayer | interactableLayer);
+        var hitCollider = Physics2D.OverlapCircle(targetPos, 0.4f, solidObjectsLayer | interactableLayer | pickUpNoPushLayer);
 
         if (hitCollider != null)
         {

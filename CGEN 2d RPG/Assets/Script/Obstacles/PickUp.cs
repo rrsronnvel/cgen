@@ -6,6 +6,8 @@ public class PickUp : MonoBehaviour
 {
     public Transform holdSpot;
     public LayerMask pickUpMask;
+    public LayerMask pickUpNoPushLayer;
+
 
     public Vector3 Direction { get; set; }
     private GameObject itemHolding;
@@ -57,9 +59,18 @@ public class PickUp : MonoBehaviour
         else
         {
             Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, .4f, pickUpMask);
+            Collider2D pickUpItem1 = Physics2D.OverlapCircle(transform.position + Direction, .4f, pickUpNoPushLayer);
             if (pickUpItem)
             {
                 itemHolding = pickUpItem.gameObject;
+                itemHolding.transform.position = holdSpot.position;
+                itemHolding.transform.parent = transform;
+                if (itemHolding.GetComponent<Rigidbody2D>())
+                    itemHolding.GetComponent<Rigidbody2D>().simulated = false;
+            }
+            if (pickUpItem1)
+            {
+                itemHolding = pickUpItem1.gameObject;
                 itemHolding.transform.position = holdSpot.position;
                 itemHolding.transform.parent = transform;
                 if (itemHolding.GetComponent<Rigidbody2D>())
