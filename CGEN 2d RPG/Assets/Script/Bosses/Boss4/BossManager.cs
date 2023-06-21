@@ -4,22 +4,29 @@ using TMPro;
 public class BossManager : MonoBehaviour
 {
     public TMP_Text countdownText;
-    public float countdownStart = 60f; // Change this to the length of your countdown
+    public float countdownStart = 30f; // Change this to the length of your countdown
     private float countdownTime;
 
     private Boss4Chase boss4Chase;
     private Boss4Range boss4Range;
+
+  
 
     void Start()
     {
         countdownTime = countdownStart;
         boss4Chase = FindObjectOfType<Boss4Chase>();
         boss4Range = FindObjectOfType<Boss4Range>();
+
+        // Reset isAlive states for both bosses
+        Boss4Chase.isAlive = true;
+        Boss4Range.isAlive = true;
+
     }
 
     void Update()
     {
-        if (countdownTime > 0)
+        if (countdownTime >0)
         {
             countdownTime -= Time.deltaTime;
         }

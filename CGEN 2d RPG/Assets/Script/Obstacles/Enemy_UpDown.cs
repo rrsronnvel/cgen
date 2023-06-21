@@ -47,7 +47,7 @@ public class Enemy_UpDown : MonoBehaviour
         if (collision.tag == "Player")
         {
             Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
-            float knockbackForce = 5f; // Adjust this value as needed
+            float knockbackForce = 0f; // Adjust this value as needed
             collision.GetComponent<Health>().TakeDamage(damage, knockbackDirection, knockbackForce);
         }
     }

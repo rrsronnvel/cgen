@@ -6454,7 +6454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 4
+  speed: 3.5
   range: 40
   checkDelay: 1
   playerLayer:
@@ -31990,7 +31990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 112763220}
-  countdownStart: 60
+  countdownStart: 30
 --- !u!1 &1519855186
 GameObject:
   m_ObjectHideFlags: 0
@@ -33833,6 +33833,9 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 256
+  pickUpNoPushLayer:
+    serializedVersion: 2
+    m_Bits: 0
   isGameOver: 0
   isKnockback: 0
 --- !u!95 &1678011885
@@ -33940,6 +33943,9 @@ MonoBehaviour:
   pickUpMask:
     serializedVersion: 2
     m_Bits: 2048
+  pickUpNoPushLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1678011892
 MonoBehaviour:
   m_ObjectHideFlags: 0
