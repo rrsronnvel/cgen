@@ -153,6 +153,11 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     }
 
+    public void Nudge(Vector3 amount)
+    {
+        this.transform.position += amount;
+    }
+
     void Interact()
     {
         //facing
@@ -184,6 +189,15 @@ public class PlayerController : MonoBehaviour, IDataPersistence
                 yield break;
             }
 
+            // Check if there's a NudgePlayer object in the way and move it as well
+            var hitCollider = Physics2D.OverlapCircle(targetPos, 0.4f, solidObjectsLayer | interactableLayer);
+            var interactable = hitCollider?.GetComponent<Interactable>();
+
+            if (interactable is NudgePlayer)
+            {
+                hitCollider.transform.position = Vector3.MoveTowards(hitCollider.transform.position, hitCollider.transform.position + (targetPos - transform.position), moveSpeed * Time.deltaTime);
+            }
+
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
 
             yield return null;
@@ -194,12 +208,22 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     }
 
 
+
     private bool IsWalkable(Vector3 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 0.4f, solidObjectsLayer | interactableLayer) != null)
+        var hitCollider = Physics2D.OverlapCircle(targetPos, 0.4f, solidObjectsLayer | interactableLayer);
+
+        if (hitCollider != null)
         {
+            var interactable = hitCollider.GetComponent<Interactable>();
+
+            if (interactable is NudgePlayer) // Allow moving into NudgePlayer objects
+                return true;
+
             return false;
         }
+
         return true;
     }
+
 }
