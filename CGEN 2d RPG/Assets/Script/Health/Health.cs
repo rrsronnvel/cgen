@@ -54,7 +54,7 @@ public class Health : MonoBehaviour, IDataPersistence
 
     private IEnumerator StopKnockback()
     {
-        yield return new WaitForSeconds(0.5f); // Adjust this delay as needed
+        yield return new WaitForSeconds(0.4f); // Adjust this delay as needed
         rb.velocity = Vector2.zero;
         playerController.isKnockback = false;
         playerController.isMoving = false; // Add this line
