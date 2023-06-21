@@ -164,7 +164,7 @@ public class BattleSystem : MonoBehaviour
                     else if (rewardType == RewardType.Speed)
                     {
                         // Increase the player's speed
-                        gameData.playerSpeed += 0.6f;
+                        gameData.playerSpeed += 0.8f;
                         rewardText.text = "Your Move Speed is increased!";
                     }
                     gameData.currentHealth = playerUnit.currentHP; // Add this line

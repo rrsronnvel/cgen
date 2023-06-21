@@ -5344,7 +5344,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3.48, y: 3.41}
     newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5394,7 +5394,7 @@ SpriteRenderer:
   m_SortingLayerID: -513031075
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300022, guid: b62a8e74a325e4493956501c30341010, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8fdbda3895f7e10cdb68de13f841ebfd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5413,8 +5413,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309461978}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.64, y: -11.48, z: 0.19186744}
-  m_LocalScale: {x: 0.7082, y: 0.7082, z: 0.7082}
+  m_LocalPosition: {x: -14.3689, y: -10.3367, z: 0.19186744}
+  m_LocalScale: {x: 0.23252273, y: 0.2629025, z: 0.7082}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -48395,6 +48395,9 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 256
+  pickUpNoPushLayer:
+    serializedVersion: 2
+    m_Bits: 0
   isGameOver: 0
   isKnockback: 0
 --- !u!95 &1678011885
@@ -48502,6 +48505,9 @@ MonoBehaviour:
   pickUpMask:
     serializedVersion: 2
     m_Bits: 2048
+  pickUpNoPushLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1678011892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58645,6 +58651,9 @@ MonoBehaviour:
   pickUpMask:
     serializedVersion: 2
     m_Bits: 2048
+  pickUpNoPushLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1958667424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58757,6 +58766,9 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 256
+  pickUpNoPushLayer:
+    serializedVersion: 2
+    m_Bits: 0
   isGameOver: 0
   isKnockback: 0
 --- !u!212 &1958667430
@@ -59307,6 +59319,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 309461979}
+        m_TargetAssemblyTypeName: TBCClue, Assembly-CSharp
+        m_MethodName: ClosePanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
