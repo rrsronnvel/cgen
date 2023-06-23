@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class NPCController : MonoBehaviour, Interactable, IDataPersistence
 {
+    [SerializeField] private string id;
+
+    [ContextMenu("Generate guid for id")]
+    private void GenerateGuid()
+    {
+        id = System.Guid.NewGuid().ToString();
+    }
+
+
     [SerializeField] Dialog dialog;
     public Animator animator; // Add a reference to the NPC's Animator
     private enum Direction { Left, Right, Down, Top }; // Add a Direction enum
@@ -12,7 +21,7 @@ public class NPCController : MonoBehaviour, Interactable, IDataPersistence
      [SerializeField] GameObject additionalPanel;
 
     public bool hasBeenInteractedWith = false;
-    public string id;
+    
 
     private void Awake()
     {
